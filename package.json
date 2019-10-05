@@ -1,0 +1,30 @@
+{
+	"name": "custom-server-express",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "nodemon server.js",
+		"frontDev": "node server.js",
+		"build": "next build",
+		"start": "cross-env NODE_ENV=production node server.js"
+	},
+	"dependencies": {
+		"@zeit/next-css": "^1.0.1",
+		"@zeit/next-less": "^1.0.1",
+		"@zeit/next-sass": "^1.0.1",
+		"bootstrap": "^4.3.1",
+		"config": "^3.2.3",
+		"express": "^4.14.0",
+		"mongoose": "^5.7.3",
+		"next": "latest",
+		"next-images": "^1.2.0",
+		"nodemon": "^1.19.3",
+		"react": "^16.10.2",
+		"react-dom": "^16.10.2",
+		"reactstrap": "^8.0.1",
+		"style-loader": "^1.0.0",
+		"styled-jsx": "^3.2.2"
+	},
+	"devDependencies": {
+		"cross-env": "^5.2.0"
+	}
+}
