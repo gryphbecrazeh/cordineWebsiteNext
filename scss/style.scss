@@ -1,0 +1,108 @@
+$accent: orange;
+$accent-2: white;
+$background: #334;
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.hero {
+	color: white;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+.hero h1 {
+	text-shadow: 0 2px 5px black;
+	color: $accent;
+}
+input {
+	border: none;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0);
+	border: $accent 3px solid;
+	color: $accent-2;
+	padding: 0.5em;
+	box-shadow: 0 2px 5px black;
+}
+input:focus::placeholder {
+	border-radius: 5px;
+}
+input::placeholder {
+	color: $accent-2;
+	text-align: center;
+}
+.subsearch {
+	margin-top: 0.5em;
+}
+a {
+	color: $accent;
+}
+a:hover {
+	color: $accent;
+}
+.logo {
+	max-width: 50px;
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+}
+
+/* Fonts */
+.oswald {
+	font-family: 'Oswald', sans-serif;
+}
+.quickSand {
+	font-family: 'Quicksand', sans-serif;
+}
+.vibes {
+	font-family: 'Vibes', cursive;
+}
+.shadows {
+	font-family: 'Shadows Into Light', cursive;
+}
+
+.elite {
+	font-family: 'Special Elite', cursive;
+}
+.bangers {
+	font-family: 'Bangers', cursive;
+}
+
+.nav-container {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	width: 100%;
+	a {
+		color: $accent;
+	}
+	background-color: rgba(68, 51, 51, 0.2);
+}
+
+.glass {
+	background-image: linear-gradient(
+		-70deg,
+		rgba(0, 0, 0, 0.3),
+		rgba(10, 10, 0, 0.2) 100%,
+		rgba(0, 0, 0, 0.5)
+	);
+	box-shadow: 0 0 5px black;
+}
+.centeredHeading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: $background;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: fill;
+}
