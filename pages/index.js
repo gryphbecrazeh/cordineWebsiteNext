@@ -1,3 +1,4 @@
+import "../scss/style.scss";
 // -----------------------------------------Next-----------------------------------------
 import Head from "next/head";
 import Link from "next/link";
@@ -16,13 +17,10 @@ export default () => (
 		<Row>
 			<Col>
 				<CenteredHeading picture={ Image } >
-					<div>
+					<div className="headers">
 						Welcome to the landing page
 					</div>
 				</CenteredHeading>
-				<div>
-					Test
-				</div>
 			</Col>
 		</Row>
 	</Document>
