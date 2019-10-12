@@ -1,56 +1,9 @@
+// ##############################--Global Variables--##############################
 $accent: orange;
 $accent-2: white;
 $background: #334;
-body {
-	margin: 0;
-	padding: 0;
-}
-
-.hero {
-	color: white;
-	text-align: center;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.7);
-}
-.hero h1 {
-	text-shadow: 0 2px 5px black;
-	color: $accent;
-}
-input {
-	border: none;
-	border-radius: 5px;
-	background-color: rgba(255, 255, 255, 0);
-	border: $accent 3px solid;
-	color: $accent-2;
-	padding: 0.5em;
-	box-shadow: 0 2px 5px black;
-}
-input:focus::placeholder {
-	border-radius: 5px;
-}
-input::placeholder {
-	color: $accent-2;
-	text-align: center;
-}
-.subsearch {
-	margin-top: 0.5em;
-}
-a {
-	color: $accent;
-}
-a:hover {
-	color: $accent;
-}
-.logo {
-	max-width: 50px;
-	position: fixed;
-	bottom: 1em;
-	right: 1em;
-}
-
-/* Fonts */
+$small_image_scale: 50px;
+// ##############################--Global Fonts--##############################
 .oswald {
 	font-family: 'Oswald', sans-serif;
 }
@@ -70,18 +23,7 @@ a:hover {
 .bangers {
 	font-family: 'Bangers', cursive;
 }
-
-.nav-container {
-	position: fixed;
-	z-index: 999;
-	top: 0;
-	width: 100%;
-	a {
-		color: $accent;
-	}
-	background-color: rgba(68, 51, 51, 0.2);
-}
-
+// ##############################--Global Classes--##############################
 .glass {
 	background-image: linear-gradient(
 		-70deg,
@@ -95,14 +37,95 @@ a:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
+	position: relative;
 	background-color: $background;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center center;
-	background-size: fill;
+	background-size: cover;
+}
+.fa-link * {
+	font-size: 10px;
+}
+// ##############################--Elements--##############################
+body {
+	margin: 0;
+	padding: 0;
+	header {
+		width: 100%;
+	}
+}
+// ##############################--Images--##############################
+
+.logo {
+	max-width: $small_image_scale;
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+}
+// ##############################--NavBar--##############################
+.nav-container {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	width: 100%;
+	a {
+		color: $accent;
+	}
+	background-color: rgba(68, 51, 51, 0.2);
+}
+
+// ##############################--Hero--##############################
+.hero {
+	color: white;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+
+	// ##############################--Elements--##############################
+	h1 {
+		text-shadow: 0 2px 5px black;
+		color: $accent;
+	}
+	a {
+		color: $accent;
+	}
+	a:hover {
+		color: $accent;
+	}
+	// ##############################--Sections--##############################
+	.subsearch {
+		margin-top: 0.5em;
+	}
+
+	// ##############################--Search Bar--##############################
+	.search-container {
+		$search-padding: 10em;
+		padding-left: $search-padding;
+		padding-right: $search-padding;
+		input {
+			border: none;
+			border-radius: 5px;
+			background-color: rgba(255, 255, 255, 0);
+			border: $accent 3px solid;
+			color: $accent-2;
+			padding: 0.5em;
+			box-shadow: 0 2px 5px black;
+		}
+		input:focus::placeholder {
+			border-radius: 5px;
+		}
+		input:focus {
+			background-color: rgba(0, 0, 0, 0);
+			color: white;
+			border: $accent 3px solid;
+			box-shadow: 0 2px 5px black;
+		}
+		input::placeholder {
+			color: $accent-2;
+			text-align: center;
+		}
+	}
 }

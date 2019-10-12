@@ -7,18 +7,21 @@ import { Container, Row } from 'reactstrap';
 import React from 'react';
 // -----------------------------------------Components-----------------------------------------
 import NavBar from '../components/NavBar';
-const Document = props => (
-	<Container fluid>
-		<Row>
+import LoginModal from '../components/LoginModal';
+
+const Document = props => {
+	return (
+		<Container fluid>
 			<Head>
 				<title>Christopher Cordine New York Based Web Developer</title>
 				<link
 					href='https://fonts.googleapis.com/css?family=Bangers|Oswald|Quicksand|Shadows+Into+Light|Special+Elite|Vibes&display=swap'
 					rel='stylesheet'></link>
 			</Head>
+			<LoginModal />
 			{/* <NavBar /> */}
 			{props.children}
-		</Row>
-	</Container>
-);
+		</Container>
+	);
+};
 export default Document;

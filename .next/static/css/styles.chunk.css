@@ -1,51 +1,3 @@
-body {
-  margin: 0;
-  padding: 0; }
-
-.hero {
-  color: white;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); }
-
-.hero h1 {
-  text-shadow: 0 2px 5px black;
-  color: orange; }
-
-input {
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0);
-  border: orange 3px solid;
-  color: white;
-  padding: 0.5em;
-  box-shadow: 0 2px 5px black; }
-
-input:focus::placeholder {
-  border-radius: 5px; }
-
-input::placeholder {
-  color: white;
-  text-align: center; }
-
-.subsearch {
-  margin-top: 0.5em; }
-
-a {
-  color: orange; }
-
-a:hover {
-  color: orange; }
-
-.logo {
-  max-width: 50px;
-  position: fixed;
-  bottom: 1em;
-  right: 1em; }
-
-/* Fonts */
 .oswald {
   font-family: 'Oswald', sans-serif; }
 
@@ -64,6 +16,36 @@ a:hover {
 .bangers {
   font-family: 'Bangers', cursive; }
 
+.glass {
+  background-image: linear-gradient(-70deg, rgba(0, 0, 0, 0.3), rgba(10, 10, 0, 0.2) 100%, rgba(0, 0, 0, 0.5));
+  box-shadow: 0 0 5px black; }
+
+.centeredHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #334;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover; }
+
+.fa-link * {
+  font-size: 10px; }
+
+body {
+  margin: 0;
+  padding: 0; }
+  body header {
+    width: 100%; }
+
+.logo {
+  max-width: 50px;
+  position: fixed;
+  bottom: 1em;
+  right: 1em; }
+
 .nav-container {
   position: fixed;
   z-index: 999;
@@ -73,24 +55,43 @@ a:hover {
   .nav-container a {
     color: orange; }
 
-.glass {
-  background-image: linear-gradient(-70deg, rgba(0, 0, 0, 0.3), rgba(10, 10, 0, 0.2) 100%, rgba(0, 0, 0, 0.5));
-  box-shadow: 0 0 5px black; }
-
-.centeredHeading {
-  display: flex;
+.hero {
+  color: white;
+  text-align: center;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: #334;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: fill; }
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); }
+  .hero h1 {
+    text-shadow: 0 2px 5px black;
+    color: orange; }
+  .hero a {
+    color: orange; }
+  .hero a:hover {
+    color: orange; }
+  .hero .subsearch {
+    margin-top: 0.5em; }
+  .hero .search-container {
+    padding-left: 10em;
+    padding-right: 10em; }
+    .hero .search-container input {
+      border: none;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0);
+      border: orange 3px solid;
+      color: white;
+      padding: 0.5em;
+      box-shadow: 0 2px 5px black; }
+    .hero .search-container input:focus::placeholder {
+      border-radius: 5px; }
+    .hero .search-container input:focus {
+      background-color: rgba(0, 0, 0, 0);
+      color: white;
+      border: orange 3px solid;
+      box-shadow: 0 2px 5px black; }
+    .hero .search-container input::placeholder {
+      color: white;
+      text-align: center; }
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
