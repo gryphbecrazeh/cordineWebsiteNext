@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -122,8 +122,8 @@ const CenteredHeading = ({
     id: "1985463911",
     dynamic: [height, picture]
   }, `.centeredHeading.__jsx-style-dynamic-selector{height:${height};background-image:url(${picture});}
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcR2FtaW5nIHYyLjBcXERlc2t0b3BcXG5leHQtZXhwcmVzcy1tb25nby1wcmUtc2V0XFxjb21wb25lbnRzXFxDZW50ZXJlZEhlYWRpbmcuanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU9lLEFBRzBDLG9DQUNlLG1EQUNwRCIsImZpbGUiOiJDOlxcVXNlcnNcXEdhbWluZyB2Mi4wXFxEZXNrdG9wXFxuZXh0LWV4cHJlc3MtbW9uZ28tcHJlLXNldFxcY29tcG9uZW50c1xcQ2VudGVyZWRIZWFkaW5nLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tUmVhY3QtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xyXG5cclxuY29uc3QgQ2VudGVyZWRIZWFkaW5nID0gKHsgcGljdHVyZSwgaGVpZ2h0ID0gJ2F1dG8nLCBjaGlsZHJlbiB9KSA9PiB7XHJcblx0cmV0dXJuIChcclxuXHRcdDxkaXYgY2xhc3NOYW1lPSdjZW50ZXJlZEhlYWRpbmcnPlxyXG5cdFx0XHR7Y2hpbGRyZW59XHJcblx0XHRcdDxzdHlsZSBqc3g+e2BcclxuXHRcdFx0XHQuY2VudGVyZWRIZWFkaW5nIHtcclxuXHRcdFx0XHRcdGhlaWdodDogJHtoZWlnaHR9O1xyXG5cdFx0XHRcdFx0YmFja2dyb3VuZC1pbWFnZTogdXJsKCR7cGljdHVyZX0pO1xyXG5cdFx0XHRcdH1cclxuXHRcdFx0YH08L3N0eWxlPlxyXG5cdFx0PC9kaXY+XHJcblx0KTtcclxufTtcclxuZXhwb3J0IGRlZmF1bHQgQ2VudGVyZWRIZWFkaW5nO1xyXG4iXX0= */
-/*@ sourceURL=C:\Users\Gaming v2.0\Desktop\next-express-mongo-pre-set\components\CenteredHeading.jsx */`));
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcaXNjcmVcXERlc2t0b3BcXGNvcmRpbmVXZWJzaXRlTmV4dFxcY29tcG9uZW50c1xcQ2VudGVyZWRIZWFkaW5nLmpzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFPZSxBQUcwQyxvQ0FDZSxtREFDcEQiLCJmaWxlIjoiQzpcXFVzZXJzXFxpc2NyZVxcRGVza3RvcFxcY29yZGluZVdlYnNpdGVOZXh0XFxjb21wb25lbnRzXFxDZW50ZXJlZEhlYWRpbmcuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1SZWFjdC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXHJcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XHJcblxyXG5jb25zdCBDZW50ZXJlZEhlYWRpbmcgPSAoeyBwaWN0dXJlLCBoZWlnaHQgPSAnYXV0bycsIGNoaWxkcmVuIH0pID0+IHtcclxuXHRyZXR1cm4gKFxyXG5cdFx0PGRpdiBjbGFzc05hbWU9J2NlbnRlcmVkSGVhZGluZyc+XHJcblx0XHRcdHtjaGlsZHJlbn1cclxuXHRcdFx0PHN0eWxlIGpzeD57YFxyXG5cdFx0XHRcdC5jZW50ZXJlZEhlYWRpbmcge1xyXG5cdFx0XHRcdFx0aGVpZ2h0OiAke2hlaWdodH07XHJcblx0XHRcdFx0XHRiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJHtwaWN0dXJlfSk7XHJcblx0XHRcdFx0fVxyXG5cdFx0XHRgfTwvc3R5bGU+XHJcblx0XHQ8L2Rpdj5cclxuXHQpO1xyXG59O1xyXG5leHBvcnQgZGVmYXVsdCBDZW50ZXJlZEhlYWRpbmc7XHJcbiJdfQ== */
+/*@ sourceURL=C:\Users\iscre\Desktop\cordineWebsiteNext\components\CenteredHeading.jsx */`));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CenteredHeading);
@@ -213,7 +213,7 @@ const NavBar = () => {
     href: "/"
   }, "Projects"))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2194696776"
-  }, ".nav-container.jsx-2194696776{position:-webkit-sticky;position:sticky;top:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcR2FtaW5nIHYyLjBcXERlc2t0b3BcXG5leHQtZXhwcmVzcy1tb25nby1wcmUtc2V0XFxjb21wb25lbnRzXFxOYXZCYXIuanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXNCSyxBQUd1Qix3Q0FDVixNQUNQIiwiZmlsZSI6IkM6XFxVc2Vyc1xcR2FtaW5nIHYyLjBcXERlc2t0b3BcXG5leHQtZXhwcmVzcy1tb25nby1wcmUtc2V0XFxjb21wb25lbnRzXFxOYXZCYXIuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1OZXh0LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cclxuLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1SZWFjdHN0cmFwLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cclxuaW1wb3J0IHsgTmF2LCBOYXZMaW5rLCBOYXZJdGVtIH0gZnJvbSAncmVhY3RzdHJhcCc7XHJcbi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tUmVhY3QtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xyXG5pbXBvcnQgJy4uL3Njc3Mvc3R5bGUuc2Nzcyc7XHJcblxyXG5jb25zdCBOYXZCYXIgPSAoKSA9PiB7XHJcblx0cmV0dXJuIChcclxuXHRcdDxkaXYgY2xhc3NOYW1lPSduYXYtY29udGFpbmVyIGdsYXNzJz5cclxuXHRcdFx0PE5hdj5cclxuXHRcdFx0XHQ8TmF2SXRlbT5cclxuXHRcdFx0XHRcdDxOYXZMaW5rIGhyZWY9Jy8nPkhvbWU8L05hdkxpbms+XHJcblx0XHRcdFx0PC9OYXZJdGVtPlxyXG5cdFx0XHRcdDxOYXZJdGVtPlxyXG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+RnJvbnQgRW5kPC9OYXZMaW5rPlxyXG5cdFx0XHRcdDwvTmF2SXRlbT5cclxuXHRcdFx0XHQ8TmF2SXRlbT5cclxuXHRcdFx0XHRcdDxOYXZMaW5rIGhyZWY9Jy8nPlByb2plY3RzPC9OYXZMaW5rPlxyXG5cdFx0XHRcdDwvTmF2SXRlbT5cclxuXHRcdFx0PC9OYXY+XHJcblx0XHRcdDxzdHlsZSBqc3g+XHJcblx0XHRcdFx0e2BcclxuXHRcdFx0XHRcdC5uYXYtY29udGFpbmVyIHtcclxuXHRcdFx0XHRcdFx0cG9zaXRpb246IHN0aWNreTtcclxuXHRcdFx0XHRcdFx0dG9wOiAwO1xyXG5cdFx0XHRcdFx0fVxyXG5cdFx0XHRcdGB9XHJcblx0XHRcdDwvc3R5bGU+XHJcblx0XHQ8L2Rpdj5cclxuXHQpO1xyXG59O1xyXG5leHBvcnQgZGVmYXVsdCBOYXZCYXI7XHJcbiJdfQ== */\n/*@ sourceURL=C:\\Users\\Gaming v2.0\\Desktop\\next-express-mongo-pre-set\\components\\NavBar.jsx */"));
+  }, ".nav-container.jsx-2194696776{position:-webkit-sticky;position:sticky;top:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcaXNjcmVcXERlc2t0b3BcXGNvcmRpbmVXZWJzaXRlTmV4dFxcY29tcG9uZW50c1xcTmF2QmFyLmpzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFzQkssQUFHdUIsd0NBQ1YsTUFDUCIsImZpbGUiOiJDOlxcVXNlcnNcXGlzY3JlXFxEZXNrdG9wXFxjb3JkaW5lV2Vic2l0ZU5leHRcXGNvbXBvbmVudHNcXE5hdkJhci5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIvLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLU5leHQtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVJlYWN0c3RyYXAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG5pbXBvcnQgeyBOYXYsIE5hdkxpbmssIE5hdkl0ZW0gfSBmcm9tICdyZWFjdHN0cmFwJztcclxuLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1SZWFjdC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXHJcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XHJcbmltcG9ydCAnLi4vc2Nzcy9zdHlsZS5zY3NzJztcclxuXHJcbmNvbnN0IE5hdkJhciA9ICgpID0+IHtcclxuXHRyZXR1cm4gKFxyXG5cdFx0PGRpdiBjbGFzc05hbWU9J25hdi1jb250YWluZXIgZ2xhc3MnPlxyXG5cdFx0XHQ8TmF2PlxyXG5cdFx0XHRcdDxOYXZJdGVtPlxyXG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+SG9tZTwvTmF2TGluaz5cclxuXHRcdFx0XHQ8L05hdkl0ZW0+XHJcblx0XHRcdFx0PE5hdkl0ZW0+XHJcblx0XHRcdFx0XHQ8TmF2TGluayBocmVmPScvJz5Gcm9udCBFbmQ8L05hdkxpbms+XHJcblx0XHRcdFx0PC9OYXZJdGVtPlxyXG5cdFx0XHRcdDxOYXZJdGVtPlxyXG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+UHJvamVjdHM8L05hdkxpbms+XHJcblx0XHRcdFx0PC9OYXZJdGVtPlxyXG5cdFx0XHQ8L05hdj5cclxuXHRcdFx0PHN0eWxlIGpzeD5cclxuXHRcdFx0XHR7YFxyXG5cdFx0XHRcdFx0Lm5hdi1jb250YWluZXIge1xyXG5cdFx0XHRcdFx0XHRwb3NpdGlvbjogc3RpY2t5O1xyXG5cdFx0XHRcdFx0XHR0b3A6IDA7XHJcblx0XHRcdFx0XHR9XHJcblx0XHRcdFx0YH1cclxuXHRcdFx0PC9zdHlsZT5cclxuXHRcdDwvZGl2PlxyXG5cdCk7XHJcbn07XHJcbmV4cG9ydCBkZWZhdWx0IE5hdkJhcjtcclxuIl19 */\n/*@ sourceURL=C:\\Users\\iscre\\Desktop\\cordineWebsiteNext\\components\\NavBar.jsx */"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -308,28 +308,31 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   const {
-    searchQuery
+    state,
+    actions
   } = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_3__["default"]);
-  console.log(searchQuery);
+  console.log(state);
 
   let onChange = e => {
     console.log(e.target.value);
-  };
+  }; // 4117x2745
+  // 2058 x 1372
+
 
   return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_5__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg"
+    picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     fluid: true
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     className: "hero"
   }, __jsx("img", {
     src: "http://cordine.site/static/media/christopher-logo-white.427e237a.png",
-    class: "logo"
+    className: "logo"
   }), __jsx("div", null, __jsx("h1", {
     className: "quickSand"
   }, __jsx("span", {
     style: {
-      color: 'white'
+      color: "white"
     }
   }, "New York"), " Web Developer"), __jsx("div", {
     className: "search-container"
@@ -339,15 +342,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     onChange: onChange
   })), __jsx("p", {
     className: "subsearch"
-  }, "Use the search bar above to immediately find", ' ', __jsx("a", {
+  }, "Use the search bar above to immediately find", " ", __jsx("a", {
     href: "#"
   }, "related work"), " I've done, or scroll down to view my featured projects and front end design."), __jsx("p", null, __jsx("a", {
     href: "https://github.com/gryphbecrazeh"
-  }, "GitHub"), ",", __jsx("a", {
+  }, "GitHub"), ",", " ", __jsx("a", {
     href: "https://codepen.io/gryphbecrazeh"
-  }, "Codepen"), ",", __jsx("a", {
+  }, "Codepen"), ",", " ", __jsx("a", {
     href: "/"
-  }, "Download Resume"), ",", __jsx("a", {
+  }, "Download Resume"), ",", " ", __jsx("a", {
     href: "/projects"
   }, "Projects")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("section", {
     id: "related-work"
@@ -384,14 +387,14 @@ const Context = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gaming v2.0\Desktop\next-express-mongo-pre-set\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\Users\iscre\Desktop\cordineWebsiteNext\pages\index.js */"./pages/index.js");
 
 
 /***/ }),

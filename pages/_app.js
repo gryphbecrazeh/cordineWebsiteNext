@@ -1,15 +1,13 @@
-import React from 'react';
-import App from 'next/app';
-// -----------------------------------------React Hooks-----------------------------------------
-import Context from '../store/context';
-import state from '../store/globalState';
+import React from "react";
+import App from "next/app";
+import GlobalStateInjector from "../components/GlobalStateInjector";
 class MyApp extends App {
 	render() {
 		const { Component, pageProps } = this.props;
 		return (
-			<Context.Provider value={state}>
+			<GlobalStateInjector>
 				<Component {...pageProps} />
-			</Context.Provider>
+			</GlobalStateInjector>
 		);
 	}
 }
