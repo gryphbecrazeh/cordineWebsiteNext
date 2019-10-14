@@ -140,3 +140,95 @@ body {
 	color: white;
 	padding: 2em;
 }
+
+// ##############################--Feature Card--##############################
+.card {
+	color: white;
+	background-color: #334;
+	background-image: linear-gradient(
+		-70deg,
+		rgba(0, 0, 0, 0.3),
+		rgba(150, 70, 0, 0.2),
+		rgba(0, 0, 0, 0.5)
+	);
+	padding: 1.5em;
+	border-radius: 5px;
+	box-shadow: 0 3px 5px black;
+	display: flex;
+	flex-direction: column;
+	max-width: 30em;
+	.row {
+		display: flex;
+		flex-direction: row;
+		padding-bottom: 1em;
+	}
+	.row * {
+		width: 100%;
+	}
+	.css-container textarea {
+		width: 100%;
+		height: 300px;
+		resize: none;
+	}
+	.relative {
+		position: relative;
+	}
+	.maximize-button {
+		background-color: #eee;
+		color: black;
+		display: inline;
+		padding: 0.5em;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		position: absolute;
+		top: 0.5em;
+		right: 0.5em;
+	}
+	.image-container {
+		justify-content: space-around;
+		align-items: center;
+	}
+	.img-box {
+		width: 5em;
+		height: 5em;
+		background-color: tomato;
+		border-radius: 5px;
+		box-shadow: 0 0 5px black;
+		transition: height 500ms ease-in-out, width 500ms ease-in-out;
+		box-sizing: border-box;
+	}
+	.img-box:hover {
+		width: 8em;
+		height: 8em;
+		cursor: pointer;
+	}
+	.card-title {
+		font-size: 1em;
+		text-align: center;
+	}
+	.view-now-button {
+		background-color: tomato;
+		border-radius: 5px;
+		text-align: center;
+		padding: 0.5em;
+		cursor: pointer;
+		box-shadow: inset 0 0 2px black;
+		transition: box-shadow 250ms ease-in-out;
+	}
+	.view-now-button:hover {
+		box-shadow: inset 0 0 5px black;
+	}
+	.active-image-container {
+		width: 100%;
+		height: 10em;
+		background-color: tomato;
+		border-radius: 5px;
+		box-shadow: 0 0 5px black;
+	}
+	.technologies {
+		padding: 0.5em;
+		font-size: 0.7em;
+		text-align: center;
+	}
+}
