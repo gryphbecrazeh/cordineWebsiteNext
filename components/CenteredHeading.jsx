@@ -1,16 +1,13 @@
 // -----------------------------------------React-----------------------------------------
-import React from 'react';
+import React from "react";
 
-const CenteredHeading = ({ picture, height = 'auto', children }) => {
+const CenteredHeading = ({ picture = "#", height = "auto", children }) => {
 	return (
-		<div className='centeredHeading'>
+		<div
+			className="centeredHeading"
+			style={{ height: height, backgroundImage: `url(${picture})` }}
+		>
 			{children}
-			<style jsx>{`
-				.centeredHeading {
-					height: ${height};
-					background-image: url(${picture});
-				}
-			`}</style>
 		</div>
 	);
 };

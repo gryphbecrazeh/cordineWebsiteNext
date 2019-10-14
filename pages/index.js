@@ -8,6 +8,7 @@ import React, { useContext } from "react";
 import Context from "../store/context";
 // -----------------------------------------Components-----------------------------------------
 import CenteredHeading from "../components/CenteredHeading";
+import FeaturedCards from "../components/FeaturedCards";
 import Document from "../layouts/document";
 // -----------------------------------------Resources-----------------------------------------
 
@@ -66,7 +67,15 @@ export default () => {
 				</header>
 			</Row>
 			<Row>
-				<section id="related-work">Test</section>
+				<FeaturedCards id="related-work">
+					<p>
+						Culpa minim nulla sit elit. Sit dolore sint minim cillum. Elit
+						ullamco deserunt sit proident aliquip fugiat aute dolor. Sit
+						pariatur laborum duis ad eu qui deserunt irure laborum irure id
+						reprehenderit mollit magna. Fugiat deserunt mollit aute voluptate
+						pariatur aliquip ullamco cupidatat nulla eiusmod.
+					</p>
+				</FeaturedCards>
 			</Row>
 		</Document>
 	);

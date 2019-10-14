@@ -1,5 +1,32 @@
 webpackHotUpdate("static\\development\\pages\\index.js",{
 
+/***/ "./components/FeaturedCards.jsx":
+/*!**************************************!*\
+  !*** ./components/FeaturedCards.jsx ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+var FeaturedCards = function FeaturedCards(_ref) {
+  var id = _ref.id,
+      children = _ref.children;
+  return __jsx("section", {
+    id: id,
+    className: "featured-cards"
+  }, children, "Test");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FeaturedCards);
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -16,7 +43,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
 /* harmony import */ var _components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/CenteredHeading */ "./components/CenteredHeading.jsx");
-/* harmony import */ var _layouts_document__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../layouts/document */ "./layouts/document.jsx");
+/* harmony import */ var _components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/FeaturedCards */ "./components/FeaturedCards.jsx");
+/* harmony import */ var _layouts_document__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layouts/document */ "./layouts/document.jsx");
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 // -----------------------------------------Sass-----------------------------------------
  // -----------------------------------------Reactstrap-----------------------------------------
@@ -28,13 +56,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
  // -----------------------------------------Components-----------------------------------------
 
 
+
  // -----------------------------------------Resources-----------------------------------------
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_3__["default"]),
-      searchQuery = _useContext.searchQuery;
+      state = _useContext.state,
+      actions = _useContext.actions;
 
-  console.log(searchQuery);
+  console.log(state);
 
   var onChange = function onChange(e) {
     console.log(e.target.value);
@@ -42,7 +72,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
   // 2058 x 1372
 
 
-  return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_5__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
     picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     fluid: true
@@ -75,12 +105,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     href: "/"
   }, "Download Resume"), ",", " ", __jsx("a", {
     href: "/projects"
-  }, "Projects")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("section", {
+  }, "Projects")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "related-work"
-  }, "Test")));
+  }, __jsx("p", null, "Culpa minim nulla sit elit. Sit dolore sint minim cillum. Elit ullamco deserunt sit proident aliquip fugiat aute dolor. Sit pariatur laborum duis ad eu qui deserunt irure laborum irure id reprehenderit mollit magna. Fugiat deserunt mollit aute voluptate pariatur aliquip ullamco cupidatat nulla eiusmod."))));
 });
 
 /***/ })
 
 })
-//# sourceMappingURL=index.js.06727c0dbddd54a6dbc5.hot-update.js.map
+//# sourceMappingURL=index.js.e4c4d3b4678a0f8fe005.hot-update.js.map
