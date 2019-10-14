@@ -10,6 +10,16 @@ I've run this out of box on the Ubuntu Windows Linux Subsystem, it appears to wo
 
 ## Things to add
 
+### Actions
+
+-- create actions js which will store all relevant actions for certain things, these will be significantly more explicit actions than currently available, these actions will be imported to useGlobalState and be exported as methods for the state, use functional programming procedure, no mutation, no direct influence over the global state outside of the actions
+
+### Authentication
+
+Once Search Query has certain text implemented, the logo should become clickable, on that click, the logo will set isAuth to false and cause the login modal to load, allowing the user to log in
+-- convert logo image to csv component
+--logo component needs context and manipulate auth
+
 ### API
 
 authorization api
