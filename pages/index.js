@@ -18,13 +18,11 @@ export default () => {
 	let onChange = e => {
 		console.log(e.target.value);
 	};
-	// 4117x2745
-	// 2058 x 1372
 	return (
 		<Document>
 			<Row>
 				<header>
-					<CenteredHeading picture="https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260">
+					<CenteredHeading picture="https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260">
 						{/* <!--  Replace logo image with logo svg  --> */}
 						<Container fluid>
 							<Row className="hero">
@@ -68,6 +66,14 @@ export default () => {
 			</Row>
 			<Row>
 				<FeaturedCards id="related-work">
+					<h2>Featured Work</h2>
+					<p>
+						I like to be constantly busy, and frequently work on several
+						projects at a time, and am always writing, working out ideas, and
+						prototyping for proof of concept. I've listed a few of my favorite
+						work below. These range from a basic HTML and CSS templating, to
+						full stack applications with a clear goal in mind.
+					</p>
 					<p>
 						Culpa minim nulla sit elit. Sit dolore sint minim cillum. Elit
 						ullamco deserunt sit proident aliquip fugiat aute dolor. Sit

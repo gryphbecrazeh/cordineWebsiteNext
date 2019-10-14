@@ -1,3 +1,74 @@
+# Work
+
+## Known Bugs
+
+## Things to add
+
+### API
+
+authorization api
+-- handles log in
+frontend api
+-- stores all front end code I submit
+projects api
+-- stores all relevant project data
+image api
+-- stores all relevant information towards obtaining images
+
+### Components
+
+create a resume component which will pull a document component and a page component, page component ends with defining where the page ends
+components will have the children prop to put all related content in to one file, resume will be more of a static use of components, and will be a template in the template folder
+
+### Models
+
+User
+-- email string
+-- password (hash) string
+-- user-creation-date date
+-- last-logged-in date
+
+Front-end
+-- css text
+-- scss text
+-- less text
+-- technologies array -> string
+-- date date
+-- image-urls array -> string
+-- hosted-url string
+-- codepen-url string
+-- repo-url string
+-- feature boolean
+
+Projects
+-- hosted-url string
+-- technologies array -> string
+-- repo-url string
+-- feature boolean
+-- date date
+-- project-length integer
+
+Subdomains
+-- target-url string
+-- hosted-ip string
+-- date-added date
+
+### Research
+
+Image Hosting
+-- write images to file structure on the server -> i/m/a/g/e/jpg/image.jpg
+-- cache images "/image.jpg" -> i/m/a/g/e/jpg/image.jpg
+-- compress and resize images
+
+Subdomain Hosting
+-- domain to store projects into
+-- mernstack && beyond
+-- link to heroku apps
+
+IP tracking Middleware
+
+## Ideas
+
 # Custom Express Server example
 
 ## How to use

@@ -1,32 +1,5 @@
 webpackHotUpdate("static\\development\\pages\\index.js",{
 
-/***/ "./components/FeaturedCards.jsx":
-/*!**************************************!*\
-  !*** ./components/FeaturedCards.jsx ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-var FeaturedCards = function FeaturedCards(_ref) {
-  var id = _ref.id,
-      children = _ref.children;
-  return __jsx("section", {
-    id: id,
-    className: "featured-cards"
-  }, children, "Test");
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (FeaturedCards);
-
-/***/ }),
-
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -107,10 +80,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     href: "/projects"
   }, "Projects")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "related-work"
-  }, __jsx("p", null, "Culpa minim nulla sit elit. Sit dolore sint minim cillum. Elit ullamco deserunt sit proident aliquip fugiat aute dolor. Sit pariatur laborum duis ad eu qui deserunt irure laborum irure id reprehenderit mollit magna. Fugiat deserunt mollit aute voluptate pariatur aliquip ullamco cupidatat nulla eiusmod."))));
+  }, __jsx("h2", null, "Featured Work"), __jsx("p", null, "Culpa minim nulla sit elit. Sit dolore sint minim cillum. Elit ullamco deserunt sit proident aliquip fugiat aute dolor. Sit pariatur laborum duis ad eu qui deserunt irure laborum irure id reprehenderit mollit magna. Fugiat deserunt mollit aute voluptate pariatur aliquip ullamco cupidatat nulla eiusmod."))));
 });
 
 /***/ })
 
 })
-//# sourceMappingURL=index.js.e4c4d3b4678a0f8fe005.hot-update.js.map
+//# sourceMappingURL=index.js.acaa7a31f2ba7a571423.hot-update.js.map
