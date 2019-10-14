@@ -14,9 +14,8 @@ import Document from "../layouts/document";
 
 export default () => {
 	const { state, actions } = useContext(Context);
-	console.log(state);
 	let onChange = e => {
-		console.log(e.target.value);
+		actions({ type: "setState", payload: { searchQuery: e.target.value } });
 	};
 	return (
 		<Document>
@@ -39,7 +38,7 @@ export default () => {
 									{/* <!--    On click, add removable tag to search of item clicked, these will be font awesome svgs, with an alt text of the text below    -->
       <p>React, Express, MongoDB, Node, Next, Redux, MySQL, Linux, PHP, Git, Bash, Magento, Wordpress, Bootstrap, Sass, etc...</p>
 								<!--    Use search to immediately display related work    --> */}
-									<div className="search-container">
+									<div className="search-container d-none d-md-block">
 										<Input
 											type="search"
 											placeholder="What are you looking for?"
@@ -55,9 +54,11 @@ export default () => {
 									<p>
 										<a href="https://github.com/gryphbecrazeh">GitHub</a>,{" "}
 										<a href="https://codepen.io/gryphbecrazeh">Codepen</a>,{" "}
-										<a href="/">Download Resume</a>,{" "}
 										<a href="/projects">Projects</a>
 									</p>
+									<div>
+										<a href="/">Download Resume Now</a>
+									</div>
 								</div>
 							</Row>
 						</Container>

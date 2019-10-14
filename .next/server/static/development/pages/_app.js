@@ -1859,8 +1859,8 @@ const useGlobalState = () => {
   } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
     searchQuery: "",
     auth: {
-      user: null,
-      isAuth: false
+      user: "guest",
+      isAuth: true
     }
   });
 

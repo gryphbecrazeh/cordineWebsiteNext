@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\_app.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_app.js"],{
 
 /***/ "./components/GlobalStateInjector.jsx":
 /*!********************************************!*\
@@ -9035,8 +9035,8 @@ var useGlobalState = function useGlobalState() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
     searchQuery: "",
     auth: {
-      user: null,
-      isAuth: false
+      user: "guest",
+      isAuth: true
     }
   }),
       state = _useState[0],

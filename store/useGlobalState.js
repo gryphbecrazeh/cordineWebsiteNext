@@ -3,7 +3,7 @@ import { useState } from "react";
 const useGlobalState = () => {
 	let [state, setState] = useState({
 		searchQuery: "",
-		auth: { user: null, isAuth: false }
+		auth: { user: "guest", isAuth: true }
 	});
 	const actions = action => {
 		let { type, payload } = action;

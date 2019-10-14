@@ -62,7 +62,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); }
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2em; }
   .hero h1 {
     text-shadow: 0 2px 5px black;
     color: orange; }

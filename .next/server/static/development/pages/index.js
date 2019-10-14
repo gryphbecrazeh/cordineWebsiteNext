@@ -182,24 +182,48 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const LoginModal = ({
-  isOpen = false,
-  toggle = () => null
-}) => {
+const LoginModal = () => {
   const {
     0: code,
     1: getCode
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({});
   const {
-    auth
+    state,
+    actions
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_2__["default"]);
-  console.log(auth);
+  const {
+    auth
+  } = state;
+
+  const toggle = () => {
+    actions({
+      type: "setState",
+      payload: {
+        auth: {
+          user: "guest",
+          isAuth: true
+        }
+      }
+    });
+  };
+
   return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
-    isOpen: isOpen,
+    isOpen: !auth.isAuth,
     toggle: toggle
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalHeader"], {
     toggle: toggle
-  }, "Test"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "Test"));
+  }, "Please Log in to Continue..."), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Form"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], null, "Email"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    name: "email",
+    placeholder: "xxx@domain.com",
+    type: "email"
+  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Label"], null, "Password"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    name: "pass",
+    placeholder: "password",
+    type: "password"
+  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    block: true,
+    color: "warning"
+  }, "Log In"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (LoginModal);
@@ -243,7 +267,7 @@ const NavBar = () => {
     href: "/"
   }, "Projects"))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2194696776"
-  }, ".nav-container.jsx-2194696776{position:-webkit-sticky;position:sticky;top:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkQ6XFx1c2VyRmlsZXNcXERlc2t0b3BcXGNvcmRpbmVXZWJzaXRlTmV4dFxcY29tcG9uZW50c1xcTmF2QmFyLmpzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFzQkssQUFHdUIsd0NBQ1YsTUFDUCIsImZpbGUiOiJEOlxcdXNlckZpbGVzXFxEZXNrdG9wXFxjb3JkaW5lV2Vic2l0ZU5leHRcXGNvbXBvbmVudHNcXE5hdkJhci5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIvLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLU5leHQtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVJlYWN0c3RyYXAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG5pbXBvcnQgeyBOYXYsIE5hdkxpbmssIE5hdkl0ZW0gfSBmcm9tICdyZWFjdHN0cmFwJztcclxuLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1SZWFjdC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXHJcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XHJcbmltcG9ydCAnLi4vc2Nzcy9zdHlsZS5zY3NzJztcclxuXHJcbmNvbnN0IE5hdkJhciA9ICgpID0+IHtcclxuXHRyZXR1cm4gKFxyXG5cdFx0PGRpdiBjbGFzc05hbWU9J25hdi1jb250YWluZXIgZ2xhc3MnPlxyXG5cdFx0XHQ8TmF2PlxyXG5cdFx0XHRcdDxOYXZJdGVtPlxyXG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+SG9tZTwvTmF2TGluaz5cclxuXHRcdFx0XHQ8L05hdkl0ZW0+XHJcblx0XHRcdFx0PE5hdkl0ZW0+XHJcblx0XHRcdFx0XHQ8TmF2TGluayBocmVmPScvJz5Gcm9udCBFbmQ8L05hdkxpbms+XHJcblx0XHRcdFx0PC9OYXZJdGVtPlxyXG5cdFx0XHRcdDxOYXZJdGVtPlxyXG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+UHJvamVjdHM8L05hdkxpbms+XHJcblx0XHRcdFx0PC9OYXZJdGVtPlxyXG5cdFx0XHQ8L05hdj5cclxuXHRcdFx0PHN0eWxlIGpzeD5cclxuXHRcdFx0XHR7YFxyXG5cdFx0XHRcdFx0Lm5hdi1jb250YWluZXIge1xyXG5cdFx0XHRcdFx0XHRwb3NpdGlvbjogc3RpY2t5O1xyXG5cdFx0XHRcdFx0XHR0b3A6IDA7XHJcblx0XHRcdFx0XHR9XHJcblx0XHRcdFx0YH1cclxuXHRcdFx0PC9zdHlsZT5cclxuXHRcdDwvZGl2PlxyXG5cdCk7XHJcbn07XHJcbmV4cG9ydCBkZWZhdWx0IE5hdkJhcjtcclxuIl19 */\n/*@ sourceURL=D:\\userFiles\\Desktop\\cordineWebsiteNext\\components\\NavBar.jsx */"));
+  }, ".nav-container.jsx-2194696776{position:-webkit-sticky;position:sticky;top:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3VidW50dS9jb3JkaW5lV2Vic2l0ZU5leHQvY29tcG9uZW50cy9OYXZCYXIuanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXNCSyxBQUd1Qix3Q0FDVixNQUNQIiwiZmlsZSI6Ii9ob21lL3VidW50dS9jb3JkaW5lV2Vic2l0ZU5leHQvY29tcG9uZW50cy9OYXZCYXIuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1OZXh0LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tUmVhY3RzdHJhcC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXG5pbXBvcnQgeyBOYXYsIE5hdkxpbmssIE5hdkl0ZW0gfSBmcm9tICdyZWFjdHN0cmFwJztcbi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tUmVhY3QtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCAnLi4vc2Nzcy9zdHlsZS5zY3NzJztcblxuY29uc3QgTmF2QmFyID0gKCkgPT4ge1xuXHRyZXR1cm4gKFxuXHRcdDxkaXYgY2xhc3NOYW1lPSduYXYtY29udGFpbmVyIGdsYXNzJz5cblx0XHRcdDxOYXY+XG5cdFx0XHRcdDxOYXZJdGVtPlxuXHRcdFx0XHRcdDxOYXZMaW5rIGhyZWY9Jy8nPkhvbWU8L05hdkxpbms+XG5cdFx0XHRcdDwvTmF2SXRlbT5cblx0XHRcdFx0PE5hdkl0ZW0+XG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+RnJvbnQgRW5kPC9OYXZMaW5rPlxuXHRcdFx0XHQ8L05hdkl0ZW0+XG5cdFx0XHRcdDxOYXZJdGVtPlxuXHRcdFx0XHRcdDxOYXZMaW5rIGhyZWY9Jy8nPlByb2plY3RzPC9OYXZMaW5rPlxuXHRcdFx0XHQ8L05hdkl0ZW0+XG5cdFx0XHQ8L05hdj5cblx0XHRcdDxzdHlsZSBqc3g+XG5cdFx0XHRcdHtgXG5cdFx0XHRcdFx0Lm5hdi1jb250YWluZXIge1xuXHRcdFx0XHRcdFx0cG9zaXRpb246IHN0aWNreTtcblx0XHRcdFx0XHRcdHRvcDogMDtcblx0XHRcdFx0XHR9XG5cdFx0XHRcdGB9XG5cdFx0XHQ8L3N0eWxlPlxuXHRcdDwvZGl2PlxuXHQpO1xufTtcbmV4cG9ydCBkZWZhdWx0IE5hdkJhcjtcbiJdfQ== */\n/*@ sourceURL=/home/ubuntu/cordineWebsiteNext/components/NavBar.jsx */"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -343,10 +367,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     state,
     actions
   } = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_3__["default"]);
-  console.log(state);
 
   let onChange = e => {
-    console.log(e.target.value);
+    actions({
+      type: "setState",
+      payload: {
+        searchQuery: e.target.value
+      }
+    });
   };
 
   return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -365,7 +393,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
       color: "white"
     }
   }, "New York"), " Web Developer"), __jsx("div", {
-    className: "search-container"
+    className: "search-container d-none d-md-block"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     type: "search",
     placeholder: "What are you looking for?",
@@ -379,10 +407,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
   }, "GitHub"), ",", " ", __jsx("a", {
     href: "https://codepen.io/gryphbecrazeh"
   }, "Codepen"), ",", " ", __jsx("a", {
-    href: "/"
-  }, "Download Resume"), ",", " ", __jsx("a", {
     href: "/projects"
-  }, "Projects")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, "Projects")), __jsx("div", null, __jsx("a", {
+    href: "/"
+  }, "Download Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "related-work"
   }, __jsx("h2", null, "Featured Work"), __jsx("p", null, "I like to be constantly busy, and frequently work on several projects at a time, and am always writing, working out ideas, and prototyping for proof of concept. I've listed a few of my favorite work below. These range from a basic HTML and CSS templating, to full stack applications with a clear goal in mind."), __jsx("p", null, "Culpa minim nulla sit elit. Sit dolore sint minim cillum. Elit ullamco deserunt sit proident aliquip fugiat aute dolor. Sit pariatur laborum duis ad eu qui deserunt irure laborum irure id reprehenderit mollit magna. Fugiat deserunt mollit aute voluptate pariatur aliquip ullamco cupidatat nulla eiusmod."))));
 });
@@ -424,7 +452,7 @@ const Context = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\userFiles\Desktop\cordineWebsiteNext\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/ubuntu/cordineWebsiteNext/pages/index.js */"./pages/index.js");
 
 
 /***/ }),

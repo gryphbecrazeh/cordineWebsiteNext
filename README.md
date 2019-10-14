@@ -2,6 +2,12 @@
 
 ## Known Bugs
 
+## Notes
+
+### Ubuntu Server
+
+I've run this out of box on the Ubuntu Windows Linux Subsystem, it appears to work out of box
+
 ## Things to add
 
 ### API
