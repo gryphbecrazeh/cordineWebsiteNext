@@ -19,6 +19,7 @@ Identified performance issues in front end javascript from development practices
 Auditted Javascript, CSS, and PHP for issues impacting, design, performance, and/or user experience, and wrote documents to describe the problem, how to resolve it, and how to proceed in the future.
 Identified problematic practices in our product upload process, resulting in illegal/broken characters appearing on the site, used regex to identify and remove them from the site entirely, identified the issue with excel opening UTF-8 files by converting them to ISO files before reading them, led the change to stop using excel all together in favor of alternatives such as google sheets and libre office (both of which support regex data manipulation).
 Led an innitiative to improve website performance and SEO search rank by adding optional fields, consolidating CSS and JS files, lazy loading offscreen images, making the switch from high file size jpg and pngs to JPEG2000 and webP's, and identifying extensions that dramatically increase the dom size beyond what they should be alotted.
+Identified cross-site scripting hazards in our search bar, noticed bits of code inside the search query DB and used cross-site scripting techniques to create alerts, communicated the issue to the remote developers
 
 CollinsHarper May 10th 2019 -> July 2019
 Software Developer / DevOps
