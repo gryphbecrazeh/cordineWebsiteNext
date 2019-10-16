@@ -1,0 +1,82 @@
+Kitchenall Nov 1 2018 -> Currently Working at this Company
+Used GREP commands to navigate through the magento/php file structure
+Used PHP to alter theme templates and page templates to implement product requirements from the Google Search Console
+Used PHP to modify server generated pdf templates to allow for more fields on GoodAhead PDF generated documents
+Used PHP to modify the catalog and search results to hide filterable attributes that only have one option available on the page
+Used HTML, CSS, and Javascript to create blogs and landing pages for the website from PSD's provided
+Used React, Express, Node, MongoDB, and Redux to create a streamlined app to manage customers, orders, shipments, products, prices, discounts, website auditting, and more.
+Used NextJS, React, React Hooks, GIT, Express, and Node to build a URL scraper and CSV feedable content spinner application to allow for the generations of new and unique text content for SEO purposes.
+Used SEO tools such as Semrush, Lighthouse, and the Google Search Console to identify issues and improve our ranking with Google searches.
+Used Tarballs delivered through FTP to deploy changes to the website
+Used Tar and GZIP to archive my daily work onto my computer in the .archives directory to maintain a clean workspace on my computer, and still retrieve the work if/when needed
+Used REGEX and CSV files and Bulk actions to add, manage, and remove products from the Magento platform
+Used Adobe Illustrator to create logos, icons, and svg's as resources for the website
+Used Adobe Photoshop to create, and edit mockups to describe changes to the website
+Used the browser to view changes in real time for front end web development purposes
+Worked with several remote developer teams in providing concepts, descriptions, and mock ups of changes and features to make/add to the website.
+Used documentation for several different extensions/applications to identify and troubleshoot problems, with the software, and make necessary changes, whether on the front end, or in the PHP code itself to resolve the issues being experienced.
+
+CollinsHarper May 10th 2019 -> July 2019
+Software Developer / DevOps
+Used find, grep, and pipes to generate tar and GZip backups of the websites
+Used PHP code sniffer to review and validate PHP files for deployment
+Used the PSR-2 PHP style guide to maintain accessible and readable code, keeping code up to the quality standard required
+Used SCP and SSH to migrate and deploy code to the server, documented the process, and communicated to the team that it is ready for smoke testing
+Worked in an entirely remote position with a team of developers from around the world
+Worked with the team to identify and correct problems in the code, format or otherwise
+Regularly studied Linux and Bash commands to get myself up to speed before and during my work on the projects
+Used GSuite to operate all company related business, maintaining communications, schedules, alerts, etc...
+Assisted in identifying previously deployed code containing backdoors
+
+Skills
+
+HTML (Started learning in 2010 Highschool, Projects, Work)
+CSS (Started learning in 2010 Highschool, Projects, Work)
+Javascript (Started learning in 2017 College, Projects, Work)
+C++ (Started learning in 2018 College)
+Python (Started learning 2018 College, Projects)
+Bash (Started learning 2018 Work)
+Git (Started learning 2017 College, Projects, Work)
+React (Started learning 2018 Projects, Work)
+Django (Started learning 2018 Projects)
+Express (Started learning 2018 Projects, Work)
+Node (Started learning 2018 Projects, Work)
+MongoDB (Started learning 2018 Projects, Work)
+Redux (Started learning 2018 Projects, Work)
+Jquery (Started learning 2017 College)
+REGEX (Started learning 2018 Projects, Work)
+Linux Debian, APT (Started learning 2018 Work)
+Sass (Started learning 2018 Projects, Work)
+NextJS (Started learning 2019 Projects, Work)
+Bootstrap (Started learning 2018 Projects, Work)
+MySQL (Started learning 2018 Projects, Work)
+Mobile App Development (Started learning 2017 College)
+Chrome Web Extension Development (Started learning in 2018 Projects)
+
+Projects
+
+Personal Website
+NextJS, ExpressJS, NodeJS, Bootstrap, Sass, React, MongoDB, Webpack
+Built CMS for it, uses CRUD to manage and display posts of code/projects
+
+Streamlined Company Application
+ReactJS, ExpressJS, NodeJS, MongoDB, Bootstrap, MongoDB, Redux
+User Manager, Order Manager, Shipment Manager, Receiving Manager, built in ERP system, website auditor, internal company communications, save/track any changes made to anything, tracks stagnant prices, orders without a shipping update, identify broken links/filters on the product and category pages, track payments from customers, to distributors, taxes, etc. Everything is uploadable and update-able via CSV, custom user authentication system built in Express. Designed middleware functions to reduce client resource load, and carefully planned out measures to use and pass data between the client and server.
+
+URL and CSV loadable Content Spinner
+NextJS, React, ExpressJS, NodeJS, Bootstrap, Webpack
+Scrape a URL or load in a csv potentially containing thousands of products, pipe through all the fields and identify specific keywords to generate unique and SEO targetted descriptions, names, etc. Outputs a new csv with unique information for all products put into it, or allowing a queue of URLs to scrape with the express custom server, and provide the same result.
+
+Click Scheduler Chrome Extension
+Javascript, CSS, HTML
+Injects a script to call the click() function on an element once a specific time is met or exceeded. Absolves the need for an expensive cron job product import for our magento website, published to the Chrome Web Store for free
+
+Bear Alert Chrome Extension
+Javascript, CSS, HTML, Regex
+Injects a script to every page you access, trying to find the occurrence of the word "bear", mostly a proof of concept for another extension/app combo that I am developing. Has a cool stats page to access to see how many "bear"s you've seen, and which pages had the most occurences of bears. Published to the Chrome Web Store for free and fun.
+
+ShopCSV Chrome Extension
+Javascript, CSS, HTML, Regex
+Injects a script on every page you access, you can choose to scrape that page, create a csv row, and append it to the total CSV file in the background page. Once you've made your selection, you can then goto the background page to download the CSV file, clearing it out from the extension, and allowing you to upload the CSV onto your Magento, Wordpress, Shopify, or other e-commerce website/platform, to absolve the tediousness of attempting to contact a manufacturer and hope that they have a quality dataset to provide you. Future implementations of this extension intend to function with a full stack application, allowing you to store all the previously created CSV's into a webserver, combine as many of them as you like, and connect to your stores api to upload the products in real time, without the need to generate any CSV files.
+
+
