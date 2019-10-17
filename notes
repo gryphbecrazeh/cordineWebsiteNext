@@ -18,4 +18,21 @@ P.S. Perhaps this only applies when using -after (and also what else you might b
 }
 
 
+-------------------------------------------------------------------------
+chrome extension tied to server
 
+scraper profiles are based on domain name
+
+domain names can have many scraper profiles
+
+profiles can have many directory profiles
+
+domain.com/category page has different profile than
+domain.com/product
+
+can scrape categories and follow into all products to scrape the product page
+
+figure out how to get inheritence with that
+like that the results do not come from the category page, but props are passed from the category page to the product
+
+need restful api, maybe website front end for better management, and saving csvs
