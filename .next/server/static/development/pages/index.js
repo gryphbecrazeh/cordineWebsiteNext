@@ -267,7 +267,7 @@ const NavBar = () => {
     href: "/"
   }, "Projects"))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2194696776"
-  }, ".nav-container.jsx-2194696776{position:-webkit-sticky;position:sticky;top:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3VidW50dS9jb3JkaW5lV2Vic2l0ZU5leHQvY29tcG9uZW50cy9OYXZCYXIuanN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXNCSyxBQUd1Qix3Q0FDVixNQUNQIiwiZmlsZSI6Ii9ob21lL3VidW50dS9jb3JkaW5lV2Vic2l0ZU5leHQvY29tcG9uZW50cy9OYXZCYXIuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1OZXh0LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tUmVhY3RzdHJhcC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXG5pbXBvcnQgeyBOYXYsIE5hdkxpbmssIE5hdkl0ZW0gfSBmcm9tICdyZWFjdHN0cmFwJztcbi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tUmVhY3QtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCAnLi4vc2Nzcy9zdHlsZS5zY3NzJztcblxuY29uc3QgTmF2QmFyID0gKCkgPT4ge1xuXHRyZXR1cm4gKFxuXHRcdDxkaXYgY2xhc3NOYW1lPSduYXYtY29udGFpbmVyIGdsYXNzJz5cblx0XHRcdDxOYXY+XG5cdFx0XHRcdDxOYXZJdGVtPlxuXHRcdFx0XHRcdDxOYXZMaW5rIGhyZWY9Jy8nPkhvbWU8L05hdkxpbms+XG5cdFx0XHRcdDwvTmF2SXRlbT5cblx0XHRcdFx0PE5hdkl0ZW0+XG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+RnJvbnQgRW5kPC9OYXZMaW5rPlxuXHRcdFx0XHQ8L05hdkl0ZW0+XG5cdFx0XHRcdDxOYXZJdGVtPlxuXHRcdFx0XHRcdDxOYXZMaW5rIGhyZWY9Jy8nPlByb2plY3RzPC9OYXZMaW5rPlxuXHRcdFx0XHQ8L05hdkl0ZW0+XG5cdFx0XHQ8L05hdj5cblx0XHRcdDxzdHlsZSBqc3g+XG5cdFx0XHRcdHtgXG5cdFx0XHRcdFx0Lm5hdi1jb250YWluZXIge1xuXHRcdFx0XHRcdFx0cG9zaXRpb246IHN0aWNreTtcblx0XHRcdFx0XHRcdHRvcDogMDtcblx0XHRcdFx0XHR9XG5cdFx0XHRcdGB9XG5cdFx0XHQ8L3N0eWxlPlxuXHRcdDwvZGl2PlxuXHQpO1xufTtcbmV4cG9ydCBkZWZhdWx0IE5hdkJhcjtcbiJdfQ== */\n/*@ sourceURL=/home/ubuntu/cordineWebsiteNext/components/NavBar.jsx */"));
+  }, ".nav-container.jsx-2194696776{position:-webkit-sticky;position:sticky;top:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcaXNjcmVcXERlc2t0b3BcXGNvcmRpbmVXZWJzaXRlTmV4dFxcY29tcG9uZW50c1xcTmF2QmFyLmpzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFzQkssQUFHdUIsd0NBQ1YsTUFDUCIsImZpbGUiOiJDOlxcVXNlcnNcXGlzY3JlXFxEZXNrdG9wXFxjb3JkaW5lV2Vic2l0ZU5leHRcXGNvbXBvbmVudHNcXE5hdkJhci5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIvLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLU5leHQtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVJlYWN0c3RyYXAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG5pbXBvcnQgeyBOYXYsIE5hdkxpbmssIE5hdkl0ZW0gfSBmcm9tICdyZWFjdHN0cmFwJztcclxuLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1SZWFjdC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXHJcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XHJcbmltcG9ydCAnLi4vc2Nzcy9zdHlsZS5zY3NzJztcclxuXHJcbmNvbnN0IE5hdkJhciA9ICgpID0+IHtcclxuXHRyZXR1cm4gKFxyXG5cdFx0PGRpdiBjbGFzc05hbWU9J25hdi1jb250YWluZXIgZ2xhc3MnPlxyXG5cdFx0XHQ8TmF2PlxyXG5cdFx0XHRcdDxOYXZJdGVtPlxyXG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+SG9tZTwvTmF2TGluaz5cclxuXHRcdFx0XHQ8L05hdkl0ZW0+XHJcblx0XHRcdFx0PE5hdkl0ZW0+XHJcblx0XHRcdFx0XHQ8TmF2TGluayBocmVmPScvJz5Gcm9udCBFbmQ8L05hdkxpbms+XHJcblx0XHRcdFx0PC9OYXZJdGVtPlxyXG5cdFx0XHRcdDxOYXZJdGVtPlxyXG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+UHJvamVjdHM8L05hdkxpbms+XHJcblx0XHRcdFx0PC9OYXZJdGVtPlxyXG5cdFx0XHQ8L05hdj5cclxuXHRcdFx0PHN0eWxlIGpzeD5cclxuXHRcdFx0XHR7YFxyXG5cdFx0XHRcdFx0Lm5hdi1jb250YWluZXIge1xyXG5cdFx0XHRcdFx0XHRwb3NpdGlvbjogc3RpY2t5O1xyXG5cdFx0XHRcdFx0XHR0b3A6IDA7XHJcblx0XHRcdFx0XHR9XHJcblx0XHRcdFx0YH1cclxuXHRcdFx0PC9zdHlsZT5cclxuXHRcdDwvZGl2PlxyXG5cdCk7XHJcbn07XHJcbmV4cG9ydCBkZWZhdWx0IE5hdkJhcjtcclxuIl19 */\n/*@ sourceURL=C:\\Users\\iscre\\Desktop\\cordineWebsiteNext\\components\\NavBar.jsx */"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -348,6 +348,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/CenteredHeading */ "./components/CenteredHeading.jsx");
 /* harmony import */ var _components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/FeaturedCards */ "./components/FeaturedCards.jsx");
 /* harmony import */ var _layouts_document__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layouts/document */ "./layouts/document.jsx");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 // -----------------------------------------Sass-----------------------------------------
  // -----------------------------------------Reactstrap-----------------------------------------
@@ -361,6 +363,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
  // -----------------------------------------Resources-----------------------------------------
+// -----------------------------------------Axios-----------------------------------------
+
 
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   const {
@@ -377,6 +381,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     });
   };
 
+  axios__WEBPACK_IMPORTED_MODULE_7___default.a.get("/api/frontEnd").then(res => console.log(res)).catch(err => console.log("error", err));
   return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
     picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
@@ -452,8 +457,19 @@ const Context = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/ubuntu/cordineWebsiteNext/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\Users\iscre\Desktop\cordineWebsiteNext\pages\index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 

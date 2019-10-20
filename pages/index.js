@@ -11,12 +11,18 @@ import CenteredHeading from "../components/CenteredHeading";
 import FeaturedCards from "../components/FeaturedCards";
 import Document from "../layouts/document";
 // -----------------------------------------Resources-----------------------------------------
+// -----------------------------------------Axios-----------------------------------------
+import axios from "axios";
 
 export default () => {
 	const { state, actions } = useContext(Context);
 	let onChange = e => {
 		actions({ type: "setState", payload: { searchQuery: e.target.value } });
 	};
+	axios
+		.get("/api/frontEnd")
+		.then(res => console.log(res))
+		.catch(err => console.log("error", err));
 	return (
 		<Document>
 			<Row>
