@@ -9036,7 +9036,8 @@ var useGlobalState = function useGlobalState() {
     searchQuery: "",
     auth: {
       user: "guest",
-      isAuth: true
+      isAuth: true,
+      frontEndPosts: []
     }
   }),
       state = _useState[0],

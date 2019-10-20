@@ -10,19 +10,23 @@ import Context from "../store/context";
 import CenteredHeading from "../components/CenteredHeading";
 import FeaturedCards from "../components/FeaturedCards";
 import Document from "../layouts/document";
+import Logo from "../components/Logo";
 // -----------------------------------------Resources-----------------------------------------
-// -----------------------------------------Axios-----------------------------------------
-import axios from "axios";
+
+// -----------------------------------------Actions-----------------------------------------
+import { getFrontEndItems } from "../actions/FrontEndActions";
 
 export default () => {
 	const { state, actions } = useContext(Context);
 	let onChange = e => {
-		actions({ type: "setState", payload: { searchQuery: e.target.value } });
+		actions({
+			type: "setState",
+			payload: {
+				searchQuery: e.target.value,
+				frontEndItems: getFrontEndItems()
+			}
+		});
 	};
-	axios
-		.get("/api/frontEnd")
-		.then(res => console.log(res))
-		.catch(err => console.log("error", err));
 	return (
 		<Document>
 			<Row>
@@ -31,11 +35,7 @@ export default () => {
 						{/* <!--  Replace logo image with logo svg  --> */}
 						<Container fluid>
 							<Row className="hero">
-								<img
-									src="http://cordine.site/static/media/christopher-logo-white.427e237a.png"
-									className="logo"
-								/>
-
+								<Logo />
 								<div>
 									<h1 className="quickSand">
 										<span style={{ color: "white" }}>New York</span> Web

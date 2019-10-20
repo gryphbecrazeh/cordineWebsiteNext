@@ -93,6 +93,32 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./actions/FrontEndActions.js":
+/*!************************************!*\
+  !*** ./actions/FrontEndActions.js ***!
+  \************************************/
+/*! exports provided: getFrontEndItems, addFrontEndItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFrontEndItems", function() { return getFrontEndItems; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFrontEndItem", function() { return addFrontEndItem; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+// -----------------------------------------Axios-----------------------------------------
+
+const getFrontEndItems = () => {
+  axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/frontEnd").then(res => {
+    return [...res.data];
+  }).catch(err => console.log("error", err));
+};
+const addFrontEndItem = item => {
+  axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/frontEnd", item).then(res => console.log(res)).catch(err => console.log(err));
+};
+
+/***/ }),
+
 /***/ "./components/CenteredHeading.jsx":
 /*!****************************************!*\
   !*** ./components/CenteredHeading.jsx ***!
@@ -230,6 +256,51 @@ const LoginModal = () => {
 
 /***/ }),
 
+/***/ "./components/Logo.jsx":
+/*!*****************************!*\
+  !*** ./components/Logo.jsx ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var _images_chrisWebsiteLogo_W_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/chrisWebsiteLogo-W.svg */ "./images/chrisWebsiteLogo-W.svg");
+/* harmony import */ var _images_chrisWebsiteLogo_W_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_chrisWebsiteLogo_W_svg__WEBPACK_IMPORTED_MODULE_2__);
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// -----------------------------------------React-----------------------------------------
+ // -----------------------------------------React Hooks-----------------------------------------
+
+ // -----------------------------------------Resources-----------------------------------------
+
+
+
+const Logo = () => {
+  const {
+    state,
+    actions
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+  const handleLogin = () => {
+    console.log(state.searchQuery.match(/login/gim));
+    console.log("login");
+  };
+
+  return __jsx("img", {
+    src: _images_chrisWebsiteLogo_W_svg__WEBPACK_IMPORTED_MODULE_2___default.a,
+    alt: "",
+    onClick: handleLogin,
+    className: "logo"
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Logo);
+
+/***/ }),
+
 /***/ "./components/NavBar.jsx":
 /*!*******************************!*\
   !*** ./components/NavBar.jsx ***!
@@ -271,6 +342,17 @@ const NavBar = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
+
+/***/ }),
+
+/***/ "./images/chrisWebsiteLogo-W.svg":
+/*!***************************************!*\
+  !*** ./images/chrisWebsiteLogo-W.svg ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/chrisWebsiteLogo-W-5cddad12e9b6d75e2cdc19e7ffbaaa48.svg";
 
 /***/ }),
 
@@ -348,8 +430,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/CenteredHeading */ "./components/CenteredHeading.jsx");
 /* harmony import */ var _components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/FeaturedCards */ "./components/FeaturedCards.jsx");
 /* harmony import */ var _layouts_document__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layouts/document */ "./layouts/document.jsx");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_Logo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Logo */ "./components/Logo.jsx");
+/* harmony import */ var _actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../actions/FrontEndActions */ "./actions/FrontEndActions.js");
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 // -----------------------------------------Sass-----------------------------------------
  // -----------------------------------------Reactstrap-----------------------------------------
@@ -362,8 +444,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
+
  // -----------------------------------------Resources-----------------------------------------
-// -----------------------------------------Axios-----------------------------------------
+// -----------------------------------------Actions-----------------------------------------
 
 
 /* harmony default export */ __webpack_exports__["default"] = (() => {
@@ -376,22 +459,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     actions({
       type: "setState",
       payload: {
-        searchQuery: e.target.value
+        searchQuery: e.target.value,
+        frontEndItems: Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])()
       }
     });
   };
 
-  axios__WEBPACK_IMPORTED_MODULE_7___default.a.get("/api/frontEnd").then(res => console.log(res)).catch(err => console.log("error", err));
   return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
     picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     fluid: true
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     className: "hero"
-  }, __jsx("img", {
-    src: "http://cordine.site/static/media/christopher-logo-white.427e237a.png",
-    className: "logo"
-  }), __jsx("div", null, __jsx("h1", {
+  }, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_7__["default"], null), __jsx("div", null, __jsx("h1", {
     className: "quickSand"
   }, __jsx("span", {
     style: {
