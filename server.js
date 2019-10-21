@@ -28,11 +28,16 @@ app.prepare().then(() => {
 		.catch(err => console.log(err));
 
 	// Use Routes
-	// Create and manage users
-	server.use("/api/users", require("./routes/api/users"));
+
 	// Handle user authentication
 	server.use("/api/auth", require("./routes/api/auth"));
+
+	// CRUD users
+	server.use("/api/users", require("./routes/api/users"));
+
+	// CRUD front end work
 	server.use("/api/frontEnd", require("./routes/api/frontEnd"));
+
 	server.all("*", (req, res) => {
 		return handle(req, res);
 	});

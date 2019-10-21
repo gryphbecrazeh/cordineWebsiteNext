@@ -8,12 +8,10 @@ const UserSchema = new Schema({
 		default: Date.now()
 	},
 	firstName: {
-		type: String,
-		required: true
+		type: String
 	},
 	lastName: {
-		type: String,
-		required: true
+		type: String
 	},
 	fullName: {
 		type: String
@@ -23,7 +21,8 @@ const UserSchema = new Schema({
 		type: Date
 	},
 	email: {
-		type: String
+		type: String,
+		required: true
 	},
 	password: {
 		type: String,
@@ -33,7 +32,8 @@ const UserSchema = new Schema({
 		type: Array
 	},
 	userName: {
-		type: String
+		type: String,
+		required: true
 	}
 });
 

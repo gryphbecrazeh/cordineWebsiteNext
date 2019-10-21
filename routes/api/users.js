@@ -20,10 +20,10 @@ router.get("/", (req, res) => {
 // @desc Add user to server
 // @access PUBLIC
 router.post("/", (req, res) => {
-	const { name, userName, password } = req.body;
+	const { userName, password, email } = req.body;
 
 	// Simple Validation
-	if (!name || !userName || !password) {
+	if (!userName || !password || !email) {
 		return res.status(400).json({ msg: "Please Enter All Fields" });
 	}
 
