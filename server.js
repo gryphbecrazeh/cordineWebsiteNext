@@ -28,7 +28,9 @@ app.prepare().then(() => {
 		.catch(err => console.log(err));
 
 	// Use Routes
+	// Create and manage users
 	app.use("/api/users", require("./routes/api/users"));
+	// Handle user authentication
 	app.use("/api/auth", require("./routes/api/auth"));
 	server.use("/api/frontEnd", require("./routes/api/frontEnd"));
 	server.all("*", (req, res) => {
