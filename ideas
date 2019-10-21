@@ -38,3 +38,14 @@ once logged in, the featured content component will have a button fixed to the u
 If the new post is a project, then a radio will be selected, and minimal data will be required.
 
 
+Virtual resume
+
+the virtual resume opens to a clean, clear theme, maximum readability, nice styles and animations, no progress bars,
+maybe progress bars if I want to go for a gaming asthetic
+
+definitly have a sticky side bar that can direct the user to different parts of the resume, offer to download a pdf version with matching styles, needs to be a manually generated pdf
+
+https://blog.risingstack.com/pdf-from-html-node-js-puppeteer/
+
+This can be accomplished rather easily in puppeteer for nodejs, I'm further annoyed that "convert html to pdf with javascript" never returns this, you have to specifically ask for it regarding nodejs for it to realize that javascript is not just a front end language
+
