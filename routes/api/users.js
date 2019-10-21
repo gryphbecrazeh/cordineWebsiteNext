@@ -20,15 +20,15 @@ router.get("/", (req, res) => {
 // @desc Add user to server
 // @access PUBLIC
 router.post("/", (req, res) => {
-	const { name, email, password } = req.body;
+	const { name, userName, password } = req.body;
 
 	// Simple Validation
-	if (!name || !email || !password) {
+	if (!name || !userName || !password) {
 		return res.status(400).json({ msg: "Please Enter All Fields" });
 	}
 
 	// Check Existing User
-	User.findOne({ email }).then(user => {
+	User.findOne({ userName }).then(user => {
 		if (user) return res.status(400).json({ msg: "User already exists" });
 
 		const newUser = new User(req.body);
@@ -50,7 +50,7 @@ router.post("/", (req, res) => {
 								user: {
 									id: user.id,
 									name: user.name,
-									email: user.email
+									userName: user.userName
 								},
 								success: true,
 								msg: "User Added"
@@ -67,10 +67,10 @@ router.post("/", (req, res) => {
 // @desc edit user
 // @accesss Private
 router.put("/:id", (req, res) => {
-	const { _id, name, email, password } = req.body;
+	const { _id, name, userName, password } = req.body;
 	let id = _id;
 	// Simple Validation
-	if (!_id || !name || !email) {
+	if (!_id || !name || !userName) {
 		return res.json({ msg: "Please enter all fields" });
 	}
 	if (password) {
@@ -83,7 +83,7 @@ router.put("/:id", (req, res) => {
 				let updatedUser = {
 					id,
 					name,
-					email
+					userName
 				};
 				updatedUser.password = newPassword;
 				// Check Existing User

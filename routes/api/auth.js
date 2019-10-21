@@ -21,14 +21,14 @@ router.get("/user", auth, (req, res) => {
 // @desc Auth User
 // @accesss PUBLIC
 router.post("/", (req, res) => {
-	const { email, password } = req.body;
+	const { userName, password } = req.body;
 
 	// Simple Validation
-	if (!email || !password) {
+	if (!userName || !password) {
 		return res.status(400).json({ msg: "Please Enter All Fields" });
 	}
 	// Check Existing User
-	User.findOne({ email }).then(user => {
+	User.findOne({ userName }).then(user => {
 		if (!user) return res.status(400).json({ msg: "User does not exist" });
 
 		// Validate password
