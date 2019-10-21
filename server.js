@@ -28,6 +28,8 @@ app.prepare().then(() => {
 		.catch(err => console.log(err));
 
 	// Use Routes
+	app.use("/api/users", require("./routes/api/users"));
+	app.use("/api/auth", require("./routes/api/auth"));
 	server.use("/api/frontEnd", require("./routes/api/frontEnd"));
 	server.all("*", (req, res) => {
 		return handle(req, res);
