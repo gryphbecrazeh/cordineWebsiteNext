@@ -1,0 +1,31 @@
+On entrance to the website
+there will be a black screen with randomized text appearing in the center until the specific interval is hit
+bam
+christopher cordine full stack javascript web developer, with icons listing technologies, click to enter button
+all black and white text
+on click to enter, the screen disappears, and you are at the landing page
+
+new york web developer
+
+nice cool black, white, and orange color scheme
+
+type into search bar for what you are looking for in a web developer, each bit of text messages the server to get all posts that have text that match the search input, fall back with "I don't have those skills you are looking for yet, but I am willing to learn, here are a few of my featured work that I can show you" then show off the featured items list
+
+featured items can be projects and front end only work
+
+a series of cards are displayed in a 2 collumn grid
+
+front end work has the option to expand to full view, see the code for it it, and a view more option to goto the frontend work page, there tiles of varying sizes, similar to a collage, will be displayed, expanding with a card on hover, and on click will open it to a full view modal
+front end work will require the ability to display mock up images and so on in the card, images should be lazy loaded and smushed for rapid availability and adequitely sized thumbnails, full views should be webP images, really make the site optimized
+
+featured projects will have a link to redirect the user to a heroku app (maybe not a link, maybe an iframe, similar to the front end stuff, would need to be cross domain, unless I can figure out how to feature multiple react apps on my server, have to look into that) on there, the user will be free to play with the app as they see fit, these apps might have temporary instances in the database/server that will expire after a certain amount of time, need to show of crud ability and so forth, note app, calculator, pios app, shopping app, etc...
+
+on the top of the landing page, and near the bottom, there will be a call to action to get them to check out my virutal resume page, this page will be non-indexable by google, here it will list off my prior work experience, and skills involved, as well as project text and so on
+
+for admin purposes, typing in login in to the search bar allows the logo fixed to the bottom right to become a clickable button, opening the login modal
+the login modal will make a post request to the server to log in
+once logged in, the featured content component will have a button fixed to the upper right which will allow me to add more posts to the featured posts, the button will open a drop down, and the dropdown will have two options, add existing post, or create a new post, on click of the add existing post, it will append a dropdown underneath the button which will allow for the user to select a new post not currently being featured to be added to the featured posts, clicking the add new post button will open a modal form, where I can add the fields I have available, maybe add a text area and iframe similar to codepen, w3schools, freecodecamp, etc..., to do live front end design coding from the admin page, upload images to the server, maybe have an upload images api, and have nodejs/express write it to the server. That api will handle smushing the image, generating the webp, and return back the link to the image, which will be added to the array of images. On completing the new post, the server will generate a preview image of the file, which will then be used for the tiles in the front end page.
+
+If the new post is a project, then a radio will be selected, and minimal data will be required.
+
+
