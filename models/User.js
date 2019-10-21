@@ -24,5 +24,14 @@ const UserSchema = new Schema({
 	},
 	email: {
 		type: String
+	},
+	password: {
+		type: String,
+		required: true
+	},
+	loginLocation: {
+		type: Array
 	}
 });
+
+module.exports = User = mongoose.model("user", UserSchema);
