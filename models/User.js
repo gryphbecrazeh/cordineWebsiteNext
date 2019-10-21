@@ -31,6 +31,9 @@ const UserSchema = new Schema({
 	},
 	loginLocation: {
 		type: Array
+	},
+	userName: {
+		type: String
 	}
 });
 

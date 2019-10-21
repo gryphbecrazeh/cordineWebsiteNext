@@ -10,5 +10,5 @@ const User = require("../../models/User");
 // @access PUBLIC
 router.post("/id:", (req, res) => {
 	let { body } = req;
-	User.find;
+	User.find(item => item.userName);
 });
