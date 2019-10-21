@@ -1860,9 +1860,9 @@ const useGlobalState = () => {
     searchQuery: "",
     auth: {
       user: "guest",
-      isAuth: true,
-      frontEndPosts: []
-    }
+      isAuth: true
+    },
+    frontEndPosts: []
   });
 
   const actions = action => {

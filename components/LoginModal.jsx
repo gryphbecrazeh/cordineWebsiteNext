@@ -41,8 +41,8 @@ const LoginModal = () => {
 			<ModalBody>
 				<Form>
 					<FormGroup>
-						<Label>Email</Label>
-						<Input name="email" placeholder="xxx@domain.com" type="email" />
+						<Label>User</Label>
+						<Input name="user" placeholder="username" type="username" />
 						<Label>Password</Label>
 						<Input name="pass" placeholder="password" type="password" />
 					</FormGroup>

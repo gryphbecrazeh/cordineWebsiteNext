@@ -48,6 +48,7 @@ export default () => {
 										<Input
 											type="search"
 											placeholder="What are you looking for?"
+											value={state.searchQuery}
 											onChange={onChange}
 										/>
 									</div>
