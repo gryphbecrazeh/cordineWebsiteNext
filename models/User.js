@@ -16,8 +16,8 @@ const UserSchema = new Schema({
 		required: true
 	},
 	fullName: {
-		type: String,
-		default: `${firstName} ${lastName}`
+		type: String
+		// default: `${this.firstName} ${this.lastName}`
 	},
 	dateBirth: {
 		type: Date
