@@ -71,6 +71,18 @@ body {
     color: orange; }
   .hero a:hover {
     color: orange; }
+  .hero .resume-button a {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    color: orange;
+    padding: 0.5em;
+    font-weight: 400;
+    transition: 250ms;
+    border: 3px solid rgba(0, 0, 0, 0); }
+  .hero .resume-button a:hover {
+    font-weight: bold;
+    color: white;
+    border: 3px solid white; }
   .hero .subsearch {
     margin-top: 0.5em; }
   .hero .search-container {

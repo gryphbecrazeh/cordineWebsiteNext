@@ -63,8 +63,8 @@ export default () => {
 										<a href="https://codepen.io/gryphbecrazeh">Codepen</a>,{" "}
 										<a href="/projects">Projects</a>
 									</p>
-									<div>
-										<a href="/">Download Resume Now</a>
+									<div className="resume-button">
+										<a href="/">View Virtual Resume Now</a>
 									</div>
 								</div>
 							</Row>
