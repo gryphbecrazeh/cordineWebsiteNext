@@ -5,6 +5,15 @@ christopher cordine full stack javascript web developer, with icons listing tech
 all black and white text
 on click to enter, the screen disappears, and you are at the landing page
 
+Something should happen to determine whether this splash page occurs at all, or happens again
+
+either we pass the user a cookie to prevent the splash page from happening again
+or record which IP's have already visited the site, and return them the landing page if they had already visited the site
+
+the record IP option seems better as I can enter google's IP and allow for the google robots to bypass the splash page and direct the robot directly to the landing page
+
+though I may be using the splash page as a component on the landing page that fades out the opacity after a certain amount of time, if that is the case, google shouldn't have TOO much of an issue reading the content, but who knows
+
 new york web developer
 
 nice cool black, white, and orange color scheme
