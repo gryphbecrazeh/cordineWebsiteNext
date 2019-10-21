@@ -14,6 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
 /* harmony import */ var _store_useGlobalState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/useGlobalState */ "./store/useGlobalState.js");
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// -----------------------------------------React-----------------------------------------
  // -----------------------------------------React Hooks-----------------------------------------
 
 

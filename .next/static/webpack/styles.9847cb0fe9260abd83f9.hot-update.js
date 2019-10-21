@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
+webpackHotUpdate("styles",{
 
 /***/ "./node_modules/bootstrap/dist/css/bootstrap.min.css":
 /*!***********************************************************!*\
@@ -74,5 +74,5 @@
 
 /***/ })
 
-}]);
-//# sourceMappingURL=styles.js.map
+})
+//# sourceMappingURL=styles.9847cb0fe9260abd83f9.hot-update.js.map
