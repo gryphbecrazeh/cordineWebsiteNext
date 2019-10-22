@@ -5,23 +5,23 @@ $background: #334;
 $small_image_scale: 50px;
 // ##############################--Global Fonts--##############################
 .oswald {
-	font-family: "Oswald", sans-serif;
+	font-family: 'Oswald', sans-serif;
 }
 .quickSand {
-	font-family: "Quicksand", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .vibes {
-	font-family: "Vibes", cursive;
+	font-family: 'Vibes', cursive;
 }
 .shadows {
-	font-family: "Shadows Into Light", cursive;
+	font-family: 'Shadows Into Light', cursive;
 }
 
 .elite {
-	font-family: "Special Elite", cursive;
+	font-family: 'Special Elite', cursive;
 }
 .bangers {
-	font-family: "Bangers", cursive;
+	font-family: 'Bangers', cursive;
 }
 // ##############################--Global Classes--##############################
 .glass {
@@ -155,8 +155,15 @@ body {
 	color: white;
 	padding: 2em;
 }
-
 // ##############################--Feature Card--##############################
+.featured-cards {
+	position: relative;
+	button.addPost {
+		position: absolute;
+		top: 1em;
+		right: 1em;
+	}
+}
 .card {
 	color: white;
 	background-color: #334;
@@ -246,4 +253,42 @@ body {
 		font-size: 0.7em;
 		text-align: center;
 	}
+}
+// ##############################--Feature Modals--##############################
+.technology {
+	padding: 0.25em;
+	background-color: #aaa;
+	border-radius: 10px;
+	box-sizing: border-box;
+	position: relative;
+	transition: 250ms ease-in-out;
+	margin-right: 0.5em;
+	max-width: 5em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+
+	.close {
+		position: absolute;
+		right: 0.25em;
+		top: 0;
+		opacity: 0;
+		transition: 100ms ease-in-out opacity;
+		transition-delay: 0;
+	}
+}
+.technology:hover {
+	padding-right: 1.5em;
+
+	.close {
+		opacity: 1;
+		transition: 250ms ease-in-out opacity;
+		transition-delay: 100ms;
+	}
+}
+#technology-output {
+	display: grid;
+	grid-gap: 3px;
+	grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+	margin-bottom: 2em;
 }

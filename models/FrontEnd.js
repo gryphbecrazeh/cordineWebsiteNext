@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Create Schema
@@ -9,7 +9,8 @@ const FrontEndSchema = new Schema({
 	},
 	technologies: {
 		type: Array,
-		required: true
+		required: true,
+		default: []
 	},
 	title: {
 		type: String,
@@ -32,4 +33,4 @@ const FrontEndSchema = new Schema({
 	}
 });
 
-module.exports = FrontEnd = mongoose.model("frontEnd", FrontEndSchema);
+module.exports = FrontEnd = mongoose.model('frontEnd', FrontEndSchema);

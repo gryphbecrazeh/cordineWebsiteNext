@@ -1,20 +1,20 @@
 .oswald {
-  font-family: "Oswald", sans-serif; }
+  font-family: 'Oswald', sans-serif; }
 
 .quickSand {
-  font-family: "Quicksand", sans-serif; }
+  font-family: 'Quicksand', sans-serif; }
 
 .vibes {
-  font-family: "Vibes", cursive; }
+  font-family: 'Vibes', cursive; }
 
 .shadows {
-  font-family: "Shadows Into Light", cursive; }
+  font-family: 'Shadows Into Light', cursive; }
 
 .elite {
-  font-family: "Special Elite", cursive; }
+  font-family: 'Special Elite', cursive; }
 
 .bangers {
-  font-family: "Bangers", cursive; }
+  font-family: 'Bangers', cursive; }
 
 .glass {
   background-image: linear-gradient(-70deg, rgba(0, 0, 0, 0.3), rgba(10, 10, 0, 0.2) 100%, rgba(0, 0, 0, 0.5));
@@ -115,6 +115,13 @@ body {
   color: white;
   padding: 2em; }
 
+.featured-cards {
+  position: relative; }
+  .featured-cards button.addPost {
+    position: absolute;
+    top: 1em;
+    right: 1em; }
+
 .card {
   color: white;
   background-color: #334;
@@ -186,6 +193,39 @@ body {
     padding: 0.5em;
     font-size: 0.7em;
     text-align: center; }
+
+.technology {
+  padding: 0.25em;
+  background-color: #aaa;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: relative;
+  transition: 250ms ease-in-out;
+  margin-right: 0.5em;
+  max-width: 5em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+  .technology .close {
+    position: absolute;
+    right: 0.25em;
+    top: 0;
+    opacity: 0;
+    transition: 100ms ease-in-out opacity;
+    transition-delay: 0; }
+
+.technology:hover {
+  padding-right: 1.5em; }
+  .technology:hover .close {
+    opacity: 1;
+    transition: 250ms ease-in-out opacity;
+    transition-delay: 100ms; }
+
+#technology-output {
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+  margin-bottom: 2em; }
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
