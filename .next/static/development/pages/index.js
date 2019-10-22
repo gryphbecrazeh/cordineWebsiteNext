@@ -65,26 +65,78 @@ function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFrontEndItems", function() { return getFrontEndItems; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFrontEndItem", function() { return addFrontEndItem; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+
+
 
 // -----------------------------------------Axios-----------------------------------------
 
-var getFrontEndItems = function getFrontEndItems() {
-  axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/frontEnd").then(function (res) {
-    return Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(res.data);
-  })["catch"](function (err) {
-    return console.log("error", err);
-  });
-};
-var addFrontEndItem = function addFrontEndItem(item) {
-  axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/frontEnd", item).then(function (res) {
-    return console.log(res);
-  })["catch"](function (err) {
-    return console.log(err);
-  });
-};
+var getFrontEndItems =
+/*#__PURE__*/
+function () {
+  var _ref = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  /*#__PURE__*/
+  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            return _context.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/api/frontEnd').then(function (res) {
+              console.log(res.data);
+              return Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(res.data);
+            })["catch"](function (err) {
+              return console.log('error', err);
+            }));
+
+          case 1:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function getFrontEndItems() {
+    return _ref.apply(this, arguments);
+  };
+}();
+var addFrontEndItem =
+/*#__PURE__*/
+function () {
+  var _ref2 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  /*#__PURE__*/
+  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(item) {
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/api/frontEnd', item).then(function (res) {
+              return res;
+            })["catch"](function (err) {
+              return console.log(err);
+            });
+
+          case 2:
+            return _context2.abrupt("return", _context2.sent);
+
+          case 3:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+
+  return function addFrontEndItem(_x) {
+    return _ref2.apply(this, arguments);
+  };
+}();
 
 /***/ }),
 
@@ -104,6 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
 /* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var _actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../actions/FrontEndActions */ "./actions/FrontEndActions.js");
 
 
 
@@ -113,12 +166,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
  // -----------------------------------------React Hooks-----------------------------------------
 
+ // -----------------------------------------Actions-----------------------------------------
+
 
 
 var AddPostModal = function AddPostModal(_ref) {
   var isOpen = _ref.isOpen,
       toggle = _ref.toggle;
 
+  // Innitializes the post object
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])({
     title: '',
     technologies: [],
@@ -129,11 +185,13 @@ var AddPostModal = function AddPostModal(_ref) {
     technology: ''
   }),
       post = _useState[0],
-      updatePost = _useState[1];
+      updatePost = _useState[1]; // Updates the post state based on the item name and value
+
 
   var handleUpdatePost = function handleUpdatePost(e) {
     updatePost(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, post, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, e.target.name, e.target.value)));
-  };
+  }; // Updates technologies with an appended iteration of the technologies array
+
 
   var handleAddTechnology = function handleAddTechnology() {
     var technology = post.technology,
@@ -144,7 +202,8 @@ var AddPostModal = function AddPostModal(_ref) {
       technologies: updatedTechnologies,
       technology: ''
     }));
-  };
+  }; // Updates the technologies with a filtered iteration of the technologies array
+
 
   var handleRemoveTechnology = function handleRemoveTechnology(e) {
     var target = e.target.getAttribute('name');
@@ -157,7 +216,14 @@ var AddPostModal = function AddPostModal(_ref) {
     }));
   };
 
-  console.log(post);
+  var handleAddPost = function handleAddPost() {
+    Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_6__["addFrontEndItem"])(post).then(function (res) {
+      return toggle();
+    })["catch"](function (err) {
+      return alert('Adding Post Failed');
+    });
+  };
+
   return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Modal"], {
     isOpen: isOpen,
     toggle: toggle
@@ -220,6 +286,7 @@ var AddPostModal = function AddPostModal(_ref) {
     className: "mt-5"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
     color: "success",
+    onClick: handleAddPost,
     block: true
   }, "Add Post"))))));
 };
@@ -271,15 +338,20 @@ var CenteredHeading = function CenteredHeading(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var _AddPostModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AddPostModal */ "./components/AddPostModal.jsx");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var _AddPostModal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./AddPostModal */ "./components/AddPostModal.jsx");
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 // -----------------------------------------React-----------------------------------------
  // -----------------------------------------Reactstrap-----------------------------------------
+
+ // -----------------------------------------React Hooks-----------------------------------------
 
  // -----------------------------------------Components-----------------------------------------
 
@@ -289,30 +361,37 @@ var FeaturedCards = function FeaturedCards(_ref) {
   var id = _ref.id,
       children = _ref.children;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_4__["default"]),
+      state = _useContext.state,
+      actions = _useContext.actions;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])({
     isOpen: false
   }),
       modal = _useState[0],
       toggleModalOpen = _useState[1];
 
   var toggleModal = function toggleModal() {
-    toggleModalOpen(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, modal, {
+    toggleModalOpen(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, modal, {
       isOpen: !modal.isOpen
     }));
   };
 
-  var addPost = __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+  var addPost = __jsx(react__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
     className: "addPost",
     onClick: toggleModal
   }, "+"));
 
+  console.log(state);
   return __jsx("section", {
     id: id,
     className: "featured-cards"
-  }, __jsx(_AddPostModal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state.auth.role === 'admin' ? addPost : '', __jsx(_AddPostModal__WEBPACK_IMPORTED_MODULE_5__["default"], {
     isOpen: modal.isOpen,
     toggle: toggleModal
-  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, children)), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, "Output Cards"))));
+  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], null, children)), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(state.frontEndPosts).map(function (item) {
+    return item.title;
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FeaturedCards);
@@ -328,11 +407,11 @@ var FeaturedCards = function FeaturedCards(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
@@ -364,7 +443,7 @@ var LoginModal = function LoginModal() {
       state = _useContext.state,
       actions = _useContext.actions;
 
-  var auth = state.auth;
+  var auth = state.auth; // Officially logs in the user
 
   var handleLogin = function handleLogin(user) {
     actions({
@@ -377,33 +456,16 @@ var LoginModal = function LoginModal() {
         }
       }
     });
-  };
-
-  var toggle = function toggle() {
-    actions({
-      type: 'setState',
-      payload: {
-        auth: {
-          user: 'guest',
-          isAuth: true
-        }
-      }
-    });
-  }; // Handle Updating fields entered for the log in system
-
-
-  var updateField = function updateField(e) {
-    updateUser(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_3__["default"])({}, user, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({}, e.target.name, e.target.value)));
   }; // Attempts a login, if it succeeds, log in, else alert the issue
 
 
   var attemptLogin =
   /*#__PURE__*/
   function () {
-    var _ref = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+    var _ref = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(
     /*#__PURE__*/
-    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+    _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee() {
+      return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
@@ -425,7 +487,25 @@ var LoginModal = function LoginModal() {
     return function attemptLogin() {
       return _ref.apply(this, arguments);
     };
-  }();
+  }(); // Toggle is accomplished by making the active user a guest again, login modal is based on whether isAuth is true, authorized guests is the default value
+
+
+  var toggle = function toggle() {
+    actions({
+      type: 'setState',
+      payload: {
+        auth: {
+          user: 'guest',
+          isAuth: true
+        }
+      }
+    });
+  }; // Handle Updating fields entered for the log in system
+
+
+  var updateField = function updateField(e) {
+    updateUser(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, user, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, e.target.name, e.target.value)));
+  };
 
   return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_5__["Modal"], {
     isOpen: !auth.isAuth,
@@ -23957,18 +24037,20 @@ module.exports = g;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
-/* harmony import */ var _components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/CenteredHeading */ "./components/CenteredHeading.jsx");
-/* harmony import */ var _components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/FeaturedCards */ "./components/FeaturedCards.jsx");
-/* harmony import */ var _layouts_document__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layouts/document */ "./layouts/document.jsx");
-/* harmony import */ var _components_Logo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Logo */ "./components/Logo.jsx");
-/* harmony import */ var _actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../actions/FrontEndActions */ "./actions/FrontEndActions.js");
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var _components_CenteredHeading__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/CenteredHeading */ "./components/CenteredHeading.jsx");
+/* harmony import */ var _components_FeaturedCards__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/FeaturedCards */ "./components/FeaturedCards.jsx");
+/* harmony import */ var _layouts_document__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../layouts/document */ "./layouts/document.jsx");
+/* harmony import */ var _components_Logo__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Logo */ "./components/Logo.jsx");
+/* harmony import */ var _actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../actions/FrontEndActions */ "./actions/FrontEndActions.js");
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 // -----------------------------------------Sass-----------------------------------------
  // -----------------------------------------Reactstrap-----------------------------------------
 
@@ -23986,7 +24068,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_3__["default"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_3__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_4__["default"]),
       state = _useContext.state,
       actions = _useContext.actions;
 
@@ -23994,27 +24076,34 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     actions({
       type: 'setState',
       payload: {
-        searchQuery: e.target.value,
-        frontEndItems: Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])()
+        searchQuery: e.target.value
       }
+    });
+    Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_9__["getFrontEndItems"])().then(function (res) {
+      return actions({
+        type: 'setState',
+        payload: {
+          frontEndPosts: Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(res)
+        }
+      });
     });
   };
 
-  return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_7__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_5__["default"], {
     picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     fluid: true
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
     className: "hero"
-  }, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_7__["default"], null), __jsx("div", null, __jsx("h1", {
+  }, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_8__["default"], null), __jsx("div", null, __jsx("h1", {
     className: "quickSand"
   }, __jsx("span", {
     style: {
       color: 'white'
     }
-  }, "New York"), " Web Developer"), __jsx("div", {
+  }, "New York"), ' ', "Web Developer"), __jsx("div", {
     className: "search-container d-none d-md-block"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
     type: "search",
     placeholder: "What are you looking for?",
     value: state.searchQuery,
@@ -24027,13 +24116,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     href: "https://github.com/gryphbecrazeh"
   }, "GitHub"), ",", ' ', __jsx("a", {
     href: "https://codepen.io/gryphbecrazeh"
-  }, "Codepen"), ",", ' ', __jsx("a", {
+  }, "Codepen"), ", ", __jsx("a", {
     href: "/projects"
   }, "Projects")), __jsx("div", {
     className: "resume-button"
   }, __jsx("a", {
     href: "/"
-  }, "View Virtual Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, "View Virtual Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "related-work"
   }, __jsx("h2", null, "Featured Work"), __jsx("p", null, "I like to be constantly busy, and frequently work on several projects at a time, and am always writing, working out ideas, and prototyping for proof of concept. I've listed a few of my favorite work below. These range from a basic HTML and CSS templating, to full stack applications with a clear goal in mind."), __jsx("p", null, "Culpa minim nulla sit elit. Sit dolore sint minim cillum. Elit ullamco deserunt sit proident aliquip fugiat aute dolor. Sit pariatur laborum duis ad eu qui deserunt irure laborum irure id reprehenderit mollit magna. Fugiat deserunt mollit aute voluptate pariatur aliquip ullamco cupidatat nulla eiusmod."))));
 });

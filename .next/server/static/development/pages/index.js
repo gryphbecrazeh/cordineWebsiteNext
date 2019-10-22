@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -130,13 +130,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 // -----------------------------------------Axios-----------------------------------------
 
-const getFrontEndItems = () => {
-  axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/frontEnd").then(res => {
+const getFrontEndItems = async () => {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/frontEnd').then(res => {
+    console.log(res.data);
     return [...res.data];
-  }).catch(err => console.log("error", err));
+  }).catch(err => console.log('error', err));
 };
-const addFrontEndItem = item => {
-  axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/frontEnd", item).then(res => console.log(res)).catch(err => console.log(err));
+const addFrontEndItem = async item => {
+  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/frontEnd', item).then(res => res).catch(err => console.log(err));
 };
 
 /***/ }),
@@ -156,6 +157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var _actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/FrontEndActions */ "./actions/FrontEndActions.js");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 // -----------------------------------------React-----------------------------------------
@@ -163,12 +165,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
  // -----------------------------------------React Hooks-----------------------------------------
 
+ // -----------------------------------------Actions-----------------------------------------
+
 
 
 const AddPostModal = ({
   isOpen,
   toggle
 }) => {
+  // Innitializes the post object
   let {
     0: post,
     1: updatePost
@@ -180,13 +185,14 @@ const AddPostModal = ({
     repo: '',
     codePen: '',
     technology: ''
-  });
+  }); // Updates the post state based on the item name and value
 
   let handleUpdatePost = e => {
     updatePost(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, post, {
       [e.target.name]: e.target.value
     }));
-  };
+  }; // Updates technologies with an appended iteration of the technologies array
+
 
   let handleAddTechnology = () => {
     let {
@@ -199,7 +205,8 @@ const AddPostModal = ({
       technologies: updatedTechnologies,
       technology: ''
     }));
-  };
+  }; // Updates the technologies with a filtered iteration of the technologies array
+
 
   let handleRemoveTechnology = e => {
     let target = e.target.getAttribute('name');
@@ -210,7 +217,10 @@ const AddPostModal = ({
     }));
   };
 
-  console.log(post);
+  let handleAddPost = () => {
+    Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_4__["addFrontEndItem"])(post).then(res => toggle()).catch(err => alert('Adding Post Failed'));
+  };
+
   return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"], {
     isOpen: isOpen,
     toggle: toggle
@@ -273,6 +283,7 @@ const AddPostModal = ({
     className: "mt-5"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     color: "success",
+    onClick: handleAddPost,
     block: true
   }, "Add Post"))))));
 };
@@ -328,11 +339,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _AddPostModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AddPostModal */ "./components/AddPostModal.jsx");
+/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var _AddPostModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AddPostModal */ "./components/AddPostModal.jsx");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 // -----------------------------------------React-----------------------------------------
  // -----------------------------------------Reactstrap-----------------------------------------
+
+ // -----------------------------------------React Hooks-----------------------------------------
 
  // -----------------------------------------Components-----------------------------------------
 
@@ -342,6 +356,10 @@ const FeaturedCards = ({
   id,
   children
 }) => {
+  const {
+    state,
+    actions
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_3__["default"]);
   let {
     0: modal,
     1: toggleModalOpen
@@ -360,13 +378,14 @@ const FeaturedCards = ({
     onClick: toggleModal
   }, "+"));
 
+  console.log(state);
   return __jsx("section", {
     id: id,
     className: "featured-cards"
-  }, __jsx(_AddPostModal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state.auth.role === 'admin' ? addPost : '', __jsx(_AddPostModal__WEBPACK_IMPORTED_MODULE_4__["default"], {
     isOpen: modal.isOpen,
     toggle: toggleModal
-  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, children)), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, "Output Cards"))));
+  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, children)), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, [...state.frontEndPosts].map(item => item.title))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FeaturedCards);
@@ -414,7 +433,7 @@ const LoginModal = () => {
   } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_3__["default"]);
   const {
     auth
-  } = state;
+  } = state; // Officially logs in the user
 
   const handleLogin = user => {
     actions({
@@ -427,7 +446,13 @@ const LoginModal = () => {
         }
       }
     });
-  };
+  }; // Attempts a login, if it succeeds, log in, else alert the issue
+
+
+  const attemptLogin = async () => {
+    await Object(_actions_AuthActions__WEBPACK_IMPORTED_MODULE_4__["login"])(user).then(res => handleLogin(res)).catch(err => alert('Something went wrong'));
+  }; // Toggle is accomplished by making the active user a guest again, login modal is based on whether isAuth is true, authorized guests is the default value
+
 
   const toggle = () => {
     actions({
@@ -446,11 +471,6 @@ const LoginModal = () => {
     updateUser(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, user, {
       [e.target.name]: e.target.value
     }));
-  }; // Attempts a login, if it succeeds, log in, else alert the issue
-
-
-  const attemptLogin = async () => {
-    await Object(_actions_AuthActions__WEBPACK_IMPORTED_MODULE_4__["login"])(user).then(res => handleLogin(res)).catch(err => alert('Something went wrong'));
   };
 
   return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"], {
@@ -814,10 +834,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     actions({
       type: 'setState',
       payload: {
-        searchQuery: e.target.value,
-        frontEndItems: Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])()
+        searchQuery: e.target.value
       }
     });
+    Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])().then(res => actions({
+      type: 'setState',
+      payload: {
+        frontEndPosts: [...res]
+      }
+    }));
   };
 
   return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -832,7 +857,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     style: {
       color: 'white'
     }
-  }, "New York"), " Web Developer"), __jsx("div", {
+  }, "New York"), ' ', "Web Developer"), __jsx("div", {
     className: "search-container d-none d-md-block"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     type: "search",
@@ -847,7 +872,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     href: "https://github.com/gryphbecrazeh"
   }, "GitHub"), ",", ' ', __jsx("a", {
     href: "https://codepen.io/gryphbecrazeh"
-  }, "Codepen"), ",", ' ', __jsx("a", {
+  }, "Codepen"), ", ", __jsx("a", {
     href: "/projects"
   }, "Projects")), __jsx("div", {
     className: "resume-button"
@@ -888,7 +913,7 @@ const Context = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

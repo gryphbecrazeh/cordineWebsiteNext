@@ -22,11 +22,19 @@ export default () => {
 		actions({
 			type: 'setState',
 			payload: {
-				searchQuery: e.target.value,
-				frontEndItems: getFrontEndItems()
+				searchQuery: e.target.value
 			}
 		});
+		getFrontEndItems().then(res =>
+			actions({
+				type: 'setState',
+				payload: {
+					frontEndPosts: [...res]
+				}
+			})
+		);
 	};
+
 	return (
 		<Document>
 			<Row>
@@ -38,8 +46,10 @@ export default () => {
 								<Logo />
 								<div>
 									<h1 className='quickSand'>
-										<span style={{ color: 'white' }}>New York</span> Web
-										Developer
+										<span style={{ color: 'white' }}>
+											New York
+										</span>{' '}
+										Web Developer
 									</h1>
 									{/* <!--    On click, add removable tag to search of item clicked, these will be font awesome svgs, with an alt text of the text below    -->
       <p>React, Express, MongoDB, Node, Next, Redux, MySQL, Linux, PHP, Git, Bash, Magento, Wordpress, Bootstrap, Sass, etc...</p>
@@ -52,17 +62,25 @@ export default () => {
 											onChange={onChange}
 										/>
 										<p className='subsearch'>
-											Use the search bar above to immediately find{' '}
-											<a href='#'>related work</a> I've done, or scroll down to
-											view my featured projects and front end design.
+											Use the search bar above to
+											immediately find{' '}
+											<a href='#'>related work</a> I've
+											done, or scroll down to view my
+											featured projects and front end
+											design.
 										</p>
 									</div>
 
 									{/* <!--    Enter short links here, just icons with hover text    --> */}
 									<p>
-										<a href='https://github.com/gryphbecrazeh'>GitHub</a>,{' '}
-										<a href='https://codepen.io/gryphbecrazeh'>Codepen</a>,{' '}
-										<a href='/projects'>Projects</a>
+										<a href='https://github.com/gryphbecrazeh'>
+											GitHub
+										</a>
+										,{' '}
+										<a href='https://codepen.io/gryphbecrazeh'>
+											Codepen
+										</a>
+										, <a href='/projects'>Projects</a>
 									</p>
 									<div className='resume-button'>
 										<a href='/'>View Virtual Resume Now</a>
@@ -77,18 +95,20 @@ export default () => {
 				<FeaturedCards id='related-work'>
 					<h2>Featured Work</h2>
 					<p>
-						I like to be constantly busy, and frequently work on several
-						projects at a time, and am always writing, working out ideas, and
-						prototyping for proof of concept. I've listed a few of my favorite
-						work below. These range from a basic HTML and CSS templating, to
-						full stack applications with a clear goal in mind.
+						I like to be constantly busy, and frequently work on
+						several projects at a time, and am always writing,
+						working out ideas, and prototyping for proof of concept.
+						I've listed a few of my favorite work below. These range
+						from a basic HTML and CSS templating, to full stack
+						applications with a clear goal in mind.
 					</p>
 					<p>
-						Culpa minim nulla sit elit. Sit dolore sint minim cillum. Elit
-						ullamco deserunt sit proident aliquip fugiat aute dolor. Sit
-						pariatur laborum duis ad eu qui deserunt irure laborum irure id
-						reprehenderit mollit magna. Fugiat deserunt mollit aute voluptate
-						pariatur aliquip ullamco cupidatat nulla eiusmod.
+						Culpa minim nulla sit elit. Sit dolore sint minim
+						cillum. Elit ullamco deserunt sit proident aliquip
+						fugiat aute dolor. Sit pariatur laborum duis ad eu qui
+						deserunt irure laborum irure id reprehenderit mollit
+						magna. Fugiat deserunt mollit aute voluptate pariatur
+						aliquip ullamco cupidatat nulla eiusmod.
 					</p>
 				</FeaturedCards>
 			</Row>

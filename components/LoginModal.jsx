@@ -26,6 +26,8 @@ const LoginModal = () => {
 	const [user, updateUser] = useState({ userName: '', password: '' });
 	const { state, actions } = useContext(Context);
 	const { auth } = state;
+
+	// Officially logs in the user
 	const handleLogin = user => {
 		actions({
 			type: 'setState',
@@ -34,6 +36,14 @@ const LoginModal = () => {
 			}
 		});
 	};
+	// Attempts a login, if it succeeds, log in, else alert the issue
+	const attemptLogin = async () => {
+		await login(user)
+			.then(res => handleLogin(res))
+			.catch(err => alert('Something went wrong'));
+	};
+
+	// Toggle is accomplished by making the active user a guest again, login modal is based on whether isAuth is true, authorized guests is the default value
 	const toggle = () => {
 		actions({
 			type: 'setState',
@@ -45,16 +55,12 @@ const LoginModal = () => {
 			}
 		});
 	};
+
 	// Handle Updating fields entered for the log in system
 	const updateField = e => {
 		updateUser({ ...user, [e.target.name]: e.target.value });
 	};
-	// Attempts a login, if it succeeds, log in, else alert the issue
-	const attemptLogin = async () => {
-		await login(user)
-			.then(res => handleLogin(res))
-			.catch(err => alert('Something went wrong'));
-	};
+
 	return (
 		<Modal isOpen={!auth.isAuth} toggle={toggle}>
 			<ModalHeader toggle={toggle}>

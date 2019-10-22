@@ -1,5 +1,6 @@
 // -----------------------------------------React-----------------------------------------
 import React, { useState } from 'react';
+
 // -----------------------------------------Reactstrap-----------------------------------------
 import {
 	Container,
@@ -18,9 +19,15 @@ import {
 	InputGroupAddon,
 	Label
 } from 'reactstrap';
+
 // -----------------------------------------React Hooks-----------------------------------------
 import Context from '../store/context';
+
+// -----------------------------------------Actions-----------------------------------------
+import { addFrontEndItem } from '../actions/FrontEndActions';
+
 const AddPostModal = ({ isOpen, toggle }) => {
+	// Innitializes the post object
 	let [post, updatePost] = useState({
 		title: '',
 		technologies: [],
@@ -30,9 +37,13 @@ const AddPostModal = ({ isOpen, toggle }) => {
 		codePen: '',
 		technology: ''
 	});
+
+	// Updates the post state based on the item name and value
 	let handleUpdatePost = e => {
 		updatePost({ ...post, [e.target.name]: e.target.value });
 	};
+
+	// Updates technologies with an appended iteration of the technologies array
 	let handleAddTechnology = () => {
 		let { technology, technologies } = post;
 		if (technology === '') return 0;
@@ -43,6 +54,8 @@ const AddPostModal = ({ isOpen, toggle }) => {
 			technology: ''
 		});
 	};
+
+	// Updates the technologies with a filtered iteration of the technologies array
 	let handleRemoveTechnology = e => {
 		let target = e.target.getAttribute('name');
 		let updatedTechnologies = post.technologies.filter(
@@ -54,7 +67,11 @@ const AddPostModal = ({ isOpen, toggle }) => {
 			technology: ''
 		});
 	};
-	console.log(post);
+	let handleAddPost = () => {
+		addFrontEndItem(post)
+			.then(res => toggle())
+			.catch(err => alert('Adding Post Failed'));
+	};
 	return (
 		<Modal isOpen={isOpen} toggle={toggle}>
 			<ModalHeader toggle={toggle}>Add a featured post</ModalHeader>
@@ -155,7 +172,10 @@ const AddPostModal = ({ isOpen, toggle }) => {
 					</Row>
 					<Row className='mt-5'>
 						<Col>
-							<Button color='success' block>
+							<Button
+								color='success'
+								onClick={handleAddPost}
+								block>
 								Add Post
 							</Button>
 						</Col>
@@ -165,4 +185,5 @@ const AddPostModal = ({ isOpen, toggle }) => {
 		</Modal>
 	);
 };
+
 export default AddPostModal;
