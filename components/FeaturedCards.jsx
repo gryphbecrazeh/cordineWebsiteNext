@@ -1,5 +1,5 @@
 // -----------------------------------------React-----------------------------------------
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, Fragment } from 'react';
 // -----------------------------------------Reactstrap-----------------------------------------
 import { Container, Row, Col, Button, Input } from 'reactstrap';
 // -----------------------------------------Components-----------------------------------------
@@ -11,11 +11,15 @@ const FeaturedCards = ({ id, children }) => {
 	let toggleModal = () => {
 		toggleModalOpen({ ...modal, isOpen: !modal.isOpen });
 	};
-	return (
-		<section id={id} className='featured-cards'>
+	let addPost = (
+		<Fragment>
 			<Button className='addPost' onClick={toggleModal}>
 				+
 			</Button>
+		</Fragment>
+	);
+	return (
+		<section id={id} className='featured-cards'>
 			<AddPostModal isOpen={modal.isOpen} toggle={toggleModal} />
 			<Container>
 				<Row>

@@ -9034,10 +9034,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var useGlobalState = function useGlobalState() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
-    searchQuery: "",
+    searchQuery: '',
     auth: {
-      user: "guest",
-      isAuth: true
+      user: 'guest',
+      isAuth: true,
+      role: 'guest'
     },
     frontEndPosts: []
   }),
@@ -9049,7 +9050,7 @@ var useGlobalState = function useGlobalState() {
         payload = action.payload;
 
     switch (type) {
-      case "setState":
+      case 'setState':
         return setState(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, payload));
 
       default:

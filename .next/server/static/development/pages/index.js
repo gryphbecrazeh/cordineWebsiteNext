@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -107,8 +107,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 // -----------------------------------------Axios-----------------------------------------
 
-const login = user => {
-  axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/auth", user).then(res => console.log(res)).catch(err => console.log(err));
+const login = async user => {
+  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/auth', user).then(res => {
+    return res.data.user;
+  }).catch(err => console.log(err));
 };
 
 /***/ }),
@@ -353,13 +355,15 @@ const FeaturedCards = ({
     }));
   };
 
+  let addPost = __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    className: "addPost",
+    onClick: toggleModal
+  }, "+"));
+
   return __jsx("section", {
     id: id,
     className: "featured-cards"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    className: "addPost",
-    onClick: toggleModal
-  }, "+"), __jsx(_AddPostModal__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_AddPostModal__WEBPACK_IMPORTED_MODULE_3__["default"], {
     isOpen: modal.isOpen,
     toggle: toggleModal
   }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, children)), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, "Output Cards"))));
@@ -401,8 +405,8 @@ const LoginModal = () => {
     0: user,
     1: updateUser
   } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
-    userName: "",
-    password: ""
+    userName: '',
+    password: ''
   });
   const {
     state,
@@ -412,26 +416,41 @@ const LoginModal = () => {
     auth
   } = state;
 
-  const toggle = () => {
+  const handleLogin = user => {
     actions({
-      type: "setState",
+      type: 'setState',
       payload: {
         auth: {
-          user: "guest",
-          isAuth: true
+          user: user.userName,
+          isAuth: true,
+          role: 'admin'
         }
       }
     });
   };
 
+  const toggle = () => {
+    actions({
+      type: 'setState',
+      payload: {
+        auth: {
+          user: 'guest',
+          isAuth: true
+        }
+      }
+    });
+  }; // Handle Updating fields entered for the log in system
+
+
   const updateField = e => {
     updateUser(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, user, {
       [e.target.name]: e.target.value
     }));
-  };
+  }; // Attempts a login, if it succeeds, log in, else alert the issue
 
-  const attemptLogin = () => {
-    Object(_actions_AuthActions__WEBPACK_IMPORTED_MODULE_4__["login"])(user);
+
+  const attemptLogin = async () => {
+    await Object(_actions_AuthActions__WEBPACK_IMPORTED_MODULE_4__["login"])(user).then(res => handleLogin(res)).catch(err => alert('Something went wrong'));
   };
 
   return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"], {
@@ -869,7 +888,7 @@ const Context = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

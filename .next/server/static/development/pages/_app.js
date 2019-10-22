@@ -1858,10 +1858,11 @@ const useGlobalState = () => {
     0: state,
     1: setState
   } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
-    searchQuery: "",
+    searchQuery: '',
     auth: {
-      user: "guest",
-      isAuth: true
+      user: 'guest',
+      isAuth: true,
+      role: 'guest'
     },
     frontEndPosts: []
   });
@@ -1873,7 +1874,7 @@ const useGlobalState = () => {
     } = action;
 
     switch (type) {
-      case "setState":
+      case 'setState':
         return setState(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, payload));
 
       default:
