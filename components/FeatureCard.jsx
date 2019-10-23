@@ -1,17 +1,17 @@
 import React from "react";
 
-const FeatureCard = () => {
+const FeatureCard = ({ post }) => {
+	let { title, technologies } = post;
 	return (
 		<div class="card relative">
 			<div class="row">
-				<h2 class="card-title">
-					Title for Front End Development Card
-					{/* Output feature title */}
-				</h2>
+				<h2 class="card-title">{title}</h2>
 			</div>
 			<div class="row">
 				<div class="technologies">
-					React, Javacript, Bootstrap, Sass
+					{technologies.map(item => (
+						<div>{item}</div>
+					))}
 					{/* Output technologies here, maybe in SVG's if we can get that serverside working */}
 				</div>
 				<div class="view-now-button">View Now</div>

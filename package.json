@@ -1,6 +1,12 @@
 {
 	"name": "custom-server-express",
+	"description": "Personal Portfolio Website to show off to employers",
 	"version": "1.0.0",
+	"license": "MIT",
+	"repository": {
+		"type": "GIT",
+		"url": "https://github.com/gryphbecrazeh/cordineWebsiteNext"
+	},
 	"scripts": {
 		"dev": "nodemon server.js",
 		"frontDev": "node server.js",

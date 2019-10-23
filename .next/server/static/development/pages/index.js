@@ -325,6 +325,62 @@ const CenteredHeading = ({
 
 /***/ }),
 
+/***/ "./components/FeatureCard.jsx":
+/*!************************************!*\
+  !*** ./components/FeatureCard.jsx ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const FeatureCard = ({
+  post
+}) => {
+  let {
+    title,
+    technologies
+  } = post;
+  return __jsx("div", {
+    class: "card relative"
+  }, __jsx("div", {
+    class: "row"
+  }, __jsx("h2", {
+    class: "card-title"
+  }, title)), __jsx("div", {
+    class: "row"
+  }, __jsx("div", {
+    class: "technologies"
+  }, technologies.map(item => __jsx("div", null, item))), __jsx("div", {
+    class: "view-now-button"
+  }, "View Now")), __jsx("div", {
+    class: "row relative"
+  }, __jsx("div", {
+    class: "active-image-container"
+  })), __jsx("div", {
+    class: "row image-container"
+  }, __jsx("div", {
+    class: "img-box"
+  }), __jsx("div", {
+    class: "img-box"
+  }), __jsx("div", {
+    class: "img-box"
+  }), __jsx("div", {
+    class: "img-box"
+  }), __jsx("div", {
+    class: "img-box"
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FeatureCard);
+
+/***/ }),
+
 /***/ "./components/FeaturedCards.jsx":
 /*!**************************************!*\
   !*** ./components/FeaturedCards.jsx ***!
@@ -341,6 +397,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
 /* harmony import */ var _AddPostModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AddPostModal */ "./components/AddPostModal.jsx");
+/* harmony import */ var _FeatureCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FeatureCard */ "./components/FeatureCard.jsx");
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 // -----------------------------------------React-----------------------------------------
@@ -349,6 +406,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
  // -----------------------------------------React Hooks-----------------------------------------
 
  // -----------------------------------------Components-----------------------------------------
+
 
  // -----------------------------------------Resources-----------------------------------------
 
@@ -382,10 +440,14 @@ const FeaturedCards = ({
   return __jsx("section", {
     id: id,
     className: "featured-cards"
-  }, state.auth.role === 'admin' ? addPost : '', __jsx(_AddPostModal__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, state.auth.role === "admin" ? addPost : "", __jsx(_AddPostModal__WEBPACK_IMPORTED_MODULE_4__["default"], {
     isOpen: modal.isOpen,
     toggle: toggleModal
-  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, children)), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, [...state.frontEndPosts].map(item => item.title))));
+  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, children)), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx("div", {
+    className: "feature-card-output"
+  }, [...state.frontEndPosts].map(item => __jsx(_FeatureCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    post: item
+  }))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FeaturedCards);
@@ -596,7 +658,7 @@ const NavBar = () => {
     href: "/"
   }, "Projects"))), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2194696776"
-  }, ".nav-container.jsx-2194696776{position:-webkit-sticky;position:sticky;top:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcR2FtaW5nIHYyLjBcXERlc2t0b3BcXGNvcmRpbmVXZWJzaXRlTmV4dFxcY29tcG9uZW50c1xcTmF2QmFyLmpzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFzQkssQUFHdUIsd0NBQ1YsTUFDUCIsImZpbGUiOiJDOlxcVXNlcnNcXEdhbWluZyB2Mi4wXFxEZXNrdG9wXFxjb3JkaW5lV2Vic2l0ZU5leHRcXGNvbXBvbmVudHNcXE5hdkJhci5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIvLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLU5leHQtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVJlYWN0c3RyYXAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxyXG5pbXBvcnQgeyBOYXYsIE5hdkxpbmssIE5hdkl0ZW0gfSBmcm9tICdyZWFjdHN0cmFwJztcclxuLy8gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1SZWFjdC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXHJcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XHJcbmltcG9ydCAnLi4vc2Nzcy9zdHlsZS5zY3NzJztcclxuXHJcbmNvbnN0IE5hdkJhciA9ICgpID0+IHtcclxuXHRyZXR1cm4gKFxyXG5cdFx0PGRpdiBjbGFzc05hbWU9J25hdi1jb250YWluZXIgZ2xhc3MnPlxyXG5cdFx0XHQ8TmF2PlxyXG5cdFx0XHRcdDxOYXZJdGVtPlxyXG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+SG9tZTwvTmF2TGluaz5cclxuXHRcdFx0XHQ8L05hdkl0ZW0+XHJcblx0XHRcdFx0PE5hdkl0ZW0+XHJcblx0XHRcdFx0XHQ8TmF2TGluayBocmVmPScvJz5Gcm9udCBFbmQ8L05hdkxpbms+XHJcblx0XHRcdFx0PC9OYXZJdGVtPlxyXG5cdFx0XHRcdDxOYXZJdGVtPlxyXG5cdFx0XHRcdFx0PE5hdkxpbmsgaHJlZj0nLyc+UHJvamVjdHM8L05hdkxpbms+XHJcblx0XHRcdFx0PC9OYXZJdGVtPlxyXG5cdFx0XHQ8L05hdj5cclxuXHRcdFx0PHN0eWxlIGpzeD5cclxuXHRcdFx0XHR7YFxyXG5cdFx0XHRcdFx0Lm5hdi1jb250YWluZXIge1xyXG5cdFx0XHRcdFx0XHRwb3NpdGlvbjogc3RpY2t5O1xyXG5cdFx0XHRcdFx0XHR0b3A6IDA7XHJcblx0XHRcdFx0XHR9XHJcblx0XHRcdFx0YH1cclxuXHRcdFx0PC9zdHlsZT5cclxuXHRcdDwvZGl2PlxyXG5cdCk7XHJcbn07XHJcbmV4cG9ydCBkZWZhdWx0IE5hdkJhcjtcclxuIl19 */\n/*@ sourceURL=C:\\Users\\Gaming v2.0\\Desktop\\cordineWebsiteNext\\components\\NavBar.jsx */"));
+  }, ".nav-container.jsx-2194696776{position:-webkit-sticky;position:sticky;top:0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3VidW50dS9ibG9nVGVzdC9jb21wb25lbnRzL05hdkJhci5qc3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBc0JLLEFBR3VCLHdDQUNWLE1BQ1AiLCJmaWxlIjoiL2hvbWUvdWJ1bnR1L2Jsb2dUZXN0L2NvbXBvbmVudHMvTmF2QmFyLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIi8vIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tTmV4dC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVJlYWN0c3RyYXAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuaW1wb3J0IHsgTmF2LCBOYXZMaW5rLCBOYXZJdGVtIH0gZnJvbSAncmVhY3RzdHJhcCc7XG4vLyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVJlYWN0LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgJy4uL3Njc3Mvc3R5bGUuc2Nzcyc7XG5cbmNvbnN0IE5hdkJhciA9ICgpID0+IHtcblx0cmV0dXJuIChcblx0XHQ8ZGl2IGNsYXNzTmFtZT0nbmF2LWNvbnRhaW5lciBnbGFzcyc+XG5cdFx0XHQ8TmF2PlxuXHRcdFx0XHQ8TmF2SXRlbT5cblx0XHRcdFx0XHQ8TmF2TGluayBocmVmPScvJz5Ib21lPC9OYXZMaW5rPlxuXHRcdFx0XHQ8L05hdkl0ZW0+XG5cdFx0XHRcdDxOYXZJdGVtPlxuXHRcdFx0XHRcdDxOYXZMaW5rIGhyZWY9Jy8nPkZyb250IEVuZDwvTmF2TGluaz5cblx0XHRcdFx0PC9OYXZJdGVtPlxuXHRcdFx0XHQ8TmF2SXRlbT5cblx0XHRcdFx0XHQ8TmF2TGluayBocmVmPScvJz5Qcm9qZWN0czwvTmF2TGluaz5cblx0XHRcdFx0PC9OYXZJdGVtPlxuXHRcdFx0PC9OYXY+XG5cdFx0XHQ8c3R5bGUganN4PlxuXHRcdFx0XHR7YFxuXHRcdFx0XHRcdC5uYXYtY29udGFpbmVyIHtcblx0XHRcdFx0XHRcdHBvc2l0aW9uOiBzdGlja3k7XG5cdFx0XHRcdFx0XHR0b3A6IDA7XG5cdFx0XHRcdFx0fVxuXHRcdFx0XHRgfVxuXHRcdFx0PC9zdHlsZT5cblx0XHQ8L2Rpdj5cblx0KTtcbn07XG5leHBvcnQgZGVmYXVsdCBOYXZCYXI7XG4iXX0= */\n/*@ sourceURL=/home/ubuntu/blogTest/components/NavBar.jsx */"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NavBar);
@@ -832,19 +894,28 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
   let onChange = e => {
     actions({
-      type: 'setState',
+      type: "setState",
       payload: {
         searchQuery: e.target.value
       }
     });
     Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])().then(res => actions({
-      type: 'setState',
+      type: "setState",
       payload: {
         frontEndPosts: [...res]
       }
     }));
   };
 
+  if (!state.frontEndPosts.length > 0) Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])().then(res => {
+    console.log(res);
+    actions({
+      type: "setState",
+      payload: {
+        frontEndPosts: [...res]
+      }
+    });
+  }).catch(err => console.log(err));
   return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
     picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
@@ -855,24 +926,23 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     className: "quickSand"
   }, __jsx("span", {
     style: {
-      color: 'white'
+      color: "white"
     }
-  }, "New York"), ' ', "Web Developer"), __jsx("div", {
+  }, "New York"), " Web Developer"), __jsx("div", {
     className: "search-container d-none d-md-block"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
     type: "search",
     placeholder: "What are you looking for?",
-    value: state.searchQuery,
     onChange: onChange
   }), __jsx("p", {
     className: "subsearch"
-  }, "Use the search bar above to immediately find", ' ', __jsx("a", {
+  }, "Use the search bar above to immediately find", " ", __jsx("a", {
     href: "#"
   }, "related work"), " I've done, or scroll down to view my featured projects and front end design.")), __jsx("p", null, __jsx("a", {
     href: "https://github.com/gryphbecrazeh"
-  }, "GitHub"), ",", ' ', __jsx("a", {
+  }, "GitHub"), ",", " ", __jsx("a", {
     href: "https://codepen.io/gryphbecrazeh"
-  }, "Codepen"), ", ", __jsx("a", {
+  }, "Codepen"), ",", " ", __jsx("a", {
     href: "/projects"
   }, "Projects")), __jsx("div", {
     className: "resume-button"
@@ -920,7 +990,7 @@ const Context = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gaming v2.0\Desktop\cordineWebsiteNext\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/ubuntu/blogTest/pages/index.js */"./pages/index.js");
 
 
 /***/ }),

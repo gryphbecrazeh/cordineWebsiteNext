@@ -5,23 +5,23 @@ $background: #334;
 $small_image_scale: 50px;
 // ##############################--Global Fonts--##############################
 .oswald {
-	font-family: 'Oswald', sans-serif;
+	font-family: "Oswald", sans-serif;
 }
 .quickSand {
-	font-family: 'Quicksand', sans-serif;
+	font-family: "Quicksand", sans-serif;
 }
 .vibes {
-	font-family: 'Vibes', cursive;
+	font-family: "Vibes", cursive;
 }
 .shadows {
-	font-family: 'Shadows Into Light', cursive;
+	font-family: "Shadows Into Light", cursive;
 }
 
 .elite {
-	font-family: 'Special Elite', cursive;
+	font-family: "Special Elite", cursive;
 }
 .bangers {
-	font-family: 'Bangers', cursive;
+	font-family: "Bangers", cursive;
 }
 // ##############################--Global Classes--##############################
 .glass {
@@ -149,13 +149,17 @@ body {
 #related-work {
 	position: relative;
 	width: 100%;
-	height: 100vh;
 	// box-shadow: inset 0 0 10em black;
 	background-color: #333;
 	color: white;
 	padding: 2em;
 }
 // ##############################--Feature Card--##############################
+.featured-card-output {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
 .featured-cards {
 	position: relative;
 	button.addPost {
@@ -164,9 +168,10 @@ body {
 		right: 1em;
 	}
 }
+
 .card {
 	color: white;
-	background-color: #334;
+	background-color: #334 !important;
 	background-image: linear-gradient(
 		-70deg,
 		rgba(0, 0, 0, 0.3),
@@ -214,15 +219,16 @@ body {
 	.img-box {
 		width: 5em;
 		height: 5em;
-		background-color: tomato;
+		background-color: orange;
 		border-radius: 5px;
 		box-shadow: 0 0 5px black;
 		transition: height 500ms ease-in-out, width 500ms ease-in-out;
 		box-sizing: border-box;
+		margin: 0.25em;
 	}
 	.img-box:hover {
-		width: 8em;
-		height: 8em;
+		// width: 8em;
+		// height: 8em;
 		cursor: pointer;
 	}
 	.card-title {
@@ -230,7 +236,7 @@ body {
 		text-align: center;
 	}
 	.view-now-button {
-		background-color: tomato;
+		background-color: orange;
 		border-radius: 5px;
 		text-align: center;
 		padding: 0.5em;
@@ -244,7 +250,7 @@ body {
 	.active-image-container {
 		width: 100%;
 		height: 10em;
-		background-color: tomato;
+		background-color: orange;
 		border-radius: 5px;
 		box-shadow: 0 0 5px black;
 	}
@@ -252,6 +258,7 @@ body {
 		padding: 0.5em;
 		font-size: 0.7em;
 		text-align: center;
+		display: flex;
 	}
 }
 // ##############################--Feature Modals--##############################
