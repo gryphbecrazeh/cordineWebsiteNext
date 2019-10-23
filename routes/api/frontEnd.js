@@ -10,13 +10,10 @@ const FrontEnd = require("../../models/FrontEnd");
 router.get("/", (req, res) => {
 	FrontEnd.find()
 		.sort({ date: -1 })
-		.then(posts => res.json(posts))
-		.catch(err =>
-			res.status(400).json({
-				success: false,
-				msg: err
-			})
-		);
+		.then((posts = []) => {
+			res.json([...posts]);
+		})
+		.catch(err => console.log("err"));
 });
 
 // @route POST api/frontEnd
@@ -40,15 +37,25 @@ router.post("/", (req, res) => {
 		);
 });
 
+// @route PUT api/frontEnd
+// @desc Update Post
+// @access PUBLIC
 router.put("/:id", (req, res) => {
 	let updatedPost = req.body;
 	FrontEnd.findByIdAndUpdate(updatedPost._id, updatedPost)
 		.then(post =>
-			res.json({ success: true, msg: "Post was updated Successfully" })
+			res.json({
+				post: post,
+				success: true,
+				msg: "Post was updated Successfully"
+			})
 		)
 		.catch(err => res.status(404).json({ success: false }));
 });
 
+// @route DELETE api/frontEnd
+// @desc Delete Post
+// @access PUBLIC
 router.delete("/:id", (req, res) => {
 	let target = req.params.id;
 	FrontEnd.findById(target)

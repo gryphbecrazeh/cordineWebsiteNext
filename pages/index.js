@@ -25,19 +25,10 @@ export default () => {
 				searchQuery: e.target.value
 			}
 		});
-		getFrontEndItems().then(res =>
-			actions({
-				type: "setState",
-				payload: {
-					frontEndPosts: [...res]
-				}
-			})
-		);
 	};
 	if (!state.frontEndPosts.length > 0)
 		getFrontEndItems()
-			.then(res => {
-				console.log(res);
+			.then((res = []) => {
 				actions({
 					type: "setState",
 					payload: {

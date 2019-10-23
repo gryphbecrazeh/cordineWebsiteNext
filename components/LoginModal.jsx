@@ -1,5 +1,5 @@
 // -----------------------------------------React-----------------------------------------
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext } from "react";
 // -----------------------------------------Reactstrap-----------------------------------------
 import {
 	Container,
@@ -16,23 +16,23 @@ import {
 	InputGroup,
 	InputGroupAddon,
 	Label
-} from 'reactstrap';
+} from "reactstrap";
 // -----------------------------------------React Hooks-----------------------------------------
-import Context from '../store/context';
+import Context from "../store/context";
 // -----------------------------------------Actions-----------------------------------------
-import { login } from '../actions/AuthActions';
+import { login } from "../actions/AuthActions";
 
 const LoginModal = () => {
-	const [user, updateUser] = useState({ userName: '', password: '' });
+	const [user, updateUser] = useState({ userName: "", password: "" });
 	const { state, actions } = useContext(Context);
 	const { auth } = state;
 
 	// Officially logs in the user
 	const handleLogin = user => {
 		actions({
-			type: 'setState',
+			type: "setState",
 			payload: {
-				auth: { user: user.userName, isAuth: true, role: 'admin' }
+				auth: { user: user.userName, isAuth: true, role: "admin" }
 			}
 		});
 	};
@@ -40,16 +40,16 @@ const LoginModal = () => {
 	const attemptLogin = async () => {
 		await login(user)
 			.then(res => handleLogin(res))
-			.catch(err => alert('Something went wrong'));
+			.catch(err => alert("Something went wrong"));
 	};
 
 	// Toggle is accomplished by making the active user a guest again, login modal is based on whether isAuth is true, authorized guests is the default value
 	const toggle = () => {
 		actions({
-			type: 'setState',
+			type: "setState",
 			payload: {
 				auth: {
-					user: 'guest',
+					user: "guest",
 					isAuth: true
 				}
 			}
@@ -63,28 +63,26 @@ const LoginModal = () => {
 
 	return (
 		<Modal isOpen={!auth.isAuth} toggle={toggle}>
-			<ModalHeader toggle={toggle}>
-				Please Log in to Continue...
-			</ModalHeader>
+			<ModalHeader toggle={toggle}>Please Log in to Continue...</ModalHeader>
 			<ModalBody>
 				<Form>
 					<FormGroup>
 						<Label>User</Label>
 						<Input
-							name='userName'
-							placeholder='username'
-							type='username'
+							name="userName"
+							placeholder="username"
+							type="username"
 							onChange={updateField}
 						/>
 						<Label>Password</Label>
 						<Input
-							name='password'
-							placeholder='password'
-							type='password'
+							name="password"
+							placeholder="password"
+							type="password"
 							onChange={updateField}
 						/>
 					</FormGroup>
-					<Button block color='warning' onClick={attemptLogin}>
+					<Button block color="warning" onClick={attemptLogin}>
 						Log In
 					</Button>
 				</Form>

@@ -22,7 +22,7 @@ const FeaturedCards = ({ id, children }) => {
 			</Button>
 		</Fragment>
 	);
-	console.log(state);
+	// console.log(state);
 	return (
 		<section id={id} className="featured-cards">
 			{state.auth.role === "admin" ? addPost : ""}

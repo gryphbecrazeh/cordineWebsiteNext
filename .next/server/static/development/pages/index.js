@@ -97,20 +97,27 @@ module.exports =
 /*!********************************!*\
   !*** ./actions/AuthActions.js ***!
   \********************************/
-/*! exports provided: login */
+/*! exports provided: login, handleConnection */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleConnection", function() { return handleConnection; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 // -----------------------------------------Axios-----------------------------------------
 
 const login = async user => {
-  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/auth', user).then(res => {
+  console.log("logging in");
+  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/auth", user).then(res => {
+    console.log(res);
+    localStorage.setItem("token", res.data.user.token);
     return res.data.user;
   }).catch(err => console.log(err));
+};
+const handleConnection = () => {
+  let token = localStorage.getItem("token");
 };
 
 /***/ }),
@@ -131,13 +138,14 @@ __webpack_require__.r(__webpack_exports__);
 // -----------------------------------------Axios-----------------------------------------
 
 const getFrontEndItems = async () => {
-  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/frontEnd').then(res => {
-    console.log(res.data);
-    return [...res.data];
-  }).catch(err => console.log('error', err));
+  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/frontEnd").then(res => {
+    let response = [];
+    if (res.data.length > 0) response = [...res.data];
+    return [...response];
+  }).catch(err => console.log("err"));
 };
 const addFrontEndItem = async item => {
-  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/frontEnd', item).then(res => res).catch(err => console.log(err));
+  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(`/api/frontEnd/${item._id}`, item).then(res => res).catch(err => console.log(err));
 };
 
 /***/ }),
@@ -347,33 +355,33 @@ const FeatureCard = ({
     technologies
   } = post;
   return __jsx("div", {
-    class: "card relative"
+    className: "card relative"
   }, __jsx("div", {
-    class: "row"
+    className: "row"
   }, __jsx("h2", {
-    class: "card-title"
+    className: "card-title"
   }, title)), __jsx("div", {
-    class: "row"
+    className: "row"
   }, __jsx("div", {
-    class: "technologies"
+    className: "technologies"
   }, technologies.map(item => __jsx("div", null, item))), __jsx("div", {
-    class: "view-now-button"
+    className: "view-now-button"
   }, "View Now")), __jsx("div", {
-    class: "row relative"
+    className: "row relative"
   }, __jsx("div", {
-    class: "active-image-container"
+    className: "active-image-container"
   })), __jsx("div", {
-    class: "row image-container"
+    className: "row image-container"
   }, __jsx("div", {
-    class: "img-box"
+    className: "img-box"
   }), __jsx("div", {
-    class: "img-box"
+    className: "img-box"
   }), __jsx("div", {
-    class: "img-box"
+    className: "img-box"
   }), __jsx("div", {
-    class: "img-box"
+    className: "img-box"
   }), __jsx("div", {
-    class: "img-box"
+    className: "img-box"
   })));
 };
 
@@ -434,9 +442,9 @@ const FeaturedCards = ({
   let addPost = __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     className: "addPost",
     onClick: toggleModal
-  }, "+"));
+  }, "+")); // console.log(state);
 
-  console.log(state);
+
   return __jsx("section", {
     id: id,
     className: "featured-cards"
@@ -486,8 +494,8 @@ const LoginModal = () => {
     0: user,
     1: updateUser
   } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
-    userName: '',
-    password: ''
+    userName: "",
+    password: ""
   });
   const {
     state,
@@ -499,12 +507,12 @@ const LoginModal = () => {
 
   const handleLogin = user => {
     actions({
-      type: 'setState',
+      type: "setState",
       payload: {
         auth: {
           user: user.userName,
           isAuth: true,
-          role: 'admin'
+          role: "admin"
         }
       }
     });
@@ -512,16 +520,16 @@ const LoginModal = () => {
 
 
   const attemptLogin = async () => {
-    await Object(_actions_AuthActions__WEBPACK_IMPORTED_MODULE_4__["login"])(user).then(res => handleLogin(res)).catch(err => alert('Something went wrong'));
+    await Object(_actions_AuthActions__WEBPACK_IMPORTED_MODULE_4__["login"])(user).then(res => handleLogin(res)).catch(err => alert("Something went wrong"));
   }; // Toggle is accomplished by making the active user a guest again, login modal is based on whether isAuth is true, authorized guests is the default value
 
 
   const toggle = () => {
     actions({
-      type: 'setState',
+      type: "setState",
       payload: {
         auth: {
-          user: 'guest',
+          user: "guest",
           isAuth: true
         }
       }
@@ -899,16 +907,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
         searchQuery: e.target.value
       }
     });
-    Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])().then(res => actions({
-      type: "setState",
-      payload: {
-        frontEndPosts: [...res]
-      }
-    }));
   };
 
-  if (!state.frontEndPosts.length > 0) Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])().then(res => {
-    console.log(res);
+  if (!state.frontEndPosts.length > 0) Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])().then((res = []) => {
     actions({
       type: "setState",
       payload: {

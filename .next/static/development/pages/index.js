@@ -4,12 +4,13 @@
 /*!********************************!*\
   !*** ./actions/AuthActions.js ***!
   \********************************/
-/*! exports provided: login */
+/*! exports provided: login, handleConnection */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleConnection", function() { return handleConnection; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
@@ -29,17 +30,20 @@ function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/auth', user).then(function (res) {
+            console.log("logging in");
+            _context.next = 3;
+            return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/auth", user).then(function (res) {
+              console.log(res);
+              localStorage.setItem("token", res.data.user.token);
               return res.data.user;
             })["catch"](function (err) {
               return console.log(err);
             });
 
-          case 2:
+          case 3:
             return _context.abrupt("return", _context.sent);
 
-          case 3:
+          case 4:
           case "end":
             return _context.stop();
         }
@@ -51,6 +55,9 @@ function () {
     return _ref.apply(this, arguments);
   };
 }();
+var handleConnection = function handleConnection() {
+  var token = localStorage.getItem("token");
+};
 
 /***/ }),
 
@@ -86,11 +93,12 @@ function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            return _context.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/api/frontEnd').then(function (res) {
-              console.log(res.data);
-              return Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(res.data);
+            return _context.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/frontEnd").then(function (res) {
+              var response = [];
+              if (res.data.length > 0) response = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(res.data);
+              return Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(response);
             })["catch"](function (err) {
-              return console.log('error', err);
+              return console.log("err");
             }));
 
           case 1:
@@ -116,7 +124,7 @@ function () {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('/api/frontEnd', item).then(function (res) {
+            return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post("/api/frontEnd/".concat(item._id), item).then(function (res) {
               return res;
             })["catch"](function (err) {
               return console.log(err);
@@ -348,35 +356,35 @@ var FeatureCard = function FeatureCard(_ref) {
   var title = post.title,
       technologies = post.technologies;
   return __jsx("div", {
-    "class": "card relative"
+    className: "card relative"
   }, __jsx("div", {
-    "class": "row"
+    className: "row"
   }, __jsx("h2", {
-    "class": "card-title"
+    className: "card-title"
   }, title)), __jsx("div", {
-    "class": "row"
+    className: "row"
   }, __jsx("div", {
-    "class": "technologies"
+    className: "technologies"
   }, technologies.map(function (item) {
     return __jsx("div", null, item);
   })), __jsx("div", {
-    "class": "view-now-button"
+    className: "view-now-button"
   }, "View Now")), __jsx("div", {
-    "class": "row relative"
+    className: "row relative"
   }, __jsx("div", {
-    "class": "active-image-container"
+    className: "active-image-container"
   })), __jsx("div", {
-    "class": "row image-container"
+    className: "row image-container"
   }, __jsx("div", {
-    "class": "img-box"
+    className: "img-box"
   }), __jsx("div", {
-    "class": "img-box"
+    className: "img-box"
   }), __jsx("div", {
-    "class": "img-box"
+    className: "img-box"
   }), __jsx("div", {
-    "class": "img-box"
+    className: "img-box"
   }), __jsx("div", {
-    "class": "img-box"
+    className: "img-box"
   })));
 };
 
@@ -437,9 +445,9 @@ var FeaturedCards = function FeaturedCards(_ref) {
   var addPost = __jsx(react__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
     className: "addPost",
     onClick: toggleModal
-  }, "+"));
+  }, "+")); // console.log(state);
 
-  console.log(state);
+
   return __jsx("section", {
     id: id,
     className: "featured-cards"
@@ -494,8 +502,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement;
 
 var LoginModal = function LoginModal() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])({
-    userName: '',
-    password: ''
+    userName: "",
+    password: ""
   }),
       user = _useState[0],
       updateUser = _useState[1];
@@ -508,12 +516,12 @@ var LoginModal = function LoginModal() {
 
   var handleLogin = function handleLogin(user) {
     actions({
-      type: 'setState',
+      type: "setState",
       payload: {
         auth: {
           user: user.userName,
           isAuth: true,
-          role: 'admin'
+          role: "admin"
         }
       }
     });
@@ -534,7 +542,7 @@ var LoginModal = function LoginModal() {
               return Object(_actions_AuthActions__WEBPACK_IMPORTED_MODULE_7__["login"])(user).then(function (res) {
                 return handleLogin(res);
               })["catch"](function (err) {
-                return alert('Something went wrong');
+                return alert("Something went wrong");
               });
 
             case 2:
@@ -553,10 +561,10 @@ var LoginModal = function LoginModal() {
 
   var toggle = function toggle() {
     actions({
-      type: 'setState',
+      type: "setState",
       payload: {
         auth: {
-          user: 'guest',
+          user: "guest",
           isAuth: true
         }
       }
@@ -23944,18 +23952,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
         searchQuery: e.target.value
       }
     });
-    Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_9__["getFrontEndItems"])().then(function (res) {
-      return actions({
-        type: "setState",
-        payload: {
-          frontEndPosts: Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(res)
-        }
-      });
-    });
   };
 
-  if (!state.frontEndPosts.length > 0) Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_9__["getFrontEndItems"])().then(function (res) {
-    console.log(res);
+  if (!state.frontEndPosts.length > 0) Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_9__["getFrontEndItems"])().then(function () {
+    var res = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     actions({
       type: "setState",
       payload: {

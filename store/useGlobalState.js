@@ -1,16 +1,17 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const useGlobalState = () => {
 	let [state, setState] = useState({
-		searchQuery: '',
-		auth: { user: 'guest', isAuth: true, role: 'guest' },
+		searchQuery: "",
+		auth: { user: "guest", isAuth: true, role: "guest" },
 		frontEndPosts: []
 	});
 	const actions = action => {
 		let { type, payload } = action;
 		switch (type) {
-			case 'setState':
+			case "setState": {
 				return setState({ ...state, ...payload });
+			}
 			default:
 				return state;
 		}
