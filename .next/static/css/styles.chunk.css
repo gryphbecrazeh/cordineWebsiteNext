@@ -120,6 +120,8 @@ a:hover {
   background-image: linear-gradient(180deg, #0b0c0c 70%, #1f2529);
   color: white;
   padding: 2em; }
+  #related-work h3 {
+    text-decoration: underline; }
   #related-work p {
     text-indent: 2em; }
   #related-work p::first-letter,
@@ -158,7 +160,7 @@ a:hover {
   .card .row {
     display: flex;
     flex-direction: row;
-    padding-bottom: 1em; }
+    padding-bottom: 0.25em; }
   .card .description {
     text-align: left; }
   .card .row * {
@@ -192,10 +194,13 @@ a:hover {
     box-sizing: border-box;
     margin: 0.25em; }
   .card .img-box:hover {
+    width: 6em;
+    height: 6em;
     cursor: pointer; }
   .card .card-title {
     font-size: 1em;
-    text-align: center; }
+    text-align: center;
+    text-decoration: underline; }
   .card .view-now-button {
     background-color: #1f2529;
     border-radius: 5px;
@@ -205,7 +210,8 @@ a:hover {
     box-shadow: inset 0 0 2px black;
     transition: box-shadow 250ms ease-in-out; }
   .card .view-now-button:hover {
-    box-shadow: inset 0 0 5px black; }
+    box-shadow: inset 0 0 5px black;
+    text-shadow: 0 0 5px white; }
   .card .active-image-container {
     width: 100%;
     height: 10em;

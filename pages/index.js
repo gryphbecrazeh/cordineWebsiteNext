@@ -63,8 +63,9 @@ export default () => {
 										/>
 										<p className="subsearch">
 											Use the search bar above to immediately find{" "}
-											<a href="#">related work</a> I've done, or scroll down to
-											view my featured projects and front end design.
+											<a href="#related-work">related work</a> I've done, or
+											scroll down to view my featured projects and front end
+											design.
 										</p>
 									</div>
 

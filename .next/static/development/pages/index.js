@@ -369,7 +369,9 @@ var FeatureCard = function FeatureCard(_ref) {
     className: "row"
   }, __jsx("div", {
     className: "technologies"
-  }, "Technologies:", " ", technologies.map(function (item, index) {
+  }, __jsx("span", {
+    className: "accent"
+  }, "Tech"), ":", " ", technologies.map(function (item, index) {
     return __jsx("span", {
       key: "".concat(key, "-tech-").concat(index)
     }, item, " ");
@@ -658,7 +660,10 @@ var Logo = function Logo() {
 
   var handleLogin = function handleLogin() {
     if (loginReady) openModal();
-  };
+  }; // Convert this Component into a tray with links to the virtual resume, github, codepen, and projects
+  // add a tool tip to the top that explains the functionality of the icon
+  // tray is collapsable
+
 
   return __jsx("img", {
     src: _images_chrisWebsiteLogo_W_svg__WEBPACK_IMPORTED_MODULE_2___default.a,
@@ -23999,7 +24004,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
   }), __jsx("p", {
     className: "subsearch"
   }, "Use the search bar above to immediately find", " ", __jsx("a", {
-    href: "#"
+    href: "#related-work"
   }, "related work"), " I've done, or scroll down to view my featured projects and front end design.")), __jsx("p", null, __jsx("a", {
     href: "https://github.com/gryphbecrazeh"
   }, "GitHub"), ",", " ", __jsx("a", {

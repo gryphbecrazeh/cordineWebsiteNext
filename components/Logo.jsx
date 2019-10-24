@@ -22,6 +22,9 @@ const Logo = () => {
 	const handleLogin = () => {
 		if (loginReady) openModal();
 	};
+	// Convert this Component into a tray with links to the virtual resume, github, codepen, and projects
+	// add a tool tip to the top that explains the functionality of the icon
+	// tray is collapsable
 	return (
 		<img
 			src={LogoIcon}
