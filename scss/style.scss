@@ -1,7 +1,11 @@
 // ##############################--Global Variables--##############################
 $accent: orange;
 $accent-2: white;
-$background: #334;
+// $accent-3: #55a;
+// $accent-3: #335;
+$accent-3: rgba(31, 37, 41, 1);
+$background-light: #334;
+$background: rgba(11, 12, 12, 1);
 $small_image_scale: 50px;
 // ##############################--Global Fonts--##############################
 .oswald {
@@ -28,9 +32,9 @@ $small_image_scale: 50px;
 	background-image: linear-gradient(
 		-70deg,
 		rgba(0, 0, 0, 0.3),
-		rgba(10, 10, 0, 0.2) 100%,
+		rgba(10, 10, 0, 0.2),
 		rgba(0, 0, 0, 0.5)
-	);
+	) !important;
 	box-shadow: 0 0 5px black;
 }
 .centeredHeading {
@@ -51,9 +55,11 @@ $small_image_scale: 50px;
 body {
 	margin: 0;
 	padding: 0;
+	margin-bottom: 20em !important;
 	header {
 		width: 100%;
 	}
+	background: $accent-3 !important;
 }
 // ##############################--Images--##############################
 
@@ -78,7 +84,7 @@ body {
 
 // ##############################--Hero--##############################
 .hero {
-	color: white;
+	color: $accent-2;
 	text-align: center;
 	justify-content: center;
 	align-items: center;
@@ -109,8 +115,8 @@ body {
 	.resume-button a:hover {
 		// background: $accent;
 		font-weight: bold;
-		color: white;
-		border: 3px solid white;
+		color: $accent-2;
+		border: 3px solid $accent-2;
 	}
 	// ##############################--Sections--##############################
 	.subsearch {
@@ -136,7 +142,7 @@ body {
 		}
 		input:focus {
 			background-color: rgba(0, 0, 0, 0);
-			color: white;
+			color: $accent-2;
 			border: $accent 3px solid;
 			box-shadow: 0 2px 5px black;
 		}
@@ -150,8 +156,8 @@ body {
 	position: relative;
 	width: 100%;
 	// box-shadow: inset 0 0 10em black;
-	background-color: rgba(11, 12, 12, 1);
-	color: white;
+	background-image: linear-gradient(180deg, $background 70%, $accent-3);
+	color: $accent-2;
 	padding: 2em;
 }
 // ##############################--Feature Card--##############################
@@ -173,15 +179,16 @@ body {
 }
 
 .card {
-	color: white;
-	background-color: #334 !important;
+	color: $accent-2;
+	background-color: $background !important;
 	background-image: linear-gradient(
 		-70deg,
 		rgba(0, 0, 0, 0.3),
-		rgba(150, 70, 0, 0.2),
+		$accent-3,
 		rgba(0, 0, 0, 0.5)
 	);
 	padding: 1.5em;
+	border-color: $accent !important;
 	border-radius: 5px;
 	box-shadow: 0 3px 5px black;
 	display: flex;
@@ -222,7 +229,7 @@ body {
 	.img-box {
 		width: 5em;
 		height: 5em;
-		background-color: orange;
+		background-color: $accent-3;
 		border-radius: 5px;
 		box-shadow: 0 0 5px black;
 		transition: height 500ms ease-in-out, width 500ms ease-in-out;
@@ -239,7 +246,7 @@ body {
 		text-align: center;
 	}
 	.view-now-button {
-		background-color: orange;
+		background-color: $accent-3;
 		border-radius: 5px;
 		text-align: center;
 		padding: 0.5em;
@@ -253,7 +260,7 @@ body {
 	.active-image-container {
 		width: 100%;
 		height: 10em;
-		background-color: orange;
+		background-color: $accent-3;
 		border-radius: 5px;
 		box-shadow: 0 0 5px black;
 	}

@@ -17,7 +17,7 @@
   font-family: "Bangers", cursive; }
 
 .glass {
-  background-image: linear-gradient(-70deg, rgba(0, 0, 0, 0.3), rgba(10, 10, 0, 0.2) 100%, rgba(0, 0, 0, 0.5));
+  background-image: linear-gradient(-70deg, rgba(0, 0, 0, 0.3), rgba(10, 10, 0, 0.2), rgba(0, 0, 0, 0.5)) !important;
   box-shadow: 0 0 5px black; }
 
 .centeredHeading {
@@ -25,7 +25,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #334;
+  background-color: #0b0c0c;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -36,7 +36,9 @@
 
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  margin-bottom: 20em !important;
+  background: #1f2529 !important; }
   body header {
     width: 100%; }
 
@@ -110,7 +112,7 @@ body {
 #related-work {
   position: relative;
   width: 100%;
-  background-color: #0b0c0c;
+  background-image: linear-gradient(180deg, #0b0c0c 70%, #1f2529);
   color: white;
   padding: 2em; }
 
@@ -130,9 +132,10 @@ body {
 
 .card {
   color: white;
-  background-color: #334 !important;
-  background-image: linear-gradient(-70deg, rgba(0, 0, 0, 0.3), rgba(150, 70, 0, 0.2), rgba(0, 0, 0, 0.5));
+  background-color: #0b0c0c !important;
+  background-image: linear-gradient(-70deg, rgba(0, 0, 0, 0.3), #1f2529, rgba(0, 0, 0, 0.5));
   padding: 1.5em;
+  border-color: orange !important;
   border-radius: 5px;
   box-shadow: 0 3px 5px black;
   display: flex;
@@ -166,7 +169,7 @@ body {
   .card .img-box {
     width: 5em;
     height: 5em;
-    background-color: orange;
+    background-color: #1f2529;
     border-radius: 5px;
     box-shadow: 0 0 5px black;
     transition: height 500ms ease-in-out, width 500ms ease-in-out;
@@ -178,7 +181,7 @@ body {
     font-size: 1em;
     text-align: center; }
   .card .view-now-button {
-    background-color: orange;
+    background-color: #1f2529;
     border-radius: 5px;
     text-align: center;
     padding: 0.5em;
@@ -190,7 +193,7 @@ body {
   .card .active-image-container {
     width: 100%;
     height: 10em;
-    background-color: orange;
+    background-color: #1f2529;
     border-radius: 5px;
     box-shadow: 0 0 5px black; }
   .card .technologies {
