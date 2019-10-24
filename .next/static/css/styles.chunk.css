@@ -34,6 +34,9 @@
 .fa-link * {
   font-size: 10px; }
 
+.accent {
+  color: orange; }
+
 body {
   margin: 0;
   padding: 0;
@@ -41,6 +44,12 @@ body {
   background: #1f2529 !important; }
   body header {
     width: 100%; }
+
+a {
+  color: orange !important; }
+
+a:hover {
+  color: orange !important; }
 
 .logo {
   max-width: 50px;
@@ -68,10 +77,6 @@ body {
   padding: 2em; }
   .hero h1 {
     text-shadow: 0 2px 5px black;
-    color: orange; }
-  .hero a {
-    color: orange; }
-  .hero a:hover {
     color: orange; }
   .hero .resume-button a {
     background: rgba(0, 0, 0, 0);
@@ -115,6 +120,14 @@ body {
   background-image: linear-gradient(180deg, #0b0c0c 70%, #1f2529);
   color: white;
   padding: 2em; }
+  #related-work p {
+    text-indent: 2em; }
+  #related-work p::first-letter,
+  #related-work .card-title::first-letter {
+    font-size: 1em;
+    font-weight: bold;
+    color: orange;
+    text-transform: uppercase; }
 
 .feature-card-output {
   width: 100%;
@@ -140,11 +153,14 @@ body {
   box-shadow: 0 3px 5px black;
   display: flex;
   flex-direction: column;
-  max-width: 30em; }
+  max-width: 30em;
+  transition: box-shadow 250ms ease-in-out; }
   .card .row {
     display: flex;
     flex-direction: row;
     padding-bottom: 1em; }
+  .card .description {
+    text-align: left; }
   .card .row * {
     width: 100%; }
   .card .css-container textarea {
@@ -198,9 +214,10 @@ body {
     box-shadow: 0 0 5px black; }
   .card .technologies {
     padding: 0.5em;
-    font-size: 0.7em;
-    text-align: center;
-    display: flex; }
+    font-size: 0.7em; }
+
+.card:hover {
+  box-shadow: 0 0 10px orange; }
 
 .technology {
   padding: 0.25em;

@@ -348,14 +348,18 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 const FeatureCard = ({
-  post
+  post,
+  key
 }) => {
   let {
     title,
-    technologies
+    technologies,
+    description,
+    _id
   } = post;
   return __jsx("div", {
-    className: "card relative"
+    className: "card relative",
+    key: `${key}`
   }, __jsx("div", {
     className: "row"
   }, __jsx("h2", {
@@ -364,7 +368,15 @@ const FeatureCard = ({
     className: "row"
   }, __jsx("div", {
     className: "technologies"
-  }, technologies.map(item => __jsx("div", null, item))), __jsx("div", {
+  }, "Technologies:", " ", technologies.map((item, index) => __jsx("span", {
+    key: `${key}-tech-${index}`
+  }, item, " ")))), __jsx("div", {
+    className: "row"
+  }, __jsx("p", {
+    className: "description"
+  }, description)), __jsx("div", {
+    className: "row"
+  }, __jsx("div", {
     className: "view-now-button"
   }, "View Now")), __jsx("div", {
     className: "row relative"
@@ -454,7 +466,8 @@ const FeaturedCards = ({
   }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, children)), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx("div", {
     className: "feature-card-output"
   }, [...state.frontEndPosts].map(item => __jsx(_FeatureCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    post: item
+    post: item,
+    key: item._id
   }))))));
 };
 
@@ -951,7 +964,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     href: "/"
   }, "View Virtual Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "related-work"
-  }, __jsx("h2", null, "Featured Work"), __jsx("p", null, "I like to be constantly busy, and frequently work on several projects at a time, and am always writing, working out ideas, and prototyping for proof of concept. I've listed a few of my favorite work below. These range from a basic HTML and CSS templating, to full stack applications with a clear goal in mind."), __jsx("p", null, "Culpa minim nulla sit elit. Sit dolore sint minim cillum. Elit ullamco deserunt sit proident aliquip fugiat aute dolor. Sit pariatur laborum duis ad eu qui deserunt irure laborum irure id reprehenderit mollit magna. Fugiat deserunt mollit aute voluptate pariatur aliquip ullamco cupidatat nulla eiusmod."))));
+  }, __jsx("h3", {
+    className: "accent oswald"
+  }, __jsx("em", null, "Featured Work")), __jsx("p", {
+    className: "elite"
+  }, "I dedicate an ", __jsx("em", {
+    className: "accent"
+  }, "absolutely massive"), " amount of time to studying and experimenting with my never ending list of technologies and design elements. I generally will not go a day without playing with some sort of idea, or investigating and attempting to recreate an interesting feature I've seen online. My codepen is full of random tests, and collections of forks of things that I felt were really cool and interesting. So much so that I've alloccated some space on my website to feature just that."), __jsx("p", {
+    className: "elite"
+  }, "Below you will find a lot of front end work that I have found fun and interesting, most of which being CSS and Bootstrap renditions of mockups I've made or found online. For more advanced front end work, feel free to check out my front-end-only react, and", " ", __jsx("em", {
+    className: "accent"
+  }, "full MERN stack"), " projects", " ", __jsx("a", {
+    className: "accent",
+    href: "/projects"
+  }, "here"), "."))));
 });
 
 /***/ }),

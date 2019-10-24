@@ -51,6 +51,9 @@ $small_image_scale: 50px;
 .fa-link * {
 	font-size: 10px;
 }
+.accent {
+	color: $accent;
+}
 // ##############################--Elements--##############################
 body {
 	margin: 0;
@@ -61,6 +64,13 @@ body {
 	}
 	background: $accent-3 !important;
 }
+a {
+	color: $accent !important;
+}
+a:hover {
+	color: $accent !important;
+}
+
 // ##############################--Images--##############################
 
 .logo {
@@ -95,12 +105,6 @@ body {
 	// ##############################--Elements--##############################
 	h1 {
 		text-shadow: 0 2px 5px black;
-		color: $accent;
-	}
-	a {
-		color: $accent;
-	}
-	a:hover {
 		color: $accent;
 	}
 	.resume-button a {
@@ -159,6 +163,16 @@ body {
 	background-image: linear-gradient(180deg, $background 70%, $accent-3);
 	color: $accent-2;
 	padding: 2em;
+	p {
+		text-indent: 2em;
+	}
+	p::first-letter,
+	.card-title::first-letter {
+		font-size: 1em;
+		font-weight: bold;
+		color: $accent;
+		text-transform: uppercase;
+	}
 }
 // ##############################--Feature Card--##############################
 .feature-card-output {
@@ -194,10 +208,14 @@ body {
 	display: flex;
 	flex-direction: column;
 	max-width: 30em;
+	transition: box-shadow 250ms ease-in-out;
 	.row {
 		display: flex;
 		flex-direction: row;
 		padding-bottom: 1em;
+	}
+	.description {
+		text-align: left;
 	}
 	.row * {
 		width: 100%;
@@ -267,10 +285,14 @@ body {
 	.technologies {
 		padding: 0.5em;
 		font-size: 0.7em;
-		text-align: center;
-		display: flex;
+		// text-align: center;
+		// display: flex;
 	}
 }
+.card:hover {
+	box-shadow: 0 0 10px $accent;
+}
+
 // ##############################--Feature Modals--##############################
 .technology {
 	padding: 0.25em;

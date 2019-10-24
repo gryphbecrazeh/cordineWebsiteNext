@@ -2,6 +2,8 @@
 
 ## Known Bugs
 
+- Attempted to add post on front dev, nothing happened on submit
+
 ## Notes
 
 ### Ubuntu Server

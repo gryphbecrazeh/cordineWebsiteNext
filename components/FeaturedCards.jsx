@@ -34,7 +34,7 @@ const FeaturedCards = ({ id, children }) => {
 				<Row>
 					<div className="feature-card-output">
 						{[...state.frontEndPosts].map(item => (
-							<FeatureCard post={item} />
+							<FeatureCard post={item} key={item._id} />
 						))}
 					</div>
 				</Row>
