@@ -155,9 +155,12 @@ body {
 	padding: 2em;
 }
 // ##############################--Feature Card--##############################
-.featured-card-output {
+.feature-card-output {
+	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+	grid-column-gap: 1em;
+	grid-row-gap: 1em;
 }
 
 .featured-cards {
