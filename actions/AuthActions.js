@@ -2,8 +2,6 @@
 import axios from "axios";
 
 export const login = async user => {
-	console.log("logging in");
-
 	return await axios
 		.post("/api/auth", user)
 		.then(res => {

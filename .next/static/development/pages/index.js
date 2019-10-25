@@ -30,8 +30,7 @@ function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            console.log("logging in");
-            _context.next = 3;
+            _context.next = 2;
             return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/auth", user).then(function (res) {
               console.log(res);
               localStorage.setItem("token", res.data.user.token);
@@ -40,10 +39,10 @@ function () {
               return console.log(err);
             });
 
-          case 3:
+          case 2:
             return _context.abrupt("return", _context.sent);
 
-          case 4:
+          case 3:
           case "end":
             return _context.stop();
         }
@@ -65,13 +64,15 @@ var handleConnection = function handleConnection() {
 /*!************************************!*\
   !*** ./actions/FrontEndActions.js ***!
   \************************************/
-/*! exports provided: getFrontEndItems, addFrontEndItem */
+/*! exports provided: getFrontEndItems, addFrontEndItem, editFrontEndItem, deleteFrontEndItem */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFrontEndItems", function() { return getFrontEndItems; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFrontEndItem", function() { return addFrontEndItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editFrontEndItem", function() { return editFrontEndItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFrontEndItem", function() { return deleteFrontEndItem; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
@@ -143,6 +144,70 @@ function () {
 
   return function addFrontEndItem(_x) {
     return _ref2.apply(this, arguments);
+  };
+}();
+var editFrontEndItem =
+/*#__PURE__*/
+function () {
+  var _ref3 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  /*#__PURE__*/
+  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(item) {
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_3___default.a.put("/api/frontEnd/".concat(item._id), item).then(function (res) {
+              return "not sure what to return here, will think about it later";
+            })["catch"](function (err) {
+              return console.log(err);
+            });
+
+          case 2:
+            return _context3.abrupt("return", _context3.sent);
+
+          case 3:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+
+  return function editFrontEndItem(_x2) {
+    return _ref3.apply(this, arguments);
+  };
+}();
+var deleteFrontEndItem =
+/*#__PURE__*/
+function () {
+  var _ref4 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  /*#__PURE__*/
+  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(item) {
+    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return axios__WEBPACK_IMPORTED_MODULE_3___default.a["delete"]("/api/frontEnd/".concat(item._id)).then(function (res) {
+              return "not sure what to return here, will think about it later";
+            })["catch"](function (err) {
+              return console.log(err);
+            });
+
+          case 2:
+            return _context4.abrupt("return", _context4.sent);
+
+          case 3:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+
+  return function deleteFrontEndItem(_x3) {
+    return _ref4.apply(this, arguments);
   };
 }();
 

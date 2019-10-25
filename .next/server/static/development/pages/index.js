@@ -109,7 +109,6 @@ __webpack_require__.r(__webpack_exports__);
 // -----------------------------------------Axios-----------------------------------------
 
 const login = async user => {
-  console.log("logging in");
   return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/auth", user).then(res => {
     console.log(res);
     localStorage.setItem("token", res.data.user.token);
@@ -126,13 +125,15 @@ const handleConnection = () => {
 /*!************************************!*\
   !*** ./actions/FrontEndActions.js ***!
   \************************************/
-/*! exports provided: getFrontEndItems, addFrontEndItem */
+/*! exports provided: getFrontEndItems, addFrontEndItem, editFrontEndItem, deleteFrontEndItem */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFrontEndItems", function() { return getFrontEndItems; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFrontEndItem", function() { return addFrontEndItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editFrontEndItem", function() { return editFrontEndItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFrontEndItem", function() { return deleteFrontEndItem; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 // -----------------------------------------Axios-----------------------------------------
@@ -146,6 +147,12 @@ const getFrontEndItems = async () => {
 };
 const addFrontEndItem = async item => {
   return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/frontEnd", item).then(res => res).catch(err => console.log(err));
+};
+const editFrontEndItem = async item => {
+  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.put(`/api/frontEnd/${item._id}`, item).then(res => "not sure what to return here, will think about it later").catch(err => console.log(err));
+};
+const deleteFrontEndItem = async item => {
+  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.delete(`/api/frontEnd/${item._id}`).then(res => "not sure what to return here, will think about it later").catch(err => console.log(err));
 };
 
 /***/ }),
