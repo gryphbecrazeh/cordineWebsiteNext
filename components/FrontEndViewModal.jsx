@@ -40,7 +40,7 @@ const FrontEndViewModal = ({ URL_HTML, URL_CSS, URL_JAVASCRIPT }) => {
 			<Modal isOpen={isOpen} toggle={toggleModal} size={getView()}>
 				<ModalBody>Test</ModalBody>
 				<ModalFooter>
-					<ButtonGroup className="d-none d-md-block w-100">
+					<ButtonGroup className="d-none d-lg-block w-100">
 						<Button onClick={changeView} name="desktop">
 							Desktop
 						</Button>

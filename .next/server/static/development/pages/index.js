@@ -545,7 +545,7 @@ const FrontEndViewModal = ({
     toggle: toggleModal,
     size: getView()
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "Test"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
-    className: "d-none d-md-block w-100"
+    className: "d-none d-lg-block w-100"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     onClick: changeView,
     name: "desktop"
@@ -597,7 +597,8 @@ const ImageViewModal = ({
     onClick: toggleModal
   }, children), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
     isOpen: isOpen,
-    toggle: toggleModal
+    toggle: toggleModal,
+    size: "lg"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "Test"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], null, "Test")));
 };
 

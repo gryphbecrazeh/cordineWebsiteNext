@@ -21,7 +21,7 @@ const ImageViewModal = ({ children }) => {
 			<div className="img-button-container" onClick={toggleModal}>
 				{children}
 			</div>
-			<Modal isOpen={isOpen} toggle={toggleModal}>
+			<Modal isOpen={isOpen} toggle={toggleModal} size="lg">
 				<ModalBody>Test</ModalBody>
 				<ModalFooter>Test</ModalFooter>
 			</Modal>

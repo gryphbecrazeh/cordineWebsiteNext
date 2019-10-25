@@ -187,7 +187,11 @@ a:hover {
 	grid-template-columns: repeat(auto-fit, minmax(23em, 1fr));
 	grid-column-gap: 1em;
 	grid-row-gap: 1em;
+	@media (max-width: 991px) {
+		justify-items: center;
+	}
 }
+// 991 - 768
 
 .featured-cards {
 	position: relative;
