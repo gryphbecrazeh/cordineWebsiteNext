@@ -29,7 +29,6 @@ export default () => {
 			})
 		);
 	};
-	console.log(state);
 	if (!state.frontEndPosts.length > 0)
 		getFrontEndItems()
 			.then((res = []) => {

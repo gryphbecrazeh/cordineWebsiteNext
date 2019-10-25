@@ -93,6 +93,52 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./actions/AuthActions.js":
+/*!********************************!*\
+  !*** ./actions/AuthActions.js ***!
+  \********************************/
+/*! exports provided: login, tokenConfig, loadUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tokenConfig", function() { return tokenConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadUser", function() { return loadUser; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+// -----------------------------------------Axios-----------------------------------------
+
+const login = async user => {
+  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/auth", user).then(res => {
+    localStorage.setItem("token", res.data.token);
+    return res.data.user;
+  }).catch(err => console.log(err));
+};
+const tokenConfig = () => {
+  // Get token from local storage
+  const token = localStorage.getItem("token"); // Headers
+
+  const config = {
+    headers: {
+      "Content-type": "application/json"
+    }
+  }; // If token, add to headers
+
+  if (token) {
+    config.headers["x-auth-token"] = token;
+  }
+
+  return config;
+}; // Check token and load user
+
+const loadUser = async () => {
+  // User Loading
+  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/auth/user", tokenConfig()).then(res => res).catch(err => console.log(err));
+};
+
+/***/ }),
+
 /***/ "./components/GlobalStateInjector.jsx":
 /*!********************************************!*\
   !*** ./components/GlobalStateInjector.jsx ***!
@@ -1801,7 +1847,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_GlobalStateInjector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/GlobalStateInjector */ "./components/GlobalStateInjector.jsx");
+/* harmony import */ var _actions_AuthActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/AuthActions */ "./actions/AuthActions.js");
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1812,6 +1860,7 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
       Component,
       pageProps
     } = this.props;
+    Object(_actions_AuthActions__WEBPACK_IMPORTED_MODULE_3__["loadUser"])().then(res => console.log(res)).catch(err => console.log(err));
     return __jsx(_components_GlobalStateInjector__WEBPACK_IMPORTED_MODULE_2__["default"], null, __jsx(Component, pageProps));
   }
 
@@ -1903,6 +1952,17 @@ const useGlobalState = () => {
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 

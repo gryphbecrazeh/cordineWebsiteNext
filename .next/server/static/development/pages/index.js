@@ -97,26 +97,44 @@ module.exports =
 /*!********************************!*\
   !*** ./actions/AuthActions.js ***!
   \********************************/
-/*! exports provided: login, handleConnection */
+/*! exports provided: login, tokenConfig, loadUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleConnection", function() { return handleConnection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tokenConfig", function() { return tokenConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadUser", function() { return loadUser; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 // -----------------------------------------Axios-----------------------------------------
 
 const login = async user => {
   return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/auth", user).then(res => {
-    console.log(res);
-    localStorage.setItem("token", res.data.user.token);
+    localStorage.setItem("token", res.data.token);
     return res.data.user;
   }).catch(err => console.log(err));
 };
-const handleConnection = () => {
-  let token = localStorage.getItem("token");
+const tokenConfig = () => {
+  // Get token from local storage
+  const token = localStorage.getItem("token"); // Headers
+
+  const config = {
+    headers: {
+      "Content-type": "application/json"
+    }
+  }; // If token, add to headers
+
+  if (token) {
+    config.headers["x-auth-token"] = token;
+  }
+
+  return config;
+}; // Check token and load user
+
+const loadUser = async () => {
+  // User Loading
+  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/auth/user", tokenConfig()).then(res => res).catch(err => console.log(err));
 };
 
 /***/ }),
@@ -1058,7 +1076,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     }));
   };
 
-  console.log(state);
   if (!state.frontEndPosts.length > 0) Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])().then((res = []) => {
     actions({
       type: "setState",
