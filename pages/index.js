@@ -91,7 +91,7 @@ export default () => {
 			</Row>
 			<Row>
 				<FeaturedCards id="related-work">
-					<h3 className="accent quickSand">
+					<h3 className="accent quickSand mb-4">
 						<em>
 							<span className="accent-2">Featured</span> Work
 						</em>
@@ -117,6 +117,7 @@ export default () => {
 						</a>
 						.
 					</p>
+					<hr className="mb-5" />
 				</FeaturedCards>
 			</Row>
 		</Document>

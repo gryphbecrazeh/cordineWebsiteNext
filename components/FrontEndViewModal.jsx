@@ -9,20 +9,46 @@ import {
 	ModalBody,
 	ModalHeader,
 	ModalFooter,
-	Button
+	Button,
+	ButtonGroup
 } from "reactstrap";
 
 const FrontEndViewModal = ({ URL_HTML, URL_CSS, URL_JAVASCRIPT }) => {
 	const [isOpen, toggle] = useState(false);
+	const [view, setView] = useState("desktop");
 	const toggleModal = () => {
 		toggle(!isOpen);
 	};
+	const getView = () => {
+		switch (view) {
+			case "desktop":
+				return "xl";
+			case "mobile":
+				return "md";
+			default:
+				return "xl";
+		}
+	};
+	const changeView = e => {
+		setView(e.target.name);
+	};
 	return (
 		<div>
-			<Button onClick={toggleModal}>View Now</Button>
-			<Modal isOpen={isOpen} toggle={toggleModal}>
+			<div className="view-now-button" onClick={toggleModal}>
+				View Now
+			</div>
+			<Modal isOpen={isOpen} toggle={toggleModal} size={getView()}>
 				<ModalBody>Test</ModalBody>
-				<ModalFooter>Test</ModalFooter>
+				<ModalFooter>
+					<ButtonGroup className="d-none d-md-block w-100">
+						<Button onClick={changeView} name="desktop">
+							Desktop
+						</Button>
+						<Button onClick={changeView} name="mobile">
+							Mobile
+						</Button>
+					</ButtonGroup>
+				</ModalFooter>
 			</Modal>
 		</div>
 	);

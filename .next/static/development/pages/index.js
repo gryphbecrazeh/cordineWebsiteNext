@@ -414,9 +414,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ImageViewModal */ "./components/ImageViewModal.jsx");
+/* harmony import */ var _components_FrontEndViewModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/FrontEndViewModal */ "./components/FrontEndViewModal.jsx");
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 // -----------------------------------------React-----------------------------------------
  // -----------------------------------------Components-----------------------------------------
+
 
 
 
@@ -455,9 +457,7 @@ var FeatureCard = function FeatureCard(_ref) {
     className: "description"
   }, description)), __jsx("div", {
     className: "row"
-  }, __jsx("div", {
-    className: "view-now-button"
-  }, "View Now")), __jsx("div", {
+  }, __jsx(_components_FrontEndViewModal__WEBPACK_IMPORTED_MODULE_2__["default"], null)), __jsx("div", {
     className: "row relative"
   }, __jsx("div", {
     className: "active-image-container"
@@ -543,6 +543,80 @@ var FeaturedCards = function FeaturedCards(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FeaturedCards);
+
+/***/ }),
+
+/***/ "./components/FrontEndViewModal.jsx":
+/*!******************************************!*\
+  !*** ./components/FrontEndViewModal.jsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// -----------------------------------------React-----------------------------------------
+ // -----------------------------------------Reactstrap-----------------------------------------
+
+
+
+var FrontEndViewModal = function FrontEndViewModal(_ref) {
+  var URL_HTML = _ref.URL_HTML,
+      URL_CSS = _ref.URL_CSS,
+      URL_JAVASCRIPT = _ref.URL_JAVASCRIPT;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      isOpen = _useState[0],
+      toggle = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("desktop"),
+      view = _useState2[0],
+      setView = _useState2[1];
+
+  var toggleModal = function toggleModal() {
+    toggle(!isOpen);
+  };
+
+  var getView = function getView() {
+    switch (view) {
+      case "desktop":
+        return "xl";
+
+      case "mobile":
+        return "md";
+
+      default:
+        return "xl";
+    }
+  };
+
+  var changeView = function changeView(e) {
+    setView(e.target.name);
+  };
+
+  return __jsx("div", null, __jsx("div", {
+    className: "view-now-button",
+    onClick: toggleModal
+  }, "View Now"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
+    isOpen: isOpen,
+    toggle: toggleModal,
+    size: getView()
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "Test"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
+    className: "d-none d-md-block w-100"
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    onClick: changeView,
+    name: "desktop"
+  }, "Desktop"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    onClick: changeView,
+    name: "mobile"
+  }, "Mobile")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FrontEndViewModal);
 
 /***/ }),
 
@@ -24159,7 +24233,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
   }, "View Virtual Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_8__["default"], {
     id: "related-work"
   }, __jsx("h3", {
-    className: "accent quickSand"
+    className: "accent quickSand mb-4"
   }, __jsx("em", null, __jsx("span", {
     className: "accent-2"
   }, "Featured"), " Work")), __jsx("p", {
@@ -24173,7 +24247,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
   }, "full MERN stack"), " projects", " ", __jsx("a", {
     className: "accent",
     href: "/projects"
-  }, "here"), "."))));
+  }, "here"), "."), __jsx("hr", {
+    className: "mb-5"
+  }))));
 });
 
 /***/ }),

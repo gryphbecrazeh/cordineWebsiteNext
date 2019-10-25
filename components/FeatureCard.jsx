@@ -2,6 +2,8 @@
 import React, { Fragment } from "react";
 // -----------------------------------------Components-----------------------------------------
 import ImageViewModal from "../components/ImageViewModal";
+import FrontEndViewModal from "../components/FrontEndViewModal";
+
 const FeatureCard = ({ post, key }) => {
 	let { title, technologies, description, _id } = post;
 	let authActions = (
@@ -33,7 +35,8 @@ const FeatureCard = ({ post, key }) => {
 				{/* Exchange element below for View Now Modal
 				createElement("div") element.innerHTML=item.html element.style=item.style||+=item.style needs default style that clears all style
 				or create iframe element, and link to a stylesheet that was added and written to specific area on the server */}
-				<div className="view-now-button">View Now</div>
+				<FrontEndViewModal />
+				{/* <div className="view-now-button">View Now</div> */}
 			</div>
 			<div className="row relative">
 				<div className="active-image-container">
