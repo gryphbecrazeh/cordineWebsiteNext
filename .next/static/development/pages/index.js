@@ -413,7 +413,11 @@ var CenteredHeading = function CenteredHeading(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ImageViewModal */ "./components/ImageViewModal.jsx");
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// -----------------------------------------React-----------------------------------------
+ // -----------------------------------------Components-----------------------------------------
+
 
 
 var FeatureCard = function FeatureCard(_ref) {
@@ -423,10 +427,15 @@ var FeatureCard = function FeatureCard(_ref) {
       technologies = post.technologies,
       description = post.description,
       _id = post._id;
+
+  var authActions = __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, __jsx("ul", {
+    className: "auth-post-actions"
+  }, __jsx("li", null, "Edit"), __jsx("li", null, "Delete")));
+
   return __jsx("div", {
     className: "card relative",
     key: "".concat(key)
-  }, __jsx("div", {
+  }, authActions, __jsx("div", {
     className: "row"
   }, __jsx("h2", {
     className: "card-title"
@@ -454,17 +463,7 @@ var FeatureCard = function FeatureCard(_ref) {
     className: "active-image-container"
   })), __jsx("div", {
     className: "row image-container"
-  }, __jsx("div", {
-    className: "img-box"
-  }), __jsx("div", {
-    className: "img-box"
-  }), __jsx("div", {
-    className: "img-box"
-  }), __jsx("div", {
-    className: "img-box"
-  }), __jsx("div", {
-    className: "img-box"
-  })));
+  }, __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FeatureCard);
@@ -544,6 +543,50 @@ var FeaturedCards = function FeaturedCards(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FeaturedCards);
+
+/***/ }),
+
+/***/ "./components/ImageViewModal.jsx":
+/*!***************************************!*\
+  !*** ./components/ImageViewModal.jsx ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// -----------------------------------------React-----------------------------------------
+ // -----------------------------------------Reactstrap-----------------------------------------
+
+
+
+var ImageViewModal = function ImageViewModal(_ref) {
+  var children = _ref.children;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      isOpen = _useState[0],
+      toggle = _useState[1];
+
+  var toggleModal = function toggleModal() {
+    toggle(!isOpen);
+  };
+
+  return __jsx("div", {
+    className: "img-box"
+  }, __jsx("div", {
+    className: "img-button-container",
+    onClick: toggleModal
+  }, children), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
+    isOpen: isOpen,
+    toggle: toggleModal
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "Test"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], null, "Test")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ImageViewModal);
 
 /***/ }),
 

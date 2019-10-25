@@ -251,6 +251,7 @@ a:hover {
 		align-items: center;
 	}
 	.img-box {
+		position: relative;
 		width: 5em;
 		height: 5em;
 		background-color: $accent-3;
@@ -259,6 +260,13 @@ a:hover {
 		transition: height 500ms ease-in-out, width 500ms ease-in-out;
 		box-sizing: border-box;
 		margin: 0.25em;
+		.img-button-container {
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+		}
 	}
 	.img-box:hover {
 		width: 6em;
@@ -295,6 +303,19 @@ a:hover {
 		font-size: 0.7em;
 		// text-align: center;
 		// display: flex;
+	}
+	.auth-post-actions {
+		position: absolute;
+		top: 0.5em;
+		right: 0.5em;
+		display: flex;
+		li {
+			list-style: none;
+		}
+		li:hover {
+			color: $accent;
+			cursor: pointer;
+		}
 	}
 }
 .card:hover {

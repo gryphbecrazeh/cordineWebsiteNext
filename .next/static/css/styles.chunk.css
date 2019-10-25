@@ -188,6 +188,7 @@ a:hover {
     justify-content: space-around;
     align-items: center; }
   .card .img-box {
+    position: relative;
     width: 5em;
     height: 5em;
     background-color: #1f2529;
@@ -196,6 +197,12 @@ a:hover {
     transition: height 500ms ease-in-out, width 500ms ease-in-out;
     box-sizing: border-box;
     margin: 0.25em; }
+    .card .img-box .img-button-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0; }
   .card .img-box:hover {
     width: 6em;
     height: 6em;
@@ -224,6 +231,16 @@ a:hover {
   .card .technologies {
     padding: 0.5em;
     font-size: 0.7em; }
+  .card .auth-post-actions {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    display: flex; }
+    .card .auth-post-actions li {
+      list-style: none; }
+    .card .auth-post-actions li:hover {
+      color: orange;
+      cursor: pointer; }
 
 .card:hover {
   box-shadow: 0 0 10px orange; }

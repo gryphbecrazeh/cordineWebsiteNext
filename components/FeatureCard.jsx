@@ -1,9 +1,20 @@
-import React from "react";
-
+// -----------------------------------------React-----------------------------------------
+import React, { Fragment } from "react";
+// -----------------------------------------Components-----------------------------------------
+import ImageViewModal from "../components/ImageViewModal";
 const FeatureCard = ({ post, key }) => {
 	let { title, technologies, description, _id } = post;
+	let authActions = (
+		<Fragment>
+			<ul className="auth-post-actions">
+				<li>Edit</li>
+				<li>Delete</li>
+			</ul>
+		</Fragment>
+	);
 	return (
 		<div className="card relative" key={`${key}`}>
+			{authActions}
 			<div className="row">
 				<h2 className="card-title">{title}</h2>
 			</div>
@@ -32,11 +43,11 @@ const FeatureCard = ({ post, key }) => {
 			</div>
 			<div className="row image-container">
 				{/* Replace with for loop */}
-				<div className="img-box"></div>
-				<div className="img-box"></div>
-				<div className="img-box"></div>
-				<div className="img-box"></div>
-				<div className="img-box"></div>
+				<ImageViewModal></ImageViewModal>
+				<ImageViewModal></ImageViewModal>
+				<ImageViewModal></ImageViewModal>
+				<ImageViewModal></ImageViewModal>
+				<ImageViewModal></ImageViewModal>
 			</div>
 		</div>
 	);
