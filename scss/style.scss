@@ -1,6 +1,6 @@
 // ##############################--Global Variables--##############################
 $accent: orange;
-$accent-2: white;
+$accent-2: #ccc;
 $accent-3: rgba(31, 37, 41, 1);
 $accent-4: #55a;
 $accent-5: #335;
@@ -363,4 +363,51 @@ a:hover {
 	grid-gap: 3px;
 	grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
 	margin-bottom: 2em;
+}
+
+#resume {
+	padding: 1em;
+	color: $accent-2;
+	li {
+		list-style: none;
+	}
+	h3 {
+		// color: $accent;
+		// text-decoration: underline;
+	}
+	p {
+		text-indent: 2em;
+	}
+	#personal {
+		display: flex;
+		justify-content: space-evenly;
+		.name {
+			font-size: 2em;
+		}
+		.title {
+			font-size: 1em;
+			line-height: 3.5em;
+		}
+	}
+	#projects {
+		em {
+			color: $accent;
+		}
+	}
+	#skills {
+		li {
+			list-style: circle;
+		}
+	}
+	#work-experience {
+		em {
+			text-indent: 40px;
+		}
+		li {
+			list-style: square;
+		}
+		strong {
+			color: $accent;
+		}
+	}
 }

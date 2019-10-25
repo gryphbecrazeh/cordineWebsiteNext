@@ -7529,20 +7529,20 @@ module.exports = function() {
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.js!./":
-/*!***********************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.js ***!
-  \***********************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.jsx!./":
+/*!************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.jsx ***!
+  \************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
-      var mod = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
+      var mod = __webpack_require__(/*! ./pages/index.jsx */ "./pages/index.jsx")
       if(true) {
-        module.hot.accept(/*! ./pages/index.js */ "./pages/index.js", function() {
+        module.hot.accept(/*! ./pages/index.jsx */ "./pages/index.jsx", function() {
           if(!next.router.components["/"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
+          var updatedPage = __webpack_require__(/*! ./pages/index.jsx */ "./pages/index.jsx")
           next.router.update("/", updatedPage)
         })
       }
@@ -24102,10 +24102,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/index.jsx":
+/*!*************************!*\
+  !*** ./pages/index.jsx ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -24115,12 +24115,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! reactstrap */ "./node_modules/reactstrap/es/index.js");
 /* harmony import */ var _components_CenteredHeading__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/CenteredHeading */ "./components/CenteredHeading.jsx");
 /* harmony import */ var _components_FeaturedCards__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/FeaturedCards */ "./components/FeaturedCards.jsx");
 /* harmony import */ var _layouts_document__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../layouts/document */ "./layouts/document.jsx");
@@ -24129,25 +24129,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
-// -----------------------------------------Sass-----------------------------------------
- // -----------------------------------------Reactstrap-----------------------------------------
-
- // -----------------------------------------React-----------------------------------------
-
+var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+// -----------------------------------------React-----------------------------------------
  // -----------------------------------------React Hooks-----------------------------------------
+
+ // -----------------------------------------Sass-----------------------------------------
+
+ // -----------------------------------------Reactstrap-----------------------------------------
 
  // -----------------------------------------Components-----------------------------------------
 
 
 
 
- // -----------------------------------------Resources-----------------------------------------
-// -----------------------------------------Actions-----------------------------------------
+ // -----------------------------------------Actions-----------------------------------------
 
+ // -----------------------------------------Resources-----------------------------------------
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_5__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_6__["default"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_3__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_4__["default"]),
       state = _useContext.state,
       actions = _useContext.actions;
 
@@ -24199,21 +24199,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
   })["catch"](function (err) {
     return console.log(err);
   });
-  return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_9__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_9__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_6__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_7__["default"], {
     picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Container"], {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_6__["Container"], {
     fluid: true
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Row"], {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_6__["Row"], {
     className: "hero"
   }, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_10__["default"], null), __jsx("div", null, __jsx("h1", {
     className: "quickSand"
   }, __jsx("span", {
-    style: {
-      color: "white"
-    }
+    className: "accent-2"
   }, "New York"), " Web Developer"), __jsx("div", {
     className: "search-container d-none d-md-block"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Input"], {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_6__["Input"], {
     type: "search",
     placeholder: "What are you looking for?",
     onChange: onChange
@@ -24230,8 +24228,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
   }, "Projects")), __jsx("div", {
     className: "resume-button"
   }, __jsx("a", {
-    href: "/"
-  }, "View Virtual Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_4__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    href: "/resume"
+  }, "View Virtual Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_6__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_8__["default"], {
     id: "related-work"
   }, __jsx("h3", {
     className: "accent quickSand mb-4"
@@ -24273,13 +24271,13 @@ var Context = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.js ***!
-  \***************************************************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.jsx ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.jsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.jsx!./");
 
 
 /***/ }),

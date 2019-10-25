@@ -38,7 +38,7 @@
   color: orange; }
 
 .accent-2 {
-  color: white; }
+  color: #ccc; }
 
 body {
   margin: 0;
@@ -71,7 +71,7 @@ a:hover {
     color: orange; }
 
 .hero {
-  color: white;
+  color: #ccc;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -91,8 +91,8 @@ a:hover {
     border: 3px solid rgba(0, 0, 0, 0); }
   .hero .resume-button a:hover {
     font-weight: bold;
-    color: white;
-    border: 3px solid white; }
+    color: #ccc;
+    border: 3px solid #ccc; }
   .hero .subsearch {
     margin-top: 0.5em; }
   .hero .search-container {
@@ -103,25 +103,25 @@ a:hover {
       border-radius: 5px;
       background-color: rgba(255, 255, 255, 0);
       border: orange 3px solid;
-      color: white;
+      color: #ccc;
       padding: 0.5em;
       box-shadow: 0 2px 5px black; }
     .hero .search-container input:focus::placeholder {
       border-radius: 5px; }
     .hero .search-container input:focus {
       background-color: rgba(0, 0, 0, 0);
-      color: white;
+      color: #ccc;
       border: orange 3px solid;
       box-shadow: 0 2px 5px black; }
     .hero .search-container input::placeholder {
-      color: white;
+      color: #ccc;
       text-align: center; }
 
 #related-work {
   position: relative;
   width: 100%;
   background-image: linear-gradient(180deg, #0b0c0c 70%, #1f2529);
-  color: white;
+  color: #ccc;
   padding: 2em; }
   #related-work h3 {
     text-decoration: underline; }
@@ -152,7 +152,7 @@ a:hover {
     right: 1em; }
 
 .card {
-  color: white;
+  color: #ccc;
   background-color: #0b0c0c !important;
   background-image: linear-gradient(-70deg, rgba(0, 0, 0, 0.3), #1f2529, rgba(0, 0, 0, 0.5));
   padding: 1.5em;
@@ -280,6 +280,32 @@ a:hover {
   grid-gap: 3px;
   grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
   margin-bottom: 2em; }
+
+#resume {
+  padding: 1em;
+  color: #ccc; }
+  #resume li {
+    list-style: none; }
+  #resume p {
+    text-indent: 2em; }
+  #resume #personal {
+    display: flex;
+    justify-content: space-evenly; }
+    #resume #personal .name {
+      font-size: 2em; }
+    #resume #personal .title {
+      font-size: 1em;
+      line-height: 3.5em; }
+  #resume #projects em {
+    color: orange; }
+  #resume #skills li {
+    list-style: circle; }
+  #resume #work-experience em {
+    text-indent: 40px; }
+  #resume #work-experience li {
+    list-style: square; }
+  #resume #work-experience strong {
+    color: orange; }
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)

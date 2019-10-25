@@ -1003,49 +1003,49 @@ function _objectSpread(target) {
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/index.jsx":
+/*!*************************!*\
+  !*** ./pages/index.jsx ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/CenteredHeading */ "./components/CenteredHeading.jsx");
 /* harmony import */ var _components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/FeaturedCards */ "./components/FeaturedCards.jsx");
 /* harmony import */ var _layouts_document__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layouts/document */ "./layouts/document.jsx");
 /* harmony import */ var _components_Logo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Logo */ "./components/Logo.jsx");
 /* harmony import */ var _actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../actions/FrontEndActions */ "./actions/FrontEndActions.js");
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
-// -----------------------------------------Sass-----------------------------------------
- // -----------------------------------------Reactstrap-----------------------------------------
-
- // -----------------------------------------React-----------------------------------------
-
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// -----------------------------------------React-----------------------------------------
  // -----------------------------------------React Hooks-----------------------------------------
+
+ // -----------------------------------------Sass-----------------------------------------
+
+ // -----------------------------------------Reactstrap-----------------------------------------
 
  // -----------------------------------------Components-----------------------------------------
 
 
 
 
- // -----------------------------------------Resources-----------------------------------------
-// -----------------------------------------Actions-----------------------------------------
+ // -----------------------------------------Actions-----------------------------------------
 
+ // -----------------------------------------Resources-----------------------------------------
 
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   const {
     state,
     actions
-  } = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
   let onChange = async e => {
     let val = e.target.value;
@@ -1067,21 +1067,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
       }
     });
   }).catch(err => console.log(err));
-  return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
     picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
     fluid: true
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
     className: "hero"
   }, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_7__["default"], null), __jsx("div", null, __jsx("h1", {
     className: "quickSand"
   }, __jsx("span", {
-    style: {
-      color: "white"
-    }
+    className: "accent-2"
   }, "New York"), " Web Developer"), __jsx("div", {
     className: "search-container d-none d-md-block"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
     type: "search",
     placeholder: "What are you looking for?",
     onChange: onChange
@@ -1098,8 +1096,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
   }, "Projects")), __jsx("div", {
     className: "resume-button"
   }, __jsx("a", {
-    href: "/"
-  }, "View Virtual Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    href: "/resume"
+  }, "View Virtual Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "related-work"
   }, __jsx("h3", {
     className: "accent quickSand mb-4"
@@ -1152,13 +1150,13 @@ const Context = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
 /***/ }),
 
 /***/ 3:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/*!*******************************!*\
+  !*** multi ./pages/index.jsx ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/ubuntu/blogTest/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/ubuntu/blogTest/pages/index.jsx */"./pages/index.jsx");
 
 
 /***/ }),
