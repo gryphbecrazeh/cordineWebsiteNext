@@ -18,14 +18,19 @@ import { getFrontEndItems } from "../actions/FrontEndActions";
 
 export default () => {
 	const { state, actions } = useContext(Context);
-	let onChange = e => {
-		actions({
-			type: "setState",
-			payload: {
-				searchQuery: e.target.value
-			}
-		});
+	let onChange = async e => {
+		let val = e.target.value;
+		await getFrontEndItems(val).then(res =>
+			actions({
+				type: "setState",
+				payload: {
+					searchQuery: val,
+					frontEndPosts: [...res]
+				}
+			})
+		);
 	};
+	console.log(state);
 	if (!state.frontEndPosts.length > 0)
 		getFrontEndItems()
 			.then((res = []) => {
@@ -86,8 +91,10 @@ export default () => {
 			</Row>
 			<Row>
 				<FeaturedCards id="related-work">
-					<h3 className="accent oswald">
-						<em>Featured Work</em>
+					<h3 className="accent quickSand">
+						<em>
+							<span className="accent-2">Featured</span> Work
+						</em>
 					</h3>
 					<p className="elite">
 						I dedicate an <em className="accent">absolutely massive</em> amount

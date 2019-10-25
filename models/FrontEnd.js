@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema
@@ -30,7 +30,16 @@ const FrontEndSchema = new Schema({
 	},
 	codePen: {
 		type: String
+	},
+	URL_HTML: {
+		type: String
+	},
+	URL_CSS: {
+		type: String
+	},
+	URL_JAVASCRIPT: {
+		type: String
 	}
 });
 
-module.exports = FrontEnd = mongoose.model('frontEnd', FrontEndSchema);
+module.exports = FrontEnd = mongoose.model("frontEnd", FrontEndSchema);

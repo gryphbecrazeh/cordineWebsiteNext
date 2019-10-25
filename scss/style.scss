@@ -54,6 +54,9 @@ $small_image_scale: 50px;
 .accent {
 	color: $accent;
 }
+.accent-2 {
+	color: $accent-2;
+}
 // ##############################--Elements--##############################
 body {
 	margin: 0;
@@ -181,7 +184,7 @@ a:hover {
 .feature-card-output {
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(23em, 1fr));
 	grid-column-gap: 1em;
 	grid-row-gap: 1em;
 }

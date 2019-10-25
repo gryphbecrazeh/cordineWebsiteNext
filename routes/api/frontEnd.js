@@ -20,7 +20,9 @@ router.get("/", (req, res) => {
 // @desc Add Post
 // @access PUBLIC
 router.post("/", (req, res) => {
+	console.log("adding post");
 	let newPost = new FrontEnd(req.body);
+	console.log(newPost);
 	newPost
 		.save()
 		.then(item => {

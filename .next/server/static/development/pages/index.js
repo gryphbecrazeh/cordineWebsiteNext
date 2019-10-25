@@ -145,7 +145,7 @@ const getFrontEndItems = async () => {
   }).catch(err => console.log("err"));
 };
 const addFrontEndItem = async item => {
-  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(`/api/frontEnd/${item._id}`, item).then(res => res).catch(err => console.log(err));
+  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/frontEnd", item).then(res => res).catch(err => console.log(err));
 };
 
 /***/ }),
@@ -918,15 +918,18 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
     actions
   } = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_3__["default"]);
 
-  let onChange = e => {
-    actions({
+  let onChange = async e => {
+    let val = e.target.value;
+    await Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])(val).then(res => actions({
       type: "setState",
       payload: {
-        searchQuery: e.target.value
+        searchQuery: val,
+        frontEndPosts: [...res]
       }
-    });
+    }));
   };
 
+  console.log(state);
   if (!state.frontEndPosts.length > 0) Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])().then((res = []) => {
     actions({
       type: "setState",
@@ -970,8 +973,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
   }, "View Virtual Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "related-work"
   }, __jsx("h3", {
-    className: "accent oswald"
-  }, __jsx("em", null, "Featured Work")), __jsx("p", {
+    className: "accent quickSand"
+  }, __jsx("em", null, __jsx("span", {
+    className: "accent-2"
+  }, "Featured"), " Work")), __jsx("p", {
     className: "elite"
   }, "I dedicate an ", __jsx("em", {
     className: "accent"

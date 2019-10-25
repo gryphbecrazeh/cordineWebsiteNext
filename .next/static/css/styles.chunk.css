@@ -37,6 +37,9 @@
 .accent {
   color: orange; }
 
+.accent-2 {
+  color: white; }
+
 body {
   margin: 0;
   padding: 0;
@@ -134,7 +137,7 @@ a:hover {
 .feature-card-output {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(23em, 1fr));
   grid-column-gap: 1em;
   grid-row-gap: 1em; }
 

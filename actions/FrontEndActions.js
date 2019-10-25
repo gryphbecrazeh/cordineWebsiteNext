@@ -14,7 +14,7 @@ export const getFrontEndItems = async () => {
 };
 export const addFrontEndItem = async item => {
 	return await axios
-		.post(`/api/frontEnd/${item._id}`, item)
+		.post("/api/frontEnd", item)
 		.then(res => res)
 		.catch(err => console.log(err));
 };
