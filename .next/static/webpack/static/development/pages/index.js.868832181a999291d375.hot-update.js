@@ -49,6 +49,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
       state = _useContext.state,
       actions = _useContext.actions;
 
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(""),
+      time = _useState[0],
+      setTime = _useState[1];
+
   var onChange =
   /*#__PURE__*/
   function () {
@@ -96,13 +100,33 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
   })["catch"](function (err) {
     return console.log(err);
   });
+
+  var hours = function hours() {
+    return new Date().getHours();
+  };
+
+  var mins = function mins() {
+    return new Date().getMinutes();
+  };
+
+  var secs = function secs() {
+    return new Date().getSeconds();
+  };
+
+  var currentTime = function currentTime() {
+    return "".concat(hours() > 12 ? hours() - 12 : hours(), ":").concat(secs() > 9 ? "" : "0").concat(mins(), ":").concat(secs(), " ").concat(hours() > 12 ? "PM" : "AM");
+  };
+
+  var timeLoop = setInterval(function () {
+    return setTime(currentTime());
+  }, 1000);
   return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_9__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_6__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_7__["default"], {
     picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_6__["Container"], {
     fluid: true
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_6__["Row"], {
     className: "hero"
-  }, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_10__["default"], null), __jsx("div", null, __jsx("h1", {
+  }, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_10__["default"], null), __jsx("div", null, __jsx("div", null, time), __jsx("h1", {
     className: "quickSand"
   }, __jsx("span", {
     className: "accent-2"
@@ -151,4 +175,4 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 /***/ })
 
 })
-//# sourceMappingURL=index.js.49e1a07eb39153190eb2.hot-update.js.map
+//# sourceMappingURL=index.js.868832181a999291d375.hot-update.js.map

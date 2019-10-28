@@ -1,5 +1,5 @@
 // -----------------------------------------React-----------------------------------------
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 // -----------------------------------------React Hooks-----------------------------------------
 import Context from "../store/context";
 // -----------------------------------------Sass-----------------------------------------
@@ -17,6 +17,7 @@ import { getFrontEndItems } from "../actions/FrontEndActions";
 
 export default () => {
 	const { state, actions } = useContext(Context);
+	const [time, setTime] = useState("");
 	let onChange = async e => {
 		let val = e.target.value;
 		await getFrontEndItems(val).then(res =>
@@ -40,7 +41,14 @@ export default () => {
 				});
 			})
 			.catch(err => console.log(err));
-
+	let hours = () => new Date().getHours();
+	let mins = () => new Date().getMinutes();
+	let secs = () => new Date().getSeconds();
+	let currentTime = () =>
+		`${hours() > 12 ? hours() - 12 : hours()}:${mins()}:${
+			secs() > 9 ? "" : "0"
+		}${secs()} ${hours() > 12 ? "PM" : "AM"}`;
+	let timeLoop = setInterval(() => setTime(currentTime()), 1000);
 	return (
 		<Document>
 			<Row>
@@ -51,6 +59,11 @@ export default () => {
 							<Row className="hero">
 								<Logo />
 								<div>
+									<div
+										style={{ position: "absolute", top: "1em", left: "1em" }}
+									>
+										{time}
+									</div>
 									<h1 className="quickSand">
 										<span className="accent-2">New York</span> Web Developer
 									</h1>

@@ -1064,6 +1064,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     state,
     actions
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  const {
+    0: time,
+    1: setTime
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
 
   let onChange = async e => {
     let val = e.target.value;
@@ -1084,13 +1088,29 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       }
     });
   }).catch(err => console.log(err));
+
+  let hours = () => new Date().getHours();
+
+  let mins = () => new Date().getMinutes();
+
+  let secs = () => new Date().getSeconds();
+
+  let currentTime = () => `${hours() > 12 ? hours() - 12 : hours()}:${mins()}:${secs() > 9 ? "" : "0"}${secs()} ${hours() > 12 ? "PM" : "AM"}`;
+
+  let timeLoop = setInterval(() => setTime(currentTime()), 1000);
   return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
     picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
     fluid: true
   }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
     className: "hero"
-  }, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_7__["default"], null), __jsx("div", null, __jsx("h1", {
+  }, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_7__["default"], null), __jsx("div", null, __jsx("div", {
+    style: {
+      position: "absolute",
+      top: "1em",
+      left: "1em"
+    }
+  }, time), __jsx("h1", {
     className: "quickSand"
   }, __jsx("span", {
     className: "accent-2"
