@@ -1,10 +1,13 @@
 // -----------------------------------------React-----------------------------------------
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
+// -----------------------------------------React Hooks-----------------------------------------
+import Context from "../store/context";
 // -----------------------------------------Components-----------------------------------------
 import ImageViewModal from "../components/ImageViewModal";
 import FrontEndViewModal from "../components/FrontEndViewModal";
 
 const FeatureCard = ({ post, key }) => {
+	const { state, actions } = useContext(Context);
 	let { title, technologies, description, _id } = post;
 	let authActions = (
 		<Fragment>
@@ -16,7 +19,8 @@ const FeatureCard = ({ post, key }) => {
 	);
 	return (
 		<div className="card relative" key={`${key}`}>
-			{authActions}
+			{state.auth.role === "admin" ? authActions : ""}
+
 			<div className="row">
 				<h2 className="card-title">{title}</h2>
 			</div>

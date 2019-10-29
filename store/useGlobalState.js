@@ -12,6 +12,14 @@ const useGlobalState = () => {
 			case "setState": {
 				return setState({ ...state, ...payload });
 			}
+			case "setUser": {
+				return setState({
+					...state,
+					auth: {
+						...payload
+					}
+				});
+			}
 			default:
 				return state;
 		}

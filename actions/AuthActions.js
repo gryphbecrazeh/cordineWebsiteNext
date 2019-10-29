@@ -12,9 +12,10 @@ export const login = async user => {
 };
 
 export const tokenConfig = () => {
+	console.log("getting token");
 	// Get token from local storage
 	const token = localStorage.getItem("token");
-
+	console.log(token);
 	// Headers
 	const config = {
 		headers: {
@@ -30,6 +31,7 @@ export const tokenConfig = () => {
 
 // Check token and load user
 export const loadUser = async () => {
+	console.log("loading user action");
 	// User Loading
 	return await axios
 		.get("/api/auth/user", tokenConfig())

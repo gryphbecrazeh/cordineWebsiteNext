@@ -55,8 +55,10 @@ function () {
   };
 }();
 var tokenConfig = function tokenConfig() {
-  // Get token from local storage
-  var token = localStorage.getItem("token"); // Headers
+  console.log("getting token"); // Get token from local storage
+
+  var token = localStorage.getItem("token");
+  console.log(token); // Headers
 
   var config = {
     headers: {
@@ -81,17 +83,19 @@ function () {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            _context2.next = 2;
+            console.log("loading user action"); // User Loading
+
+            _context2.next = 3;
             return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/auth/user", tokenConfig()).then(function (res) {
               return res;
             })["catch"](function (err) {
               return console.log(err);
             });
 
-          case 2:
+          case 3:
             return _context2.abrupt("return", _context2.sent);
 
-          case 3:
+          case 4:
           case "end":
             return _context2.stop();
         }
@@ -459,10 +463,13 @@ var CenteredHeading = function CenteredHeading(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ImageViewModal */ "./components/ImageViewModal.jsx");
-/* harmony import */ var _components_FrontEndViewModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/FrontEndViewModal */ "./components/FrontEndViewModal.jsx");
+/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
+/* harmony import */ var _components_ImageViewModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ImageViewModal */ "./components/ImageViewModal.jsx");
+/* harmony import */ var _components_FrontEndViewModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/FrontEndViewModal */ "./components/FrontEndViewModal.jsx");
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 // -----------------------------------------React-----------------------------------------
+ // -----------------------------------------React Hooks-----------------------------------------
+
  // -----------------------------------------Components-----------------------------------------
 
 
@@ -471,6 +478,11 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 var FeatureCard = function FeatureCard(_ref) {
   var post = _ref.post,
       key = _ref.key;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_1__["default"]),
+      state = _useContext.state,
+      actions = _useContext.actions;
+
   var title = post.title,
       technologies = post.technologies,
       description = post.description,
@@ -483,7 +495,7 @@ var FeatureCard = function FeatureCard(_ref) {
   return __jsx("div", {
     className: "card relative",
     key: "".concat(key)
-  }, authActions, __jsx("div", {
+  }, state.auth.role === "admin" ? authActions : "", __jsx("div", {
     className: "row"
   }, __jsx("h2", {
     className: "card-title"
@@ -503,13 +515,13 @@ var FeatureCard = function FeatureCard(_ref) {
     className: "description"
   }, description)), __jsx("div", {
     className: "row"
-  }, __jsx(_components_FrontEndViewModal__WEBPACK_IMPORTED_MODULE_2__["default"], null)), __jsx("div", {
+  }, __jsx(_components_FrontEndViewModal__WEBPACK_IMPORTED_MODULE_3__["default"], null)), __jsx("div", {
     className: "row relative"
   }, __jsx("div", {
     className: "active-image-container"
   })), __jsx("div", {
     className: "row image-container"
-  }, __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+  }, __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (FeatureCard);
@@ -24368,7 +24380,7 @@ var Context = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!****************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fubuntu%2FblogTest%2Fpages%2Findex.jsx ***!
   \****************************************************************************************************************/
@@ -24391,5 +24403,5 @@ module.exports = dll_13346faca0e924a89b24;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[1,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map

@@ -116,8 +116,10 @@ const login = async user => {
   }).catch(err => console.log(err));
 };
 const tokenConfig = () => {
-  // Get token from local storage
-  const token = localStorage.getItem("token"); // Headers
+  console.log("getting token"); // Get token from local storage
+
+  const token = localStorage.getItem("token");
+  console.log(token); // Headers
 
   const config = {
     headers: {
@@ -133,7 +135,8 @@ const tokenConfig = () => {
 }; // Check token and load user
 
 const loadUser = async () => {
-  // User Loading
+  console.log("loading user action"); // User Loading
+
   return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/auth/user", tokenConfig()).then(res => res).catch(err => console.log(err));
 };
 
@@ -1842,26 +1845,37 @@ function createUrl(router) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
-/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_GlobalStateInjector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/GlobalStateInjector */ "./components/GlobalStateInjector.jsx");
-/* harmony import */ var _actions_AuthActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/AuthActions */ "./actions/AuthActions.js");
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
+/* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_GlobalStateInjector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/GlobalStateInjector */ "./components/GlobalStateInjector.jsx");
+/* harmony import */ var _actions_AuthActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/AuthActions */ "./actions/AuthActions.js");
+/* harmony import */ var _store_useGlobalState__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/useGlobalState */ "./store/useGlobalState.js");
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
 
 
-class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_1___default.a {
+
+class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
+  componentDidMount() {
+    console.log("loading user");
+    Object(_actions_AuthActions__WEBPACK_IMPORTED_MODULE_4__["loadUser"])().then(res => _store_useGlobalState__WEBPACK_IMPORTED_MODULE_5__["default"].actions({
+      type: "setUser",
+      payload: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, res.data)
+    })).catch(err => console.log(err));
+  }
+
   render() {
     const {
       Component,
       pageProps
     } = this.props;
-    Object(_actions_AuthActions__WEBPACK_IMPORTED_MODULE_3__["loadUser"])().then(res => console.log(res)).catch(err => console.log(err));
-    return __jsx(_components_GlobalStateInjector__WEBPACK_IMPORTED_MODULE_2__["default"], null, __jsx(Component, pageProps));
+    return __jsx(_components_GlobalStateInjector__WEBPACK_IMPORTED_MODULE_3__["default"], null, __jsx(Component, pageProps));
   }
 
 }
@@ -1926,6 +1940,13 @@ const useGlobalState = () => {
       case "setState":
         {
           return setState(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, payload));
+        }
+
+      case "setUser":
+        {
+          return setState(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+            auth: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, payload)
+          }));
         }
 
       default:

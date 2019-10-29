@@ -22,6 +22,7 @@ router.get("/user", auth, (req, res) => {
 // @desc Auth User
 // @accesss PUBLIC
 router.post("/", (req, res) => {
+	console.log(req.body);
 	const { userName, password } = req.body;
 
 	// Simple Validation
