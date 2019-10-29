@@ -76,12 +76,43 @@ a:hover {
 
 // ##############################--Images--##############################
 
-.logo {
-	max-width: $small_image_scale;
+#logo-tray {
 	position: fixed;
 	bottom: 1em;
 	right: 1em;
+	display: flex;
+	flex-direction: column-reverse;
 	z-index: 9999999;
+
+	ul {
+		display: flex;
+		padding-right: 3em;
+		margin-right: -20em;
+		opacity: 0;
+		transition: ease-in-out margin-right 250ms, ease-in-out opacity 100ms;
+		li {
+			list-style-type: none;
+			padding: 0.5em;
+			line-height: 0.1em;
+		}
+	}
+	.logo {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		max-width: $small_image_scale;
+		cursor: pointer;
+	}
+	// .logo:hover + ul {
+	// 	margin-right: 0;
+	// 	opacity: 1;
+	// }
+}
+#logo-tray:hover {
+	ul {
+		margin-right: 0;
+		opacity: 1;
+	}
 }
 // ##############################--NavBar--##############################
 .nav-container {
@@ -370,10 +401,6 @@ a:hover {
 	color: $accent-2;
 	li {
 		list-style: none;
-	}
-	h3 {
-		// color: $accent;
-		// text-decoration: underline;
 	}
 	p {
 		text-indent: 2em;

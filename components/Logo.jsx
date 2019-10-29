@@ -26,13 +26,29 @@ const Logo = () => {
 	// add a tool tip to the top that explains the functionality of the icon
 	// tray is collapsable
 	return (
-		<img
-			src={LogoIcon}
-			alt=""
-			onClick={handleLogin}
-			className="logo"
-			style={{ cursor: loginReady ? "pointer" : "default" }}
-		/>
+		<div className="tray" id="logo-tray">
+			<img
+				src={LogoIcon}
+				alt=""
+				onClick={handleLogin}
+				className="logo"
+				style={{ cursor: loginReady ? "pointer" : "default" }}
+			/>
+			<ul>
+				<li className="tray-item">
+					<a href="#">Virtual Resume</a>
+				</li>
+				<li className="tray-item">
+					<a href="#">Github</a>
+				</li>{" "}
+				<li className="tray-item">
+					<a href="#">Codepen</a>
+				</li>{" "}
+				<li className="tray-item">
+					<a href="#">Projects</a>
+				</li>
+			</ul>
+		</div>
 	);
 };
 export default Logo;

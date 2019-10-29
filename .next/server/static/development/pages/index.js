@@ -779,7 +779,10 @@ const Logo = () => {
   // tray is collapsable
 
 
-  return __jsx("img", {
+  return __jsx("div", {
+    className: "tray",
+    id: "logo-tray"
+  }, __jsx("img", {
     src: _images_chrisWebsiteLogo_W_svg__WEBPACK_IMPORTED_MODULE_2___default.a,
     alt: "",
     onClick: handleLogin,
@@ -787,7 +790,23 @@ const Logo = () => {
     style: {
       cursor: loginReady ? "pointer" : "default"
     }
-  });
+  }), __jsx("ul", null, __jsx("li", {
+    className: "tray-item"
+  }, __jsx("a", {
+    href: "#"
+  }, "Virtual Resume")), __jsx("li", {
+    className: "tray-item"
+  }, __jsx("a", {
+    href: "#"
+  }, "Github")), " ", __jsx("li", {
+    className: "tray-item"
+  }, __jsx("a", {
+    href: "#"
+  }, "Codepen")), " ", __jsx("li", {
+    className: "tray-item"
+  }, __jsx("a", {
+    href: "#"
+  }, "Projects"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Logo);

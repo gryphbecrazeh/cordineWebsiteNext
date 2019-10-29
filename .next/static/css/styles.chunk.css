@@ -54,12 +54,32 @@ a {
 a:hover {
   color: orange !important; }
 
-.logo {
-  max-width: 50px;
+#logo-tray {
   position: fixed;
   bottom: 1em;
   right: 1em;
+  display: flex;
+  flex-direction: column-reverse;
   z-index: 9999999; }
+  #logo-tray ul {
+    display: flex;
+    padding-right: 3em;
+    margin-right: -20em;
+    opacity: 0;
+    transition: ease-in-out margin-right 250ms, ease-in-out opacity 100ms; }
+    #logo-tray ul li {
+      list-style-type: none;
+      padding: 0.5em;
+      line-height: 0.1em; }
+  #logo-tray .logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 50px; }
+
+#logo-tray:hover ul {
+  margin-right: 0;
+  opacity: 1; }
 
 .nav-container {
   position: fixed;
