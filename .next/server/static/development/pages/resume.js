@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -136,491 +136,6 @@ const loadUser = async () => {
   // User Loading
   return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/auth/user", tokenConfig()).then(res => res).catch(err => console.log(err));
 };
-
-/***/ }),
-
-/***/ "./actions/FrontEndActions.js":
-/*!************************************!*\
-  !*** ./actions/FrontEndActions.js ***!
-  \************************************/
-/*! exports provided: getFrontEndItems, addFrontEndItem, editFrontEndItem, deleteFrontEndItem */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFrontEndItems", function() { return getFrontEndItems; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addFrontEndItem", function() { return addFrontEndItem; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editFrontEndItem", function() { return editFrontEndItem; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFrontEndItem", function() { return deleteFrontEndItem; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-// -----------------------------------------Axios-----------------------------------------
-
-const getFrontEndItems = async () => {
-  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/frontEnd").then(res => {
-    let response = [];
-    if (res.data.length > 0) response = [...res.data];
-    return [...response];
-  }).catch(err => console.log("err"));
-};
-const addFrontEndItem = async item => {
-  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/frontEnd", item).then(res => res).catch(err => console.log(err));
-};
-const editFrontEndItem = async item => {
-  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.put(`/api/frontEnd/${item._id}`, item).then(res => "not sure what to return here, will think about it later").catch(err => console.log(err));
-};
-const deleteFrontEndItem = async item => {
-  return await axios__WEBPACK_IMPORTED_MODULE_0___default.a.delete(`/api/frontEnd/${item._id}`).then(res => "not sure what to return here, will think about it later").catch(err => console.log(err));
-};
-
-/***/ }),
-
-/***/ "./components/AddPostModal.jsx":
-/*!*************************************!*\
-  !*** ./components/AddPostModal.jsx ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
-/* harmony import */ var _actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/FrontEndActions */ "./actions/FrontEndActions.js");
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-// -----------------------------------------React-----------------------------------------
- // -----------------------------------------Reactstrap-----------------------------------------
-
- // -----------------------------------------React Hooks-----------------------------------------
-
- // -----------------------------------------Actions-----------------------------------------
-
-
-
-const AddPostModal = ({
-  isOpen,
-  toggle
-}) => {
-  // Innitializes the post object
-  let {
-    0: post,
-    1: updatePost
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
-    title: '',
-    technologies: [],
-    description: '',
-    images: [],
-    repo: '',
-    codePen: '',
-    technology: ''
-  }); // Updates the post state based on the item name and value
-
-  let handleUpdatePost = e => {
-    updatePost(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, post, {
-      [e.target.name]: e.target.value
-    }));
-  }; // Updates technologies with an appended iteration of the technologies array
-
-
-  let handleAddTechnology = () => {
-    let {
-      technology,
-      technologies
-    } = post;
-    if (technology === '') return 0;
-    let updatedTechnologies = [...technologies, technology];
-    updatePost(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, post, {
-      technologies: updatedTechnologies,
-      technology: ''
-    }));
-  }; // Updates the technologies with a filtered iteration of the technologies array
-
-
-  let handleRemoveTechnology = e => {
-    let target = e.target.getAttribute('name');
-    let updatedTechnologies = post.technologies.filter(item => item !== target);
-    updatePost(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, post, {
-      technologies: updatedTechnologies,
-      technology: ''
-    }));
-  };
-
-  let handleAddPost = () => {
-    Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_4__["addFrontEndItem"])(post).then(res => toggle()).catch(err => alert('Adding Post Failed'));
-  };
-
-  return __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"], {
-    isOpen: isOpen,
-    toggle: toggle
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["ModalHeader"], {
-    toggle: toggle
-  }, "Add a featured post"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["ModalBody"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["ButtonGroup"], {
-    className: "w-100"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    disabled: true
-  }, "Create Front End Post"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    disabled: true
-  }, "Create Project Post")))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Label"], null, "Title"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
-    type: "text",
-    name: "title",
-    placeholder: "Post Title",
-    onChange: handleUpdatePost
-  }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Label"], null, "Description"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
-    type: "textarea",
-    name: "description",
-    placeholder: "Post Description",
-    onChange: handleUpdatePost
-  }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Label"], null, "Repo"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
-    type: "text",
-    name: "repo",
-    placeholder: "Repository URL",
-    onChange: handleUpdatePost
-  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Label"], null, "CodePen"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
-    type: "text",
-    name: "codePen",
-    placeholder: "CodePen URL",
-    onChange: handleUpdatePost
-  }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Label"], null, "Technologies"), __jsx("div", {
-    id: "technology-output"
-  }, post.technologies.map(item => {
-    return __jsx("div", {
-      className: "technology",
-      name: item
-    }, item, __jsx("span", {
-      className: "close",
-      name: item,
-      onClick: handleRemoveTechnology
-    }, "x"));
-  })), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["InputGroup"], {
-    className: "mt-2"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
-    type: "text",
-    name: "technology",
-    placeholder: "React, Bootstrap, Css, Javascript...",
-    value: post.technology,
-    onChange: handleUpdatePost
-  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["InputGroupAddon"], {
-    addonType: "append"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    onClick: handleAddTechnology
-  }, "Add Technology"))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Label"], null, "Add Images"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Input"], {
-    type: "file",
-    name: "images",
-    disabled: true
-  }))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], {
-    className: "mt-5"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    color: "success",
-    onClick: handleAddPost,
-    block: true
-  }, "Add Post"))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (AddPostModal);
-
-/***/ }),
-
-/***/ "./components/CenteredHeading.jsx":
-/*!****************************************!*\
-  !*** ./components/CenteredHeading.jsx ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// -----------------------------------------React-----------------------------------------
-
-
-const CenteredHeading = ({
-  picture = "#",
-  height = "auto",
-  children
-}) => {
-  return __jsx("div", {
-    className: "centeredHeading",
-    style: {
-      height: height,
-      backgroundImage: `url(${picture})`
-    }
-  }, children);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (CenteredHeading);
-
-/***/ }),
-
-/***/ "./components/FeatureCard.jsx":
-/*!************************************!*\
-  !*** ./components/FeatureCard.jsx ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/ImageViewModal */ "./components/ImageViewModal.jsx");
-/* harmony import */ var _components_FrontEndViewModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/FrontEndViewModal */ "./components/FrontEndViewModal.jsx");
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// -----------------------------------------React-----------------------------------------
- // -----------------------------------------Components-----------------------------------------
-
-
-
-
-const FeatureCard = ({
-  post,
-  key
-}) => {
-  let {
-    title,
-    technologies,
-    description,
-    _id
-  } = post;
-
-  let authActions = __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, __jsx("ul", {
-    className: "auth-post-actions"
-  }, __jsx("li", null, "Edit"), __jsx("li", null, "Delete")));
-
-  return __jsx("div", {
-    className: "card relative",
-    key: `${key}`
-  }, authActions, __jsx("div", {
-    className: "row"
-  }, __jsx("h2", {
-    className: "card-title"
-  }, title)), __jsx("div", {
-    className: "row"
-  }, __jsx("div", {
-    className: "technologies"
-  }, __jsx("span", {
-    className: "accent"
-  }, "Tech"), ":", " ", technologies.map((item, index) => __jsx("span", {
-    key: `${key}-tech-${index}`
-  }, item, " ")))), __jsx("div", {
-    className: "row"
-  }, __jsx("p", {
-    className: "description"
-  }, description)), __jsx("div", {
-    className: "row"
-  }, __jsx(_components_FrontEndViewModal__WEBPACK_IMPORTED_MODULE_2__["default"], null)), __jsx("div", {
-    className: "row relative"
-  }, __jsx("div", {
-    className: "active-image-container"
-  })), __jsx("div", {
-    className: "row image-container"
-  }, __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null), __jsx(_components_ImageViewModal__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (FeatureCard);
-
-/***/ }),
-
-/***/ "./components/FeaturedCards.jsx":
-/*!**************************************!*\
-  !*** ./components/FeaturedCards.jsx ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
-/* harmony import */ var _AddPostModal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AddPostModal */ "./components/AddPostModal.jsx");
-/* harmony import */ var _FeatureCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FeatureCard */ "./components/FeatureCard.jsx");
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-// -----------------------------------------React-----------------------------------------
- // -----------------------------------------Reactstrap-----------------------------------------
-
- // -----------------------------------------React Hooks-----------------------------------------
-
- // -----------------------------------------Components-----------------------------------------
-
-
- // -----------------------------------------Resources-----------------------------------------
-
-const FeaturedCards = ({
-  id,
-  children
-}) => {
-  const {
-    state,
-    actions
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_3__["default"]);
-  let {
-    0: modal,
-    1: toggleModalOpen
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
-    isOpen: false
-  });
-
-  let toggleModal = () => {
-    toggleModalOpen(Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, modal, {
-      isOpen: !modal.isOpen
-    }));
-  };
-
-  let addPost = __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    className: "addPost",
-    onClick: toggleModal
-  }, "+")); // console.log(state);
-
-
-  return __jsx("section", {
-    id: id,
-    className: "featured-cards"
-  }, state.auth.role === "admin" ? addPost : "", __jsx(_AddPostModal__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    isOpen: modal.isOpen,
-    toggle: toggleModal
-  }), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Container"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], null, children)), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, __jsx("div", {
-    className: "feature-card-output"
-  }, [...state.frontEndPosts].map(item => __jsx(_FeatureCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    post: item,
-    key: item._id
-  }))))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (FeaturedCards);
-
-/***/ }),
-
-/***/ "./components/FrontEndViewModal.jsx":
-/*!******************************************!*\
-  !*** ./components/FrontEndViewModal.jsx ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// -----------------------------------------React-----------------------------------------
- // -----------------------------------------Reactstrap-----------------------------------------
-
-
-
-const FrontEndViewModal = ({
-  URL_HTML,
-  URL_CSS,
-  URL_JAVASCRIPT
-}) => {
-  const {
-    0: isOpen,
-    1: toggle
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    0: view,
-    1: setView
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("desktop");
-
-  const toggleModal = () => {
-    toggle(!isOpen);
-  };
-
-  const getView = () => {
-    switch (view) {
-      case "desktop":
-        return "xl";
-
-      case "mobile":
-        return "md";
-
-      default:
-        return "xl";
-    }
-  };
-
-  const changeView = e => {
-    setView(e.target.name);
-  };
-
-  return __jsx("div", null, __jsx("div", {
-    className: "view-now-button",
-    onClick: toggleModal
-  }, "View Now"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
-    isOpen: isOpen,
-    toggle: toggleModal,
-    size: getView()
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "Front End View Modal"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ButtonGroup"], {
-    className: "d-none d-lg-block w-100"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    onClick: changeView,
-    name: "desktop"
-  }, "Desktop"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    onClick: changeView,
-    name: "mobile"
-  }, "Mobile")))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (FrontEndViewModal);
-
-/***/ }),
-
-/***/ "./components/ImageViewModal.jsx":
-/*!***************************************!*\
-  !*** ./components/ImageViewModal.jsx ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// -----------------------------------------React-----------------------------------------
- // -----------------------------------------Reactstrap-----------------------------------------
-
-
-
-const ImageViewModal = ({
-  children
-}) => {
-  const {
-    0: isOpen,
-    1: toggle
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-
-  const toggleModal = () => {
-    toggle(!isOpen);
-  };
-
-  return __jsx("div", {
-    className: "img-box"
-  }, __jsx("div", {
-    className: "img-button-container",
-    onClick: toggleModal
-  }, children), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"], {
-    isOpen: isOpen,
-    toggle: toggleModal,
-    size: "lg"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalBody"], null, "Test"), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["ModalFooter"], null, "Image View Modal")));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (ImageViewModal);
 
 /***/ }),
 
@@ -1045,10 +560,10 @@ function _objectSpread(target) {
 
 /***/ }),
 
-/***/ "./pages/index.jsx":
-/*!*************************!*\
-  !*** ./pages/index.jsx ***!
-  \*************************/
+/***/ "./pages/resume.jsx":
+/*!**************************!*\
+  !*** ./pages/resume.jsx ***!
+  \**************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1056,128 +571,108 @@ function _objectSpread(target) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _store_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/context */ "./store/context.js");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/CenteredHeading */ "./components/CenteredHeading.jsx");
-/* harmony import */ var _components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/FeaturedCards */ "./components/FeaturedCards.jsx");
-/* harmony import */ var _layouts_document__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../layouts/document */ "./layouts/document.jsx");
-/* harmony import */ var _components_Logo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Logo */ "./components/Logo.jsx");
-/* harmony import */ var _actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../actions/FrontEndActions */ "./actions/FrontEndActions.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _layouts_document__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../layouts/document */ "./layouts/document.jsx");
+/* harmony import */ var _components_Logo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Logo */ "./components/Logo.jsx");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_4__);
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 // -----------------------------------------React-----------------------------------------
- // -----------------------------------------React Hooks-----------------------------------------
-
- // -----------------------------------------Sass-----------------------------------------
-
  // -----------------------------------------Reactstrap-----------------------------------------
 
  // -----------------------------------------Components-----------------------------------------
 
 
+ // -----------------------------------------Sass-----------------------------------------
 
-
- // -----------------------------------------Actions-----------------------------------------
-
- // -----------------------------------------Resources-----------------------------------------
 
 /* harmony default export */ __webpack_exports__["default"] = (() => {
-  const {
-    state,
-    actions
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_store_context__WEBPACK_IMPORTED_MODULE_1__["default"]);
-  const {
-    0: time,
-    1: setTime
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
-
-  let onChange = async e => {
-    let val = e.target.value;
-    await Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])(val).then(res => actions({
-      type: "setState",
-      payload: {
-        searchQuery: val,
-        frontEndPosts: [...res]
-      }
-    }));
-  };
-
-  if (!state.frontEndPosts.length > 0) Object(_actions_FrontEndActions__WEBPACK_IMPORTED_MODULE_8__["getFrontEndItems"])().then((res = []) => {
-    actions({
-      type: "setState",
-      payload: {
-        frontEndPosts: [...res]
-      }
-    });
-  }).catch(err => console.log(err));
-
-  let hours = () => new Date().getHours();
-
-  let mins = () => new Date().getMinutes();
-
-  let secs = () => new Date().getSeconds();
-
-  let currentTime = () => `${hours() > 9 ? "" : "0"}${hours() > 12 ? hours() - 12 : hours()}:${mins() > 9 ? "" : "0"}${mins()}:${secs() > 9 ? "" : "0"}${secs()} ${hours() > 12 ? "PM" : "AM"}`;
-
-  let timeLoop = setInterval(() => setTime(currentTime()), 1000);
-  return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, __jsx("header", null, __jsx(_components_CenteredHeading__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    picture: "https://images.pexels.com/photos/327308/pexels-photo-327308.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], {
-    fluid: true
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], {
-    className: "hero"
-  }, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_7__["default"], null), __jsx("div", null, __jsx("div", {
-    style: {
-      position: "absolute",
-      top: "1em",
-      left: "1em"
-    }
-  }, time), __jsx("h1", {
-    className: "quickSand"
+  return __jsx(_layouts_document__WEBPACK_IMPORTED_MODULE_2__["default"], null, __jsx(_components_Logo__WEBPACK_IMPORTED_MODULE_3__["default"], null), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+    id: "resume"
+  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, __jsx("section", {
+    id: "personal"
+  }, __jsx("div", {
+    className: "name"
+  }, __jsx("a", {
+    href: "/"
   }, __jsx("span", {
     className: "accent-2"
-  }, "New York"), " Web Developer"), __jsx("div", {
-    className: "search-container d-none d-md-block"
-  }, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Input"], {
-    type: "search",
-    placeholder: "What are you looking for?",
-    onChange: onChange
-  }), __jsx("p", {
-    className: "subsearch"
-  }, "Use the search bar above to immediately find", " ", __jsx("a", {
-    href: "#related-work"
-  }, "related work"), " I've done, or scroll down to view my featured projects and front end design.")), __jsx("p", null, __jsx("a", {
-    href: "https://github.com/gryphbecrazeh"
-  }, "GitHub"), ",", " ", __jsx("a", {
-    href: "https://codepen.io/gryphbecrazeh"
-  }, "Codepen"), ",", " ", __jsx("a", {
-    href: "/projects"
-  }, "Projects")), __jsx("div", {
-    className: "resume-button"
+  }, "Christopher"), " Cordine")), __jsx("div", {
+    className: "title"
+  }, "Web Developer"), __jsx("div", {
+    className: "info-contact"
+  }, __jsx("div", {
+    className: "email"
   }, __jsx("a", {
-    href: "/resume"
-  }, "View Virtual Resume Now")))))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, __jsx(_components_FeaturedCards__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    id: "related-work"
-  }, __jsx("h3", {
-    className: "accent quickSand mb-4"
-  }, __jsx("em", null, __jsx("span", {
-    className: "accent-2"
-  }, "Featured"), " Work")), __jsx("p", {
-    className: "elite"
-  }, "I dedicate an ", __jsx("em", {
+    href: "mailto:christopher@cordine.site"
+  }, "christopher@cordine.site")), __jsx("div", {
+    className: "phone"
+  }, __jsx("a", {
+    href: "tel:+1(516)424-2147"
+  }, "(516) 424-2147")))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    md: 8
+  }, __jsx("section", {
+    id: "projects"
+  }, __jsx("h3", null, "Projects"), __jsx("ul", null, __jsx("li", null, __jsx("strong", null, "Personal Website "), __jsx("em", null, "NextJS, ExpressJS, NodeJS, Bootstrap, Sass, React, MongoDB, Webpack"), __jsx("p", null, "Built CMS for it, uses CRUD to manage and display posts of code/projects"), __jsx("p", null, "View this project ", __jsx("a", {
+    href: "/"
+  }, "here"), ".")), __jsx("li", null, __jsx("strong", null, "Streamlined Company Application "), __jsx("em", null, "ReactJS, ExpressJS, NodeJS, MongoDB, Bootstrap, MongoDB, Redux"), __jsx("p", null, "User Manager, Order Manager, Shipment Manager, Receiving Manager, built in ERP system, website auditor, internal company communications, save/track any changes made to anything, tracks stagnant prices, orders without a shipping update, identify broken links/filters on the product and category pages, track payments from customers, to distributors, taxes, etc. Everything is uploadable and update-able via CSV, custom user authentication system built in Express. Designed middleware functions to reduce client resource load, and carefully planned out measures to use and pass data between the client and server."), __jsx("p", null)), __jsx("li", null, __jsx("strong", null, " URL and CSV loadable Content Spinner "), __jsx("em", null, "NextJS, React, ExpressJS, NodeJS, Bootstrap, Webpack "), __jsx("p", null, "Scrape a URL or load in a csv potentially containing thousands of products, pipe through all the fields and identify specific keywords to generate unique and SEO targetted descriptions, names, etc. Outputs a new csv with unique information for all products put into it, or allowing a queue of URLs to scrape with the express custom server, and provide the same result."), __jsx("p", null)), __jsx("li", null, __jsx("strong", null, " Click Scheduler Chrome Extension "), __jsx("em", null, "Javascript, CSS, HTML "), __jsx("p", null, "Injects a script to call the click() function on an element once a specific time is met or exceeded. Absolves the need for an expensive cron job product import for our magento website, published to the Chrome Web Store for free"), __jsx("p", null, "View this project", " ", __jsx("a", {
+    href: "https://chrome.google.com/webstore/detail/click-scheduler-pro/cglnpjdjjinnbaioncegaiaifdpildne?hl=en"
+  }, "here"), ".")), __jsx("li", null, __jsx("strong", null, " Bear Alert Chrome Extension "), __jsx("em", null, " Javascript, CSS, HTML, Regex "), __jsx("p", null, "Injects a script to every page you access, trying to find the occurrence of the word \"bear\", mostly a proof of concept for another extension/app combo that I am developing. Has a cool stats page to access to see how many \"bear\"s you've seen, and which pages had the most occurences of bears. Published to the Chrome Web Store for free and fun."), __jsx("p", null, "View this project", " ", __jsx("a", {
+    href: "https://chrome.google.com/webstore/detail/bear-alert/idhligenifohdkgfnadnppainnoicmib?hl=en"
+  }, "here"), ".")), __jsx("li", null, __jsx("strong", null, " ShopCSV Chrome Extension "), __jsx("em", null, "Javascript, CSS, HTML, Regex "), __jsx("p", null, "Injects a script on every page you access, you can choose to scrape that page, create a csv row, and append it to the total CSV file in the background page. Once you've made your selection, you can then goto the background page to download the CSV file, clearing it out from the extension, and allowing you to upload the CSV onto your Magento, Wordpress, Shopify, or other e-commerce website/platform, to absolve the tediousness of attempting to contact a manufacturer and hope that they have a quality dataset to provide you. Future implementations of this extension intend to function with a full stack application, allowing you to store all the previously created CSV's into a webserver, combine as many of them as you like, and connect to your stores api to upload the products in real time, without the need to generate any CSV files."), __jsx("p", null))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null, __jsx("section", {
+    id: "skills"
+  }, __jsx("h3", null, "Skills"), __jsx("ul", null, __jsx("li", null, __jsx("strong", {
     className: "accent"
-  }, "absolutely massive"), " amount of time to studying and experimenting with my never ending list of technologies and design elements. I generally will not go a day without playing with some sort of idea, or investigating and attempting to recreate an interesting feature I've seen online. My codepen is full of random tests, and collections of forks of things that I felt were really cool and interesting. So much so that I've alloccated some space on my website to feature just that."), __jsx("p", {
-    className: "elite"
-  }, "Below you will find a lot of front end work that I have found fun and interesting, most of which being CSS and Bootstrap renditions of mockups I've made or found online. For more advanced front end work, feel free to check out my front-end-only react, and", " ", __jsx("em", {
+  }, "HTML "), " - ", __jsx("em", null, "(Started learning in 2010 Highschool, Projects, Work)")), __jsx("li", null, __jsx("strong", {
     className: "accent"
-  }, "full MERN stack"), " projects", " ", __jsx("a", {
-    className: "accent",
-    href: "/projects"
-  }, "here"), "."), __jsx("hr", {
-    className: "mb-5"
-  }))));
+  }, "CSS "), " - ", __jsx("em", null, "(Started learning in 2010 Highschool, Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Javascript "), " - ", __jsx("em", null, "(Started learning in 2017 College, Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "C++ "), " - ", __jsx("em", null, "(Started learning in 2018 College)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Python "), " - ", __jsx("em", null, "(Started learning 2018 College, Projects)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Bash "), " - ", __jsx("em", null, "(Started learning 2018 Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Git "), " - ", __jsx("em", null, "(Started learning 2017 College, Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "React "), " - ", __jsx("em", null, "(Started learning 2018 Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Django "), " - ", __jsx("em", null, "(Started learning 2018 Projects)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Express "), " - ", __jsx("em", null, "(Started learning 2018 Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Node "), " - ", __jsx("em", null, "(Started learning 2018 Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "MongoDB "), " - ", __jsx("em", null, "(Started learning 2018 Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Redux "), " - ", __jsx("em", null, "(Started learning 2018 Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Jquery "), " - ", __jsx("em", null, "(Started learning 2017 College)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "REGEX "), " - ", __jsx("em", null, "(Started learning 2018 Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Linux Debian, APT "), " - ", __jsx("em", null, "(Started learning 2018 Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Sass "), " - ", __jsx("em", null, "(Started learning 2018 Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "NextJS "), " - ", __jsx("em", null, "(Started learning 2019 Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Bootstrap "), " - ", __jsx("em", null, "(Started learning 2018 Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "MySQL "), " - ", __jsx("em", null, "(Started learning 2018 Projects, Work)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Mobile App Development "), " - ", __jsx("em", null, "(Started learning 2017 College)")), __jsx("li", null, __jsx("strong", {
+    className: "accent"
+  }, "Chrome Web Extension Development"), " - ", __jsx("em", null, "(Started learning in 2018 Projects)")))))), __jsx(reactstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, __jsx("section", {
+    id: "work-experience"
+  }, __jsx("h3", null, "Related Work Experience"), __jsx("div", {
+    className: "job"
+  }, __jsx("strong", null, "Kitchenall - Web Master / Technical SEO Specialist / Product Manager / Software Developer"), " - ", __jsx("em", null, "Nov 1 2018 -> Currently Working at this Company"), __jsx("ul", null, __jsx("li", null, "Used GREP commands to navigate through the magento/php file structure"), __jsx("li", null, "Used PHP to alter theme templates and page templates to implement product requirements from the Google Search Console"), __jsx("li", null, "Used PHP to modify server generated pdf templates to allow for more fields on GoodAhead PDF generated documents"), __jsx("li", null, "Used PHP to modify the catalog and search results to hide filterable attributes that only have one option available on the page"), __jsx("li", null, "Used HTML, CSS, and Javascript to create blogs and landing pages for the website from PSD's provided"), __jsx("li", null, "Used React, Express, Node, MongoDB, and Redux to create a streamlined app to manage customers, orders, shipments, products, prices, discounts, website auditting, and more."), __jsx("li", null, "Used NextJS, React, React Hooks, GIT, Express, and Node to build a URL scraper and CSV feedable content spinner application to allow for the generations of new and unique text content for SEO purposes."), __jsx("li", null, "Used SEO tools such as Semrush, Lighthouse, and the Google Search Console to identify issues and improve our ranking with Google searches."), __jsx("li", null, "Used Tarballs delivered through FTP to deploy changes to the website"), __jsx("li", null, "Used Tar and GZIP to archive my daily work onto my computer in the .archives directory to maintain a clean workspace on my computer, and still retrieve the work if/when needed"), __jsx("li", null, "Used REGEX and CSV files and Bulk actions to add, manage, and remove products from the Magento platform"), __jsx("li", null, "Used Adobe Illustrator to create logos, icons, and svg's as resources for the website"), __jsx("li", null, "Used Adobe Photoshop to create and edit mockups to describe changes to the website"), __jsx("li", null, "Used Adobe InDesign to create and edit documents and create a product catalog for our customers to browse through offline."), __jsx("li", null, "Used the browser to view changes in real time for front end web development purposes"), __jsx("li", null, "Worked with several remote developer teams in providing concepts, descriptions, and mock ups of changes and features to make/add to the website."), __jsx("li", null, "Used documentation for several different extensions/applications to identify and troubleshoot problems, with the software, and make necessary changes, whether on the front end, or in the PHP code itself to resolve the issues being experienced."), __jsx("li", null, "Identified performance issues in front end javascript from development practices."), __jsx("li", null, "Auditted Javascript, CSS, and PHP for issues impacting, design, performance, and/or user experience, and wrote documents to describe the problem, how to resolve it, and how to proceed in the future."), __jsx("li", null, "Identified problematic practices in our product upload process, resulting in illegal/broken characters appearing on the site, used regex to identify and remove them from the site entirely, identified the issue with excel opening UTF-8 files by converting them to ISO files before reading them, led the change to stop using excel all together in favor of alternatives such as google sheets and libre office (both of which support regex data manipulation)."), __jsx("li", null, "Led an innitiative to improve website performance and SEO search rank by adding optional fields, consolidating CSS and JS files, lazy loading offscreen images, making the switch from high file size jpg and pngs to JPEG2000 and webP's, and identifying extensions that dramatically increase the dom size beyond what they should be alotted."), __jsx("li", null, "Identified cross-site scripting hazards in our search bar, noticed bits of code inside the search query DB and used cross-site scripting techniques to create alerts, communicated the issue to the remote developers"))), __jsx("div", {
+    className: "job"
+  }, __jsx("strong", null, "CollinsHarper - Contract Software Developer / DevOps"), " - ", __jsx("em", null, "May 10th 2019 -> July 2019 Software Developer / DevOps "), __jsx("ul", null, __jsx("li", null, "Used Vim text editor to edit code"), __jsx("li", null, "Used find, grep, and pipes to generate tar and GZip backups of the websites"), __jsx("li", null, "Used PHP code sniffer to review and validate PHP files for deployment"), __jsx("li", null, "Used the PSR-2 PHP style guide to maintain accessible and readable code, keeping code up to the quality standard required"), __jsx("li", null, "Used SCP and SSH to migrate and deploy code to the server, documented the process, and communicated to the team that it is ready for smoke testing"), __jsx("li", null, "Worked in an entirely remote position with a team of developers from around the world"), __jsx("li", null, "Worked with the team to identify and correct problems in the code, format or otherwise"), __jsx("li", null, "Regularly studied Linux and Bash commands to get myself up to speed before and during my contract on the projects"), __jsx("li", null, "Used GSuite to operate all company related business, maintaining communications, schedules, alerts, etc..."), __jsx("li", null, "Assisted in identifying previously deployed code containing backdoors")))))));
 });
 
 /***/ }),
@@ -1210,14 +705,14 @@ const Context = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({});
 
 /***/ }),
 
-/***/ 3:
-/*!*******************************!*\
-  !*** multi ./pages/index.jsx ***!
-  \*******************************/
+/***/ 4:
+/*!********************************!*\
+  !*** multi ./pages/resume.jsx ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/ubuntu/blogTest/pages/index.jsx */"./pages/index.jsx");
+module.exports = __webpack_require__(/*! /home/ubuntu/blogTest/pages/resume.jsx */"./pages/resume.jsx");
 
 
 /***/ }),
@@ -1322,4 +817,4 @@ module.exports = require("styled-jsx/style");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=resume.js.map

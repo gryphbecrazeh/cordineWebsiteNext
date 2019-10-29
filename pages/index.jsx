@@ -45,9 +45,9 @@ export default () => {
 	let mins = () => new Date().getMinutes();
 	let secs = () => new Date().getSeconds();
 	let currentTime = () =>
-		`${hours() > 12 ? hours() - 12 : hours()}:${mins()}:${
-			secs() > 9 ? "" : "0"
-		}${secs()} ${hours() > 12 ? "PM" : "AM"}`;
+		`${hours() > 9 ? "" : "0"}${hours() > 12 ? hours() - 12 : hours()}:${
+			mins() > 9 ? "" : "0"
+		}${mins()}:${secs() > 9 ? "" : "0"}${secs()} ${hours() > 12 ? "PM" : "AM"}`;
 	let timeLoop = setInterval(() => setTime(currentTime()), 1000);
 	return (
 		<Document>

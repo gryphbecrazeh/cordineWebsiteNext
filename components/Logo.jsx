@@ -4,6 +4,9 @@ import React, { useContext } from "react";
 // -----------------------------------------React Hooks-----------------------------------------
 import Context from "../store/context";
 
+// -----------------------------------------Reactstrap-----------------------------------------
+import { Tooltip } from "reactstrap";
+
 // -----------------------------------------Resources-----------------------------------------
 import LogoIcon from "../images/chrisWebsiteLogo-W.svg";
 
@@ -21,31 +24,34 @@ const Logo = () => {
 	};
 	const handleLogin = () => {
 		if (loginReady) openModal();
+		else window.location = "/";
 	};
 	// Convert this Component into a tray with links to the virtual resume, github, codepen, and projects
 	// add a tool tip to the top that explains the functionality of the icon
 	// tray is collapsable
 	return (
-		<div className="tray" id="logo-tray">
-			<img
-				src={LogoIcon}
-				alt=""
-				onClick={handleLogin}
-				className="logo"
-				style={{ cursor: loginReady ? "pointer" : "default" }}
-			/>
+		<div className="tray d-none d-md-block" id="logo-tray">
+			<img src={LogoIcon} alt="" onClick={handleLogin} className="logo" />
 			<ul>
 				<li className="tray-item">
-					<a href="#">Virtual Resume</a>
+					<a name="resume" href="/resume">
+						Virtual Resume
+					</a>
 				</li>
 				<li className="tray-item">
-					<a href="#">Github</a>
-				</li>{" "}
+					<a name="github" href="https://github.com/gryphbecrazeh">
+						Github
+					</a>
+				</li>
 				<li className="tray-item">
-					<a href="#">Codepen</a>
-				</li>{" "}
+					<a name="codepen" href="https://codepen.io/gryphbecrazeh">
+						Codepen
+					</a>
+				</li>
 				<li className="tray-item">
-					<a href="#">Projects</a>
+					<a name="projects" href="/projects">
+						Projects
+					</a>
 				</li>
 			</ul>
 		</div>

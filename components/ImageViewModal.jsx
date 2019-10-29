@@ -23,7 +23,7 @@ const ImageViewModal = ({ children }) => {
 			</div>
 			<Modal isOpen={isOpen} toggle={toggleModal} size="lg">
 				<ModalBody>Test</ModalBody>
-				<ModalFooter>Test</ModalFooter>
+				<ModalFooter>Image View Modal</ModalFooter>
 			</Modal>
 		</div>
 	);

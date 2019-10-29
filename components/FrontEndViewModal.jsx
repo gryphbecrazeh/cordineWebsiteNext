@@ -38,7 +38,7 @@ const FrontEndViewModal = ({ URL_HTML, URL_CSS, URL_JAVASCRIPT }) => {
 				View Now
 			</div>
 			<Modal isOpen={isOpen} toggle={toggleModal} size={getView()}>
-				<ModalBody>Test</ModalBody>
+				<ModalBody>Front End View Modal</ModalBody>
 				<ModalFooter>
 					<ButtonGroup className="d-none d-lg-block w-100">
 						<Button onClick={changeView} name="desktop">

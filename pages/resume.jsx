@@ -4,12 +4,14 @@ import React, { useContext } from "react";
 import { Container, Row, Col, Button, Input } from "reactstrap";
 // -----------------------------------------Components-----------------------------------------
 import Document from "../layouts/document";
+import Logo from "../components/Logo";
 // -----------------------------------------Sass-----------------------------------------
 import "../scss/style.scss";
 
 export default () => {
 	return (
 		<Document>
+			<Logo />
 			<Container id="resume">
 				<Row>
 					<Col>
